@@ -103,6 +103,15 @@ body {
 .title {
     font-size: 200%;
     font-style: italic;
+
+    margin-top: 27vh;
+}
+
+.description {
+    position: relative;
+    margin-top: -1.5vh;
+
+    line-height: 190%
 }
 
 .circleContainer{
@@ -119,17 +128,7 @@ body {
 
 	width: 2vw;
 	height: 2vw;
-    background: rgba(211, 47, 86);
-    
-    border-radius: 50px;
-}
-
-.circleButton {
-    margin-left: 1vw;
-
-	width: 2vw;
-	height: 2vw;
-    background: rgba(211, 47, 86);
+    background: rgba(226, 53, 94);
     
     border-radius: 50px;
 }
@@ -144,4 +143,21 @@ body {
 
 .figure1:hover {
     filter: grayscale(0%); 
+}
+
+.circleButton {
+    position: absolute;
+    margin-left: 55vw;
+    margin-top: 40vh;
+
+	width: 4vw;
+	height: 4vw;
+    background: rgba(226, 53, 94);
+    border-radius: 50px;
+
+    transition: transform .5s ease;
+}
+
+.circleButton:hover {
+    transform: scale(1.2);
 }
