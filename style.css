@@ -15,7 +15,7 @@ body {
     margin: 0;
 }
 
-.colorBar {
+#colorBar {
     z-index: 2; 
     margin: 0;
 

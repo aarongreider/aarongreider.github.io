@@ -1,12 +1,7 @@
-console.log('hello whorled');
+console.log('hello wohald');
 
-// const menu = document.querySelector('.colorBar');
+const menu = document.querySelector('.colorBar');
 
-// menu.addEventListener('click', function (event) {
-//    menu.classList.toggle('.activeColorBar')
-//})
-
-
-$("button").click(function () {
-    $("p").css("color", "red");
-});
+function myFunction() {
+    document.getElementById("colorBar").style.height = "100vh";
+}
