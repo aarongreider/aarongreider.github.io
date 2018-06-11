@@ -124,6 +124,16 @@ body {
     border-radius: 50px;
 }
 
+.circleButton {
+    margin-left: 1vw;
+
+	width: 2vw;
+	height: 2vw;
+    background: rgba(211, 47, 86);
+    
+    border-radius: 50px;
+}
+
 .figure1 {
     height: 100%;
     filter: grayscale(100%);
