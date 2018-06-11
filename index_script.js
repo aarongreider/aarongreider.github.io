@@ -7,7 +7,7 @@ console.log('hello Aaren');
 //})
 
 $(document).ready(function () {
-    $(".colorBar").click(function () {
+    $("button").click(function () {
         $("p").css("color", "red");
     });
 });
