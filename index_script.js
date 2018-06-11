@@ -1,4 +1,4 @@
-console.log('hello Aaren');
+console.log('hello whorled');
 
 // const menu = document.querySelector('.colorBar');
 
@@ -6,8 +6,7 @@ console.log('hello Aaren');
 //    menu.classList.toggle('.activeColorBar')
 //})
 
-$(document).ready(function () {
-    $("button").click(function () {
-        $("p").css("color", "red");
-    });
+
+$("button").click(function () {
+    $("p").css("color", "red");
 });
