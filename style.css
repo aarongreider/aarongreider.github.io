@@ -136,13 +136,8 @@ body {
 .figure1 {
     height: 100%;
     filter: grayscale(100%);
-    transition: all .5s ease;
 
     border: none;
-}
-
-.figure1:hover {
-    filter: grayscale(0%); 
 }
 
 .circleButton {
