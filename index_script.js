@@ -1,7 +1,13 @@
 console.log('hello world');
 
-const menu = document.querySelector('.colorBar');
+// const menu = document.querySelector('.colorBar');
 
-menu.addEventListener('click', function (event) {
-    menu.classList.toggle('.activeColorBar')
-})
+// menu.addEventListener('click', function (event) {
+//    menu.classList.toggle('.activeColorBar')
+//})
+
+$(document).ready(function () {
+    $(".colorBar").click(function () {
+        $("p").css("color", "red");
+    });
+});
