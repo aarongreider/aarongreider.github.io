@@ -37,3 +37,7 @@ function openMenu() {
         }
     }
 }
+
+function expandProject() {
+    
+}

@@ -8,7 +8,7 @@ html {
 
 body {
     font-family: 'Playfair Display', serif;
-    font-size: 1.3vw;
+    font-size: 1vw;
 
     color: grey;
 
@@ -52,8 +52,10 @@ body {
     letter-spacing: .7vw;
 
     position: absolute;
-    top: 5.5vh;
+    top: 4vh;
     left: 12.5vw;
+
+    font-size: 1em;
 }
 
 .flex {
@@ -135,7 +137,7 @@ body {
     border: none;
 }
 
-.circleButton {
+#circleButton {
     position: absolute;
     margin-left: 55vw;
     margin-top: 40vh;
@@ -144,6 +146,12 @@ body {
 	height: 4vw;
     background: rgba(226, 53, 94);
     border-radius: 50px;
+    border:none;
+    outline: none;
 
     transition: transform .5s ease;
+}
+
+#circleButton:hover {
+    transform: scale(1.2);
 }
