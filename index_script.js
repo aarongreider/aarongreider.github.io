@@ -1,12 +1,14 @@
-console.log('hello wohald');
+console.log('hello whurled');
 
 var aboutExpanded = false;
 var menuExpanded = false;
+var galleryExpanded = false;
 var about;
 var menu;
+var gallery;
 
 
-function openAbout() {
+function toggleAbout() {
     about = document.getElementById("colorBar");
     if (aboutExpanded) {
         about.style.height = "3vh";
@@ -16,12 +18,12 @@ function openAbout() {
         aboutExpanded = true;
 
         if (menuExpanded) {
-            openMenu();
+            toggleMenu();
         }
     }
 }
 
-function openMenu() {
+function toggleMenu() {
     menu = document.getElementById("colorBar2");
     if (menuExpanded) {
         menu.style.height = "3vh";
@@ -33,11 +35,25 @@ function openMenu() {
         menuExpanded = true;
 
         if (aboutExpanded) {
-            openAbout();
+            toggleAbout();
         }
     }
 }
 
 function expandProject() {
-    
+    gallery = document.getElementById("gallery");
+
+    if (galleryExpanded) {
+        gallery.style.left = "0";
+        galleryExpanded = false;
+    } else {
+        gallery.style.left = "-40vw";
+        galleryExpanded = true;
+    }
+
+    if (menuExpanded) {
+        toggleMenu();
+    } else if (aboutExpanded) {
+        toggleAbout();
+    }
 }

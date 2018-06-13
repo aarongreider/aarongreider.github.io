@@ -89,7 +89,9 @@ body {
 }
 
 .galleryContent {
+    position: absolute;
     margin: 0 auto;
+    left: 0;
 
     height: 68vh;
     width: 125vw;
@@ -101,8 +103,7 @@ body {
 
     background-color: rgb(223, 223, 223); 
 
-    position: absolute;
-
+    transition: left .5s ease;
 }
 
 .column {
