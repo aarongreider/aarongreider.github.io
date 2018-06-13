@@ -1,5 +1,5 @@
 * {
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 html {
@@ -71,30 +71,59 @@ body {
     height: 100vh;
 }
 
-.container {
+.galleryViewport {
     margin: 0 auto;
 
     height: 68vh;
-    max-width: 85vw;
+    width: 85vw;
 
 
     display: grid;
-    grid-template-columns: 47% 5% 47%;
+    grid-template-columns: 32% 4% 32% 32%;
+    
 
     background-color: rgb(223, 223, 223); 
 
     position: absolute;
-    overflow: hidden;
+
+}
+
+.galleryContent {
+    margin: 0 auto;
+
+    height: 68vh;
+    width: 125vw;
+
+
+    display: grid;
+    grid-template-columns: 32% 4% 32% 32%;
+    
+
+    background-color: rgb(223, 223, 223); 
+
+    position: absolute;
+
 }
 
 .column {
      margin: 0 auto;
 }
 
-#content {
-    margin: 0 auto;
-
+.colTitle {
     width:75%;
+}
+
+.colProcess {
+    width:75%;
+}
+
+.colCircMenu {
+    grid-column: 2 / 3;
+}
+
+.colFigure {
+    height: 100%;
+    width: 100%;
 }
 
 .title {
@@ -131,10 +160,13 @@ body {
 }
 
 .figure1 {
-    height: 100%;
+    object-fit: cover;
     filter: grayscale(100%);
 
     border: none;
+
+    height:100%;
+    width: 100%;
 }
 
 #circleButton {
