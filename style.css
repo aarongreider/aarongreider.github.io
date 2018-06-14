@@ -58,6 +58,13 @@ body {
     font-size: 1em;
 }
 
+hr {
+
+
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
 .flex {
     display: flex;
     justify-content: center;
@@ -96,14 +103,10 @@ body {
     height: 68vh;
     width: 125vw;
 
-
     display: grid;
-    grid-template-columns: 32% 4% 32% 32%;
-    
+    grid-template-columns: 32% 4% 32% 32%; 
 
-    background-color: rgb(223, 223, 223); 
-
-    transition: left .5s ease;
+    transition: left .8s ease;
 }
 
 .column {
