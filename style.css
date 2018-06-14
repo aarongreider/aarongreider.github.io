@@ -1,18 +1,24 @@
 * {
-    /* overflow: hidden; */
+     overflow: hidden; 
 }
 
 html {
     overflow: auto;
 }
 
-body {
+body, button {
     font-family: 'Playfair Display', serif;
     font-size: 1vw;
 
     color: grey;
 
     margin: 0;
+}
+
+hr {
+    margin: 0;
+    padding: 0;
+    border: .5px solid lightgrey;
 }
 
 #colorBar {
@@ -48,21 +54,86 @@ body {
     transition: all .5s ease;
 }
 
+#aboutWrapper {
+    color: white; 
+
+    position: absolute;
+    margin: 0 auto;
+    top: 5vh;
+    left: 12.5vw;
+
+    text-align: left;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.skills {
+    display: flex;
+}
+
+.mediaWrapper {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: 20vh;
+
+    overflow: hidden;
+}
+
+.mediaLine {
+    position: relative;
+    margin: 0;
+
+    border: .5px solid white;
+    opacity: .5;
+
+    width: 100%;
+}
+
+.mediaLink {
+    flex-shrink: 1;
+    padding: 1vw;
+
+    font-size: 100%;
+    text-decoration: none;
+    color: white;
+
+    transition: all .3s ease;
+}
+
+.mediaLink:hover {
+    flex-grow: 1;
+    flex-shrink: 1;
+
+    background: rgba(128, 128, 128, 0.199);
+
+    font-size: 120%;
+
+}
+
 .nameBar {
+    margin: 0;
+    padding: 0;
+
     letter-spacing: .7vw;
 
     position: absolute;
-    top: 4vh;
+    top: 5vh;
     left: 12.5vw;
 
     font-size: 1em;
 }
 
-hr {
+.nameLine {
+    position: absolute;
+    top: 6.5vh;
+    left: 12.5vw;
 
-
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    width: 85vw;
 }
 
 .flex {
