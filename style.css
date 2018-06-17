@@ -228,6 +228,7 @@ ul {
 
 .colProcess {
     width:75%;
+    padding: 0 5vw;
 
     overflow: scroll;
 }
@@ -274,7 +275,7 @@ ul {
     border-radius: 50px;
 }
 
-.figure1 {
+#figure1 {
     object-fit: cover;
     filter: grayscale(100%);
 
@@ -283,7 +284,13 @@ ul {
     height:100%;
     width: 100%;
 
-    content: attr(src)
+    transition: filter 1s ease;    
+}
+
+.figureProcess {
+    object-fit: cover;
+    height:100%;
+    width: 100%;
 }
 
 #circleButton {

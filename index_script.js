@@ -6,6 +6,7 @@ var galleryExpanded = false;
 var about;
 var menu;
 var gallery;
+var figure;
 
 
 function toggleAbout() {
@@ -42,13 +43,16 @@ function toggleMenu() {
 
 function expandProject() {
     gallery = document.getElementById("gallery");
+    figure = document.getElementById("figure1");
 
     if (galleryExpanded) {
         gallery.style.left = "0";
         galleryExpanded = false;
+        figure.style.filter = "grayscale(100%)"
     } else {
         gallery.style.left = "-40vw";
         galleryExpanded = true;
+        figure.style.filter = "grayscale(0%)"
     }
 
     if (menuExpanded) {
