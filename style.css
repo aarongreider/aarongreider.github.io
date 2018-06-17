@@ -168,9 +168,9 @@ ul {
 .nameLine {
     position: absolute;
     top: 6.5vh;
-    left: 12.5vw;
+    left: 29vw;
 
-    width: 85vw;
+    width: 57vw;
 }
 
 .flex {
@@ -219,6 +219,7 @@ ul {
 
 .column {
      margin: 0 auto;
+     height: 68vh;
 }
 
 .colTitle {
