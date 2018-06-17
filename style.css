@@ -282,12 +282,14 @@ ul {
 
     height:100%;
     width: 100%;
+
+    content: attr(src)
 }
 
 #circleButton {
-    position: relative;
-    margin: 0 2vw;
-    top:-94vh;
+    position: absolute;
+    margin: 0 48vw;
+    top:25vh;
 
 	width: 4vw;
 	height: 4vw;
