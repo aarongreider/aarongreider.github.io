@@ -1,5 +1,6 @@
 * {
-     overflow: hidden; 
+    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 html {
@@ -192,11 +193,6 @@ ul {
     height: 68vh;
     width: 85vw;
 
-
-    display: grid;
-    grid-template-columns: 32% 4% 32% 32%;
-    
-
     background-color: rgb(223, 223, 223); 
 
     position: absolute;
@@ -208,57 +204,50 @@ ul {
     margin: 0 auto;
     left: 0;
 
-    height: 68vh;
+    /* height: 68vh; */
+    height: 136vh;
     width: 125vw;
 
     display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 50% 50%;
+
+    transition: all .8s ease;
+}
+
+.gallerySlider {
+    height: 100%;
+
+    display: grid;
     grid-template-columns: 32% 4% 32% 32%; 
-
-    transition: left .8s ease;
+    grid-template-rows: 100%;
+}
+#gallerySlider1 {
+    grid-row-start: 1;
+    grid-row-end: 2;
 }
 
-.column {
-     margin: 0 auto;
-     height: 68vh;
+#gallerySlider2 {
+    grid-row-start: 2;
+    grid-row-end: 3;
 }
 
-.colTitle {
-    width:75%;
-}
-
-.colProcess {
-    width:75%;
-    padding: 0 5vw;
-
-    overflow: scroll;
-}
-
-.colCircMenu {
-    grid-column: 2 / 3;
-}
-
-.colFigure {
+.navContent {
+    position: relative;
+    
+    left: 0;
     height: 100%;
     width: 100%;
+
+    transition: all .8s ease;
 }
 
-.title {
-    font-size: 200%;
-    font-style: italic;
-
-    margin-top: 27vh;
-}
-
-.description {
+#circleContainer {
     position: relative;
-    margin-top: -1.5vh;
+    left: 40.8vw;
 
-    line-height: 190%
-}
-
-.circleContainer{
-    height: 100%;
-    width: 100%;         
+    height: 68vh;
+    width: 3.4vw;         
 
     display: flex;
     flex-direction: column;
@@ -273,6 +262,65 @@ ul {
     background: rgba(226, 53, 94);
     
     border-radius: 50px;
+}
+
+#circleButton {
+    position: absolute;
+    margin: 0 48vw;
+    top: 25vh;
+
+	width: 4vw;
+	height: 4vw;
+    background: rgba(226, 53, 94);
+    border-radius: 50px;
+    border:none;
+    outline: none;
+
+    transition: transform .4s ease;
+}
+
+#circleButton:hover {
+    transform: scale(1.1);
+}
+
+.column {
+     margin: 0 auto;
+}
+
+.colTitle {
+    width:75%;
+
+    grid-column: 1 / 2;
+}
+
+.colProcess {
+    width:75%;
+    padding: 0 5vw;
+
+    overflow: scroll;
+
+    grid-column: 4 / 5;
+}
+
+.colFigure {
+    height: 100%;
+    width: 100%;
+
+    grid-column: 3 / 4;
+}
+
+.title {
+    font-size: 200%;
+    font-style: italic;
+
+    margin-top: 27vh;
+}
+
+.description {
+    position: relative;
+    margin-top: -1.5vh;
+
+    line-height: 190%
 }
 
 #figure1 {
@@ -291,25 +339,6 @@ ul {
     object-fit: cover;
     height:100%;
     width: 100%;
-}
-
-#circleButton {
-    position: absolute;
-    margin: 0 48vw;
-    top:25vh;
-
-	width: 4vw;
-	height: 4vw;
-    background: rgba(226, 53, 94);
-    border-radius: 50px;
-    border:none;
-    outline: none;
-
-    transition: transform .4s ease;
-}
-
-#circleButton:hover {
-    transform: scale(1.1);
 }
 
 ::-webkit-scrollbar {
