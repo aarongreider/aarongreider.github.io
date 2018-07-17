@@ -202,12 +202,12 @@ ul {
     top: 0;
 
     /* height: 68vh; */
-    height: 136vh;
+    height: 544vh;
     width: 125vw;
 
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 50% 50%;
+    grid-template-rows: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
 
     transition: all .8s ease;
 }
@@ -258,7 +258,16 @@ ul {
 	height: 2vw;
     background: rgba(226, 53, 94);
     
+    background-color: rgb(226, 53, 94);
+    border:none;
     border-radius: 50px;
+    outline: none;
+
+    transition: transform .4s ease;
+}
+
+.circle:hover {
+    transform: scale(1.15);
 }
 
 #circleButton {
