@@ -72,12 +72,16 @@ function expandProject() {
 
 window.addEventListener('wheel', function (e) {
     gallery = document.getElementById("gallery");
-    
-    if (e.deltaY > 0) {
+
+    //console.log("listener, e.deltaY: " + e.deltaY
+    //    + ", galleryExpanded: " + galleryExpanded
+    //    + ", gallery " + gallery);
+
+    if (e.deltaY > 0 && !galleryExpanded) {
         gallery.style.top = "-68vh";
         projectNum = 1;
     }
-    else if (e.deltaY < 0) {
+    else if (e.deltaY < 0  && !galleryExpanded) {
         gallery.style.top = "0";
         projectNum = 0;
     }
