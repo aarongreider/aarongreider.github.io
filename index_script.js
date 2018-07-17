@@ -6,7 +6,7 @@ var galleryExpanded = false;
 var about;
 var menu;
 var gallery;
-var figure;
+var figures;
 var nav;
 
 var projectNum = 0;
@@ -45,6 +45,7 @@ function toggleMenu() {
 }
 
 function checkToggled() {
+    // when an action happens, check if either the about or the menu are open, and collapse them
     if (menuExpanded) {
         toggleMenu();
     } else if (aboutExpanded) {
@@ -53,30 +54,41 @@ function checkToggled() {
 }
 
 function expandProject() {
+    // shifts gallery over to display the process work and extended description
+    // collapses about and menu, removes greyscale filter of title image
     gallery = document.getElementById("gallery");
-    figure = document.getElementById("figure1");
+    figures = document.getElementsByClassName("titleFigure");
+    for (var i = 0; i < figures.length; i++) {
+        console.log(`figure ${i}: found`);
+    }
     nav = document.getElementById("navContent1");
 
     if (galleryExpanded) {
         gallery.style.left = "0";
         nav.style.left = "0";
         galleryExpanded = false;
-        figure.style.filter = "grayscale(100%)";
+        for (var i = 0; i < figures.length; i++) {
+            figures[i].style.filter = "grayscale(100%)";
+        }
     } else {
         gallery.style.left = "-40vw";
         nav.style.left = "-40.8vw";
         galleryExpanded = true;
-        figure.style.filter = "grayscale(0%)";
+        for (var i = 0; i < figures.length; i++) {
+            figures[i].style.filter = "grayscale(0%)";
+        }
     }
 
     checkToggled();
 }
 
-function selectProject(circleNum) {
+function selectProject(num) {
+    // called to shift the gallery to display a specific project num
+    // will collapse menu and about
     gallery = document.getElementById("gallery");
-    
-    switch(circleNum) {
-        case 1: 
+
+    switch (num) {
+        case 1:
             gallery.style.top = "0";
             break;
         case 2:
@@ -102,23 +114,24 @@ function selectProject(circleNum) {
             break;
     }
 
-    projectNum = circleNum;
+    projectNum = num;
     checkToggled();
 }
 
 window.addEventListener('wheel', function (e) {
+    // listens for wheel event, changes the projectNum and calls selectProject(num)
     gallery = document.getElementById("gallery");
 
-    //console.log("listener, e.deltaY: " + e.deltaY
-    //    + ", galleryExpanded: " + galleryExpanded
-    //    + ", gallery " + gallery);
+    if (e.deltaY > 0 && !galleryExpanded && projectNum != 8) {
+        projectNum += 1;
+        selectProject(projectNum);
 
-    if (e.deltaY > 0 && !galleryExpanded) {
-        gallery.style.top = "-68vh";
-        projectNum = 2;
-    }
-    else if (e.deltaY < 0  && !galleryExpanded) {
-        gallery.style.top = "0";
-        projectNum = 1;
+        console.log("scrolling down; projectNum: " + projectNum);
+
+    } else if (e.deltaY < 0 && !galleryExpanded && projectNum != 1) {
+        projectNum -= 1;
+        selectProject(projectNum);
+
+        console.log("scrolling down; projectNum: " + projectNum);
     }
 });

@@ -1,106 +1,252 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="icon" href="Graphics/favicon.png" type="image/png" sizes="16x16">
-        <link rel="stylesheet" href="style.css" type="text/css">
-        <script src="index_script.js"></script>
 
-        <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i" rel="stylesheet">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-       
-    </head>
-    <body>       
-        <button id="colorBar" onclick="toggleAbout()">
-            <hr class="aboutLine">
-            <div id="aboutWrapper"> 
-                <p class="aboutName">AARON GREIDER</p>
-                <p class="aboutTitle">EDUCATION</p>
-                <ul> 
-                    <li>University of Cincinnati</li>
-                    <li>Visual Communication</li>
-                    <li>Sophomore</li>
-                </ul>
-                <p class="aboutTitle">LEADERSHIP</p>
+<head>
+    <link rel="icon" href="Graphics/favicon.png" type="image/png" sizes="16x16">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="index_script.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <button id="colorBar" onclick="toggleAbout()">
+        <hr class="aboutLine">
+        <div id="aboutWrapper">
+            <p class="aboutName">AARON GREIDER</p>
+            <p class="aboutTitle">EDUCATION</p>
+            <ul>
+                <li>University of Cincinnati</li>
+                <li>Visual Communication</li>
+                <li>Sophomore</li>
+            </ul>
+            <p class="aboutTitle">LEADERSHIP</p>
+            <ul>
+                <li>2018 AIGA Student Group Co-President</li>
+                <li>2017 Eagle Scout Award</li>
+            </ul>
+            <div class="skills">
                 <ul>
-                    <li>2018 AIGA Student Group Co-President</li>
-                    <li>2017 Eagle Scout Award</li>
+                    <li>Illustrator</li>
+                    <li>InDesign</li>
+                    <li>Premiere Pro</li>
+                    <li>Photoshop</li>
                 </ul>
-                <div class="skills">
-                    <ul>
-                        <li>Illustrator</li>
-                        <li>InDesign</li>
-                        <li>Premiere Pro</li>
-                        <li>Photoshop</li>
-                    </ul>
-                    <ul>
-                        <li>Autodesk Maya</li>
-                        <li>Wordpress</li>
-                        <li>HTML & CSS</li>
-                        <li>Javascript</li>
-                    </ul>
-                </div>
-                <div class="mediaWrapper">
-                    <hr class="mediaLine">
-                    <a href="https://www.behance.net/aaron_greider" target="_blank" class="mediaLink">BEHANCE</a>
-                    <hr class="mediaLine">
-                    <a href="https://www.instagram.com/aa.j.g/?hl=en" target="_blank" class="mediaLink">INSTAGRAM</a>
-                    <hr class="mediaLine">
-                    <a href="https://www.linkedin.com/in/aaron-greider" target="_blank" class="mediaLink">LINKEDIN</a>
-                    <hr class="mediaLine">
-                </div>
+                <ul>
+                    <li>Autodesk Maya</li>
+                    <li>Wordpress</li>
+                    <li>HTML & CSS</li>
+                    <li>Javascript</li>
+                </ul>
             </div>
-        </button>
+            <div class="mediaWrapper">
+                <hr class="mediaLine">
+                <a href="https://www.behance.net/aaron_greider" target="_blank" class="mediaLink">BEHANCE</a>
+                <hr class="mediaLine">
+                <a href="https://www.instagram.com/aa.j.g/?hl=en" target="_blank" class="mediaLink">INSTAGRAM</a>
+                <hr class="mediaLine">
+                <a href="https://www.linkedin.com/in/aaron-greider" target="_blank" class="mediaLink">LINKEDIN</a>
+                <hr class="mediaLine">
+            </div>
+        </div>
+    </button>
 
-        <p class="nameBar">AARON GREIDER</p>
-        <hr class="nameLine">
-        <div class="flex">
-            <div class="galleryViewport">
-                <div class="galleryContent" id="gallery">
-                    <div class="gallerySlider" id="gallerySlider1">
-                        <div class="column colTitle">
-                            <p class="title">Body Mantel</p>
-                            <p class="description">The Poplar Prince’s robes were created from 101 twelve-inch poplar planks and held together with wood adhesive. The initial
-                            concept was modeled and rendered in Autodesk Maya, and the succeeding mantel was a loose adaption of what I could complete
-                            over the course of one all-nighter.</p>
-                        </div> 
-                        <div class="column colFigure">
-                            <img id="figure1" src="Graphics/body_mantel_cover.jpg"></img>
-                        </div>
-                        <div class="column colProcess">
-                                <p class="title">101 Poplar Planks and Wood Glue</p>
-                                <p class="description">The model was meant to liken cascading and asymmetrical movement a nontraditional ebb
-                                from bottom right to upper left culminating in a fractal spiral on the left shoulder.<br> <br> Because the poplar planks resembled reeds, I researched styles of traditional reed armor - especially that of ancient eastern
-                                shoguns. I began by creating a duct tape bust of my torso that I could use to brainstorm, though, I opted to brainstorm in
-                                the digital space instead. When I began to construct the mantel, I found that the skeleton made a better bust than my poplar-reinforced
-                                duct tape one. To create dimension of the overall form, a tiny (>.25in) spacer made of cut, layered, and glued poplar was
-                                placed between each plank. Without the spacers there would be no way to glue the sticks together. Each joint was held together
-                                for 30 minutes with a clothespin to avoid damage before the adhesive sealed.</p>
-                                <img class="figureProcess" src="Graphics/body_mantel_process1.jpg"></img>
-                                <img class="figureProcess" src="Graphics/body_mantel_process2.jpg"></img>
-                        </div>
+    <p class="nameBar">AARON GREIDER</p>
+    <hr class="nameLine">
+    <div class="flex">
+        <div class="galleryViewport">
+            <div class="galleryContent" id="gallery">
+                <div class="gallerySlider" id="gallerySlider1">
+                    <div class="column colTitle">
+                        <p class="title">Body Mantel</p>
+                        <p class="description">The Poplar Prince’s robes were created from 101 twelve-inch poplar planks and held together with
+                            wood adhesive. The initial concept was modeled and rendered in Autodesk Maya, and the succeeding
+                            mantel was a loose adaption of what I could complete over the course of one all-nighter.</p>
                     </div>
-                    <div class="gallerySlider" id="gallerySlider2">
-                        <div class="column colTitle">
-                            <p class="title">Matière Texture Swatch</p>
-                            <p class="description">To study the capacity of material textures and the effect of their combination, we were assigned to create a single entity
-                            composed of two materials with unique tactile qualities. My swatch used candle wax and poplar planks.</p>
-                        </div> 
-                        <div class="column colFigure">
-                            <img id="figure1" src="Graphics/matiere_cover.jpg"></img>
-                            <!--<input type="image" src="Graphics/button.png" id="circleButton" onclick="expandProject()"></input>-->
-                        </div>
-                        <div class="column colProcess">
-                                <p class="title">Poplar Planks and Candle Wax</p>
-                                <p class="description">Melting the wax intrigued me, so I experimented with different factors’ effect on the cooling speed. I came to the conclusion
-                                that pouring wax onto water and a dry surface simultaneously would adhere the wax to the surface and quickly create a hardened
-                                structure that retained the likeness of the fluid state. Because wax repels water, the wax would unconditionally adhere to
-                                itself, lending the capability to create a complex wax labyrinth. I constructed a grid out of the planks which would serve
-                                as structural support for a 1x1 foot wax swatch. Then using clothespins, shoelace, and a ruler I created a mechanism to suspend
-                                the grid on the surface of the water (in a dishbin) so I could freely pour the wax onto both the water and the poplar</p>
-                                <img class="figureProcess" src="Graphics/matiere_process1.jpg"></img>
-                                <img class="figureProcess" src="Graphics/matiere_process2.jpg"></img>
-                                <img class="figureProcess" src="Graphics/matiere_process3.jpg"></img>
-                        </div>
+                    <div class="column colFigure">
+                        <img  class="titleFigure" id="figure1" src="Graphics/body_mantel_cover.jpg"></img>
+                    </div>
+                    <div class="column colProcess">
+                        <p class="title">101 Poplar Planks and Wood Glue</p>
+                        <p class="description">The model was meant to liken cascading and asymmetrical movement a nontraditional ebb from bottom
+                            right to upper left culminating in a fractal spiral on the left shoulder.
+                            <br>
+                            <br> Because the poplar planks resembled reeds, I researched styles of traditional reed armor - especially
+                            that of ancient eastern shoguns. I began by creating a duct tape bust of my torso that I could
+                            use to brainstorm, though, I opted to brainstorm in the digital space instead. When I began to
+                            construct the mantel, I found that the skeleton made a better bust than my poplar-reinforced
+                            duct tape one. To create dimension of the overall form, a tiny (>.25in) spacer made of cut, layered,
+                            and glued poplar was placed between each plank. Without the spacers there would be no way to
+                            glue the sticks together. Each joint was held together for 30 minutes with a clothespin to avoid
+                            damage before the adhesive sealed.</p>
+                        <img class="figureProcess" src="Graphics/body_mantel_process1.jpg"></img>
+                        <img class="figureProcess" src="Graphics/body_mantel_process2.jpg"></img>
+                    </div>
+                </div>
+                <div class="gallerySlider" id="gallerySlider2">
+                    <div class="column colTitle">
+                        <p class="title">Patch</p>
+                        <p class="description">Patch is a work in progress midi control program. Through a custom-purposed Raspberry Pi and Teensy, we can simultaneously
+                        modify the patch - and other midi variables - of a Nord Keyboard and Virus TI synthesizer through the convenience and familiarity
+                        of a mobile web browser. Patch was in need of design assistance for the UI interface and identity of the software.</p>
+                    </div>
+                    <div class="column colFigure">
+                        <img class="titleFigure" id="figure2" src="Graphics/Patch_title.jpg"></img>
+                    </div>
+                    <div class="column colProcess">
+                        <p class="title">Identity and UI</p>
+                        <img class="figureProcess" src="Graphics/typo-corrected_01.jpg"></img>
+                        <img class="figureProcess" src="Graphics/typo-corrected_02.jpg"></img>
+                        <img class="figureProcess" src="Graphics/typo-corrected_03.jpg"></img>
+                        <img class="figureProcess" src="Graphics/typo-corrected_04.jpg"></img>
+                        <img class="figureProcess" src="Graphics/typo-corrected_05.jpg"></img>
+                        <img class="figureProcess" src="Graphics/typo-corrected_06.jpg"></img>
+                        <img class="figureProcess" src="Graphics/typo-corrected_07.jpg"></img>
+                        <img class="figureProcess" src="Graphics/typo-corrected_08.jpg"></img>
+                        <img class="figureProcess" src="Graphics/typo-corrected_09.jpg"></img>
+                    </div>
+                </div>
+                <div class="gallerySlider" id="gallerySlider3">
+                    <div class="column colTitle">
+                        <p class="title">Matière Texture Swatch</p>
+                        <p class="description">To study the capacity of material textures and the effect of their combination, we were assigned
+                            to create a single entity composed of two materials with unique tactile qualities. My swatch
+                            used candle wax and poplar planks.</p>
+                    </div>
+                    <div class="column colFigure">
+                        <img class="titleFigure" id="figure3" src="Graphics/matiere_cover.jpg"></img>
+                    </div>
+                    <div class="column colProcess">
+                        <p class="title">Poplar Planks and Candle Wax</p>
+                        <p class="description">Melting the wax intrigued me, so I experimented with different factors’ effect on the cooling speed.
+                            I came to the conclusion that pouring wax onto water and a dry surface simultaneously would adhere
+                            the wax to the surface and quickly create a hardened structure that retained the likeness of
+                            the fluid state. Because wax repels water, the wax would unconditionally adhere to itself, lending
+                            the capability to create a complex wax labyrinth. I constructed a grid out of the planks which
+                            would serve as structural support for a 1x1 foot wax swatch. Then using clothespins, shoelace,
+                            and a ruler I created a mechanism to suspend the grid on the surface of the water (in a dishbin)
+                            so I could freely pour the wax onto both the water and the poplar</p>
+                        <img class="figureProcess" src="Graphics/matiere_process1.jpg"></img>
+                        <img class="figureProcess" src="Graphics/matiere_process2.jpg"></img>
+                        <img class="figureProcess" src="Graphics/matiere_process3.jpg"></img>
+                    </div>
+                </div>
+                <div class="gallerySlider" id="gallerySlider4">
+                    <div class="column colTitle">
+                        <p class="title">Matière Texture Swatch</p>
+                        <p class="description">To study the capacity of material textures and the effect of their combination, we were assigned to create a single
+                            entity composed of two materials with unique tactile qualities. My swatch used candle wax and poplar planks.</p>
+                    </div>
+                    <div class="column colFigure">
+                        <img class="titleFigure" id="figure4" src="Graphics/matiere_cover.jpg"></img>
+                    </div>
+                    <div class="column colProcess">
+                        <p class="title">Poplar Planks and Candle Wax</p>
+                        <p class="description">Melting the wax intrigued me, so I experimented with different factors’ effect on the cooling speed. I came to the
+                            conclusion that pouring wax onto water and a dry surface simultaneously would adhere the wax to the surface and
+                            quickly create a hardened structure that retained the likeness of the fluid state. Because wax repels water,
+                            the wax would unconditionally adhere to itself, lending the capability to create a complex wax labyrinth. I constructed
+                            a grid out of the planks which would serve as structural support for a 1x1 foot wax swatch. Then using clothespins,
+                            shoelace, and a ruler I created a mechanism to suspend the grid on the surface of the water (in a dishbin) so
+                            I could freely pour the wax onto both the water and the poplar</p>
+                        <img class="figureProcess" src="Graphics/matiere_process1.jpg"></img>
+                        <img class="figureProcess" src="Graphics/matiere_process2.jpg"></img>
+                        <img class="figureProcess" src="Graphics/matiere_process3.jpg"></img>
+                    </div>
+                </div>
+                <div class="gallerySlider" id="gallerySlider5">
+                    <div class="column colTitle">
+                        <p class="title">Matière Texture Swatch</p>
+                        <p class="description">To study the capacity of material textures and the effect of their combination, we were assigned to create a single
+                            entity composed of two materials with unique tactile qualities. My swatch used candle wax and poplar planks.</p>
+                    </div>
+                    <div class="column colFigure">
+                        <img class="titleFigure" id="figure5" src="Graphics/matiere_cover.jpg"></img>
+                    </div>
+                    <div class="column colProcess">
+                        <p class="title">Poplar Planks and Candle Wax</p>
+                        <p class="description">Melting the wax intrigued me, so I experimented with different factors’ effect on the cooling speed. I came to the
+                            conclusion that pouring wax onto water and a dry surface simultaneously would adhere the wax to the surface and
+                            quickly create a hardened structure that retained the likeness of the fluid state. Because wax repels water,
+                            the wax would unconditionally adhere to itself, lending the capability to create a complex wax labyrinth. I constructed
+                            a grid out of the planks which would serve as structural support for a 1x1 foot wax swatch. Then using clothespins,
+                            shoelace, and a ruler I created a mechanism to suspend the grid on the surface of the water (in a dishbin) so
+                            I could freely pour the wax onto both the water and the poplar</p>
+                        <img class="figureProcess" src="Graphics/matiere_process1.jpg"></img>
+                        <img class="figureProcess" src="Graphics/matiere_process2.jpg"></img>
+                        <img class="figureProcess" src="Graphics/matiere_process3.jpg"></img>
+                    </div>
+                </div>
+                <div class="gallerySlider" id="gallerySlider6">
+                    <div class="column colTitle">
+                        <p class="title">Matière Texture Swatch</p>
+                        <p class="description">To study the capacity of material textures and the effect of their combination, we were assigned to create a single
+                            entity composed of two materials with unique tactile qualities. My swatch used candle wax and poplar planks.</p>
+                    </div>
+                    <div class="column colFigure">
+                        <img class="titleFigure" id="figure6" src="Graphics/matiere_cover.jpg"></img>
+                    </div>
+                    <div class="column colProcess">
+                        <p class="title">Poplar Planks and Candle Wax</p>
+                        <p class="description">Melting the wax intrigued me, so I experimented with different factors’ effect on the cooling speed. I came to the
+                            conclusion that pouring wax onto water and a dry surface simultaneously would adhere the wax to the surface and
+                            quickly create a hardened structure that retained the likeness of the fluid state. Because wax repels water,
+                            the wax would unconditionally adhere to itself, lending the capability to create a complex wax labyrinth. I constructed
+                            a grid out of the planks which would serve as structural support for a 1x1 foot wax swatch. Then using clothespins,
+                            shoelace, and a ruler I created a mechanism to suspend the grid on the surface of the water (in a dishbin) so
+                            I could freely pour the wax onto both the water and the poplar</p>
+                        <img class="figureProcess" src="Graphics/matiere_process1.jpg"></img>
+                        <img class="figureProcess" src="Graphics/matiere_process2.jpg"></img>
+                        <img class="figureProcess" src="Graphics/matiere_process3.jpg"></img>
+                    </div>
+                </div>
+                <div class="gallerySlider" id="gallerySlider7">
+                    <div class="column colTitle">
+                        <p class="title">Matière Texture Swatch</p>
+                        <p class="description">To study the capacity of material textures and the effect of their combination, we were assigned to create a single
+                            entity composed of two materials with unique tactile qualities. My swatch used candle wax and poplar planks.</p>
+                    </div>
+                    <div class="column colFigure">
+                        <img class="titleFigure" id="figure7" src="Graphics/matiere_cover.jpg"></img>
+                    </div>
+                    <div class="column colProcess">
+                        <p class="title">Poplar Planks and Candle Wax</p>
+                        <p class="description">Melting the wax intrigued me, so I experimented with different factors’ effect on the cooling speed. I came to the
+                            conclusion that pouring wax onto water and a dry surface simultaneously would adhere the wax to the surface and
+                            quickly create a hardened structure that retained the likeness of the fluid state. Because wax repels water,
+                            the wax would unconditionally adhere to itself, lending the capability to create a complex wax labyrinth. I constructed
+                            a grid out of the planks which would serve as structural support for a 1x1 foot wax swatch. Then using clothespins,
+                            shoelace, and a ruler I created a mechanism to suspend the grid on the surface of the water (in a dishbin) so
+                            I could freely pour the wax onto both the water and the poplar</p>
+                        <img class="figureProcess" src="Graphics/matiere_process1.jpg"></img>
+                        <img class="figureProcess" src="Graphics/matiere_process2.jpg"></img>
+                        <img class="figureProcess" src="Graphics/matiere_process3.jpg"></img>
+                    </div>
+                </div>
+                <div class="gallerySlider" id="gallerySlider8">
+                    <div class="column colTitle">
+                        <p class="title">Matière Texture Swatch</p>
+                        <p class="description">To study the capacity of material textures and the effect of their combination, we were assigned to create a single
+                            entity composed of two materials with unique tactile qualities. My swatch used candle wax and poplar planks.</p>
+                    </div>
+                    <div class="column colFigure">
+                        <img class="titleFigure" id="figure8" src="Graphics/matiere_cover.jpg"></img>
+                    </div>
+                    <div class="column colProcess">
+                        <p class="title">Poplar Planks and Candle Wax</p>
+                        <p class="description">Melting the wax intrigued me, so I experimented with different factors’ effect on the cooling speed. I came to the
+                            conclusion that pouring wax onto water and a dry surface simultaneously would adhere the wax to the surface and
+                            quickly create a hardened structure that retained the likeness of the fluid state. Because wax repels water,
+                            the wax would unconditionally adhere to itself, lending the capability to create a complex wax labyrinth. I constructed
+                            a grid out of the planks which would serve as structural support for a 1x1 foot wax swatch. Then using clothespins,
+                            shoelace, and a ruler I created a mechanism to suspend the grid on the surface of the water (in a dishbin) so
+                            I could freely pour the wax onto both the water and the poplar</p>
+                        <img class="figureProcess" src="Graphics/matiere_process1.jpg"></img>
+                        <img class="figureProcess" src="Graphics/matiere_process2.jpg"></img>
+                        <img class="figureProcess" src="Graphics/matiere_process3.jpg"></img>
+                    </div>
                 </div>
             </div>
             <div class="navContent" id="navContent1">
@@ -119,6 +265,6 @@
             </div>
         </div>
         <button id="colorBar2" onclick="toggleMenu()"></button>
-    </body>
+</body>
 
 </html>
