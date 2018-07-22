@@ -12,6 +12,22 @@ var nav;
 var projectNum = 0;
 
 
+function populateSubOption() {
+    var subOption = document.getElementsByClassName("subMenuOption");
+    var titles = document.getElementsByClassName("title");
+    console.log(`subOption.length: ${subOption.length}`)
+    console.log(`titles.length: ${titles.length}`)
+    var j = 0;
+    for (var i = 0; i < subOption.length; i++) {
+        // use .innerHTML to populate the subOptions under menu/WORK with the proper prject name
+        // iterates title selector by 2 ticks to grab the correct project name, skipping 
+        // the expanded project title (also denoted by the 'title' classname)
+        console.log(`iterating; subOption ${i} = ${titles[j].innerHTML}`)
+        subOption[i].innerHTML = `${i+1}. ${titles[j].innerHTML}`;
+        j += 2;
+    }
+}
+
 function toggleAbout() {
     about = document.getElementById("colorBar");
     if (aboutExpanded) {
@@ -28,6 +44,8 @@ function toggleAbout() {
 }
 
 function toggleMenu() {
+    populateSubOption();
+    console.log("toggleMenu() triggered");
     menu = document.getElementById("colorBar2");
     if (menuExpanded) {
         menu.style.height = "3vh";

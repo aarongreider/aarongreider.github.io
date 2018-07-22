@@ -5,7 +5,7 @@
 
 body, button {
     font-family: 'Playfair Display', serif;
-    font-size: 1vw;
+    font-size: 1em;
 
     color: grey;
 
@@ -16,6 +16,18 @@ hr {
     margin: 0;
     padding: 0;
     border: .5px solid lightgrey;
+}
+
+#hamburger {
+    margin: 4vh 89vw;
+    
+    height: 3vh;
+    width: 3vw;
+}
+
+line {
+    stroke:grey; 
+    stroke-width:.5px;
 }
 
 #colorBar {
@@ -31,24 +43,71 @@ hr {
     border:none;
     outline: none;
 
-    transition: all .5s ease;
+    transition: height .5s ease;
 }
 
 #colorBar2 {
     z-index: 2; 
-    top:97vh;
+    top: 97vh;
     margin-left: 68.5vw;
 
-    position: absolute;
+    position: absolute; 
 
     width: 31.5vw;
     height: 3vh;
 
     background-color: rgb(226, 53, 94);
-    border:none;
+    border: none;
     outline: none;
 
-    transition: all .5s ease;
+    transition: height .5s ease, top .5s ease;
+}
+
+#menuWrapper {
+    position: absolute;
+    margin: 10vh 4vw;
+
+    font-size: 75%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    width: 75%;
+    height: 50vh;
+
+    overflow: visible;
+}
+
+.menuOption, .subMenuOption {
+    flex-shrink: 1;
+    padding: 1vw;
+    margin: 0;
+    width: 87.5%;
+
+    text-align: center;
+
+    font-size: 100%;
+    text-decoration: none;
+    color: white;
+
+    transition: font-size .3s ease, padding .3s ease;
+}
+
+.subMenuOption {
+    width: 63%;
+    text-align: left;
+}
+
+.menuOption:hover, .subMenuOption:hover {
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding:1.5vw;
+
+    background: rgba(128, 128, 128, 0.199);
+
+    font-size: 120%;
+
 }
 
 #aboutWrapper {
@@ -71,7 +130,7 @@ hr {
     letter-spacing: .6vw;
     margin-top: 2vh;
 
-    font-size: 16px;
+    font-size: 1em;
 }
 
 .aboutLine {
@@ -123,6 +182,16 @@ ul {
     opacity: .5;
 
     width: 100%;
+}
+
+.subMediaLine {
+    position: relative;
+    margin: 0;
+
+    border: .5px solid white;
+    opacity: .5;
+
+    width: 75%;
 }
 
 .mediaLink {
@@ -180,7 +249,7 @@ ul {
     z-index: -1;
 
     width: 100vw;
-    height: 100vh;
+    height: 103vh;
 }
 
 .galleryViewport {
@@ -209,7 +278,7 @@ ul {
     grid-template-columns: 100%;
     grid-template-rows: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
 
-    transition: all .8s ease;
+    transition: top .4s ease, left .4s ease;
 }
 
 .gallerySlider {
@@ -252,7 +321,7 @@ ul {
     height: 100%;
     width: 100%;
 
-    transition: all .8s ease;
+    transition: top .4s ease, left .4s ease;
 }
 
 #circleContainer {
@@ -363,26 +432,24 @@ ul {
     width: 100%;
 }
 
-::-webkit-scrollbar {
-    width: 20px;
-}
 
-/* width */
+/* width 
 ::-webkit-scrollbar {
     width: .5vw;
 }
 
-/* Track */
+/* Track 
 ::-webkit-scrollbar-track {
     box-shadow: inset 0 0 0; 
 }
  
-/* Handle */
+/* Handle 
 ::-webkit-scrollbar-thumb {
     background: rgba(226, 53, 94);
 }
 
-/* Handle on hover */
+/* Handle on hover
 ::-webkit-scrollbar-thumb:hover {
     background: rgb(192, 45, 79)
 }
+ */
