@@ -21,8 +21,8 @@ hr {
 #hamburger {
     margin: 4vh 89vw;
     
-    height: 3vh;
-    width: 3vw;
+    height: 1.5em;
+    width: 2.5em;
 }
 
 line {
@@ -153,7 +153,7 @@ line {
 
 ul {
     list-style-type: none;
-    line-height: 2vw;
+    line-height: 2em;
 
     margin: 0 4vh 4vh;
     padding: 0;
@@ -329,7 +329,7 @@ ul {
     left: 40.8vw;
 
     height: 68vh;
-    width: 3.4vw;         
+    width: 3.4em;         
 
     display: flex;
     flex-direction: column;
@@ -339,8 +339,8 @@ ul {
 .circle {
     margin: 0 auto;
 
-	width: 2vw;
-	height: 2vw;
+	width: 2em;
+	height: 2em;
     background: rgba(226, 53, 94);
     
     background-color: rgb(226, 53, 94);
@@ -360,8 +360,8 @@ ul {
     margin: 0 48vw;
     top: 25vh;
 
-	width: 4vw;
-	height: 4vw;
+	width: 4em;
+	height: 4em;
     background: rgba(226, 53, 94);
     border-radius: 50px;
     border:none;
@@ -455,7 +455,34 @@ ul {
  */
 
  @media only screen and (max-width: 600px) {
+    body {
+        font-size: 70%;
+     }
     .galleryContent {
         width: 237vw;
+    }
+    #colorBar, #colorBar2 {
+        width: 100vw;
+    }
+    #colorBar2 {
+        left:-68.5vw;
+    }
+    .nameLine, .aboutLine {
+        width: 0;
+    }
+    #circleButton {
+        margin: 0 55vw;
+        top: 27.5vh;
+        width: 2em;
+        height: 2em;
+    }
+    #circleContainer {
+        left: 72.8vw;
+    }
+    .nameBar {
+        top: 4.5em;
+    }
+    #hamburger {
+        margin: 4em 89vw;
     }
 }
