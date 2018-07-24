@@ -13,22 +13,25 @@ var projectNum = 0;
 
 
 function populateSubOption() {
+    console.log("populateSubOption()");
     var subOption = document.getElementsByClassName("subMenuOption");
     var titles = document.getElementsByClassName("title");
-    console.log(`subOption.length: ${subOption.length}`)
-    console.log(`titles.length: ${titles.length}`)
+    console.log(`   subOption.length: ${subOption.length}`)
+    console.log(`   titles.length: ${titles.length}`)
     var j = 0;
     for (var i = 0; i < subOption.length; i++) {
         // use .innerHTML to populate the subOptions under menu/WORK with the proper prject name
         // iterates title selector by 2 ticks to grab the correct project name, skipping 
         // the expanded project title (also denoted by the 'title' classname)
-        console.log(`iterating; subOption ${i} = ${titles[j].innerHTML}`)
+        console.log(`       iterating; subOption ${i} = ${titles[j].innerHTML}`)
         subOption[i].innerHTML = `${i+1}. ${titles[j].innerHTML}`;
         j += 2;
     }
 }
 
 function toggleAbout() {
+    console.log("toggleAbout()");
+
     about = document.getElementById("colorBar");
     if (aboutExpanded) {
         about.style.height = "3vh";
@@ -44,8 +47,9 @@ function toggleAbout() {
 }
 
 function toggleMenu() {
+    console.log("toggleMenu()");
+
     populateSubOption();
-    console.log("toggleMenu() triggered");
     menu = document.getElementById("colorBar2");
     if (menuExpanded) {
         menu.style.height = "3vh";
@@ -64,6 +68,8 @@ function toggleMenu() {
 
 function checkToggled() {
     // when an action happens, check if either the about or the menu are open, and collapse them
+    console.log("checkToggled()");
+
     if (menuExpanded) {
         toggleMenu();
     } else if (aboutExpanded) {
@@ -74,6 +80,8 @@ function checkToggled() {
 function expandProject() {
     // shifts gallery over to display the process work and extended description
     // collapses about and menu, removes greyscale filter of title image
+    console.log("expandProject()");
+
     gallery = document.getElementById("gallery");
     figures = document.getElementsByClassName("titleFigure");
     for (var i = 0; i < figures.length; i++) {
@@ -103,6 +111,8 @@ function expandProject() {
 function selectProject(num) {
     // called to shift the gallery to display a specific project num
     // will collapse menu and about
+    console.log("selectProject()");
+
     gallery = document.getElementById("gallery");
 
     switch (num) {
