@@ -433,26 +433,29 @@ ul {
 }
 
 
-/* width 
+/* width */
 ::-webkit-scrollbar {
     width: .5vw;
+    display: none;
 }
 
-/* Track 
+/* Track */
 ::-webkit-scrollbar-track {
     box-shadow: inset 0 0 0; 
+    display: none;
 }
  
-/* Handle 
+/* Handle */
 ::-webkit-scrollbar-thumb {
     background: rgba(226, 53, 94);
+    display: none;
 }
 
-/* Handle on hover
+/* Handle on hover*/
 ::-webkit-scrollbar-thumb:hover {
-    background: rgb(192, 45, 79)
+    background: rgb(192, 45, 79);
+    display: none;
 }
- */
 
  @media only screen and (max-width: 600px) {
     body {
@@ -460,6 +463,7 @@ ul {
      }
     .galleryContent {
         width: 237vw;
+        transform: translateZ(-1px);
     }
     #colorBar, #colorBar2 {
         width: 100vw;
