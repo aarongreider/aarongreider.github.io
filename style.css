@@ -5,9 +5,9 @@
 
 body, button {
     font-family: 'Playfair Display', serif;
-    font-size: .9em;
+    font-size: 1.05em;
 
-    color: grey;
+    color: whitesmoke;
 
     margin: 0;
 }
@@ -15,7 +15,11 @@ body, button {
 hr {
     margin: 0;
     padding: 0;
-    border: .5px solid lightgrey;
+    border: .5px solid whitesmoke;
+}
+
+.framingText{
+    z-index: 1;
 }
 
 #hamburger {
@@ -33,13 +37,13 @@ hr {
     margin: 2em;
 }
 #hamburger .left {
-    float:left;
-    width:40%;
+    float: left;
+    width: 8%;
 }
 
 #hamburger .right {
-    float:right;
-    width:40%;
+    float: right;
+    width: 33%;
 }
 
 /* 
@@ -52,9 +56,32 @@ hr {
 }
 */
 
-line {
-    stroke:grey; 
-    stroke-width:.5px;
+.nameBar {
+    margin: 0;
+    padding: 0;
+    letter-spacing: .6em;
+
+    display: flex;
+    align-items: center;
+    position: absolute;
+
+    top: 5vh;
+    left: 7vw;
+    font-size: 100%;
+    width: 80vw;
+}
+
+.nameBar hr {
+    margin: 2em;
+}
+.nameBar .left {
+    float: left;
+    width: 6%;
+}
+
+.nameBar .right {
+    float: right;
+    width: 58%;
 }
 
 #colorBar {
@@ -65,7 +92,7 @@ line {
     width: 33%;
     height: 3vh;
 
-    background-color: rgb(226, 53, 94);
+    background-color: #cecece;
     border:none;
     outline: none;
 
@@ -81,7 +108,7 @@ line {
     width: 33%;
     height: 3vh;
 
-    background-color: rgb(226, 53, 94);
+    background-color: #cecece;
     border: none;
     outline: none;
 
@@ -243,115 +270,76 @@ ul {
 
 }
 
-.nameBar {
+#viewport {
+    position: absolute;
+    top: 0;
+    left: 0;
     margin: 0;
-    padding: 0;
-
-    letter-spacing: .6em;
-
-    position: absolute;
-    top: 5vh;
-    left: 12.5vw;
-
-    font-size: 100%;
-}
-
-.nameLine {
-    position: absolute;
-    top: 6.5vh;
-    left: 29vw;
-
-    width: 57vw;
-}
-
-.flex {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    position: absolute;
-    top: -3vh;
-    z-index: -1;
-
+    height: 100vh;
     width: 100vw;
-    height: 103vh;
-}
-
-.galleryViewport {
-    margin: 0 auto;
-
-    height: 68vh;
-    width: 85vw;
-
-    background-color: rgb(223, 223, 223); 
-
-    position: absolute;
-
 }
 
 .galleryContent {
+    background: linear-gradient(0deg, rgba(0,0,0,0.75) 0%, rgba(8,8,8,1) 90%, rgba(255,255,255,0.25) 100%);
     position: absolute;
     margin: 0 auto;
     left: 0;
     top: 0;
 
     /* height: 68vh; */
-    height: 544vh;
-    width: 125vw;
+    height: 1200vh;
+    width: 800vw;
 
     display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
+    grid-template-rows: 100%;
+    grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
 
-    transition: top .4s ease, left .4s ease;
+    transition: top .2s ease, left .2s ease;
 }
 
 .gallerySlider {
     height: 100%;
-
-    display: grid;
-    grid-template-columns: 32% 4% 32% 32%; 
-    grid-template-rows: 100%;
 }
 
 #gallerySlider1 {
-    grid-row: 1;
+    grid-column: 1;
 }
 #gallerySlider2 {
-    grid-row: 2;
+    grid-column: 2;
 }
 #gallerySlider3 {
-    grid-row: 3;
+    grid-column: 3;
 }
 #gallerySlider4 {
-    grid-row: 4;
+    grid-column: 4;
 }
 #gallerySlider5 {
-    grid-row: 5;
+    grid-column: 5;
 }
 #gallerySlider6 {
-    grid-row: 6;
+    grid-column: 6;
 }
 #gallerySlider7 {
-    grid-row: 7;
+    grid-column: 7;
 }
 #gallerySlider8 {
-    grid-row: 8;
+    grid-column: 8;
 }
 
 .navContent {
     position: relative;
     
     left: 0;
-    height: 100%;
-    width: 100%;
+    height: 68vh;
+    width: 3vw;
+    overflow: visible;
 
     transition: top .4s ease, left .4s ease;
 }
 
 #circleContainer {
     position: relative;
-    left: 40.8vw;
+    left: 0;
 
     height: 68vh;
     width: 3.4em;         
@@ -366,9 +354,8 @@ ul {
 
 	width: 2em;
 	height: 2em;
-    background: rgba(226, 53, 94);
     
-    background-color: rgb(226, 53, 94);
+    background-color: #cecece;
     border:none;
     border-radius: 50px;
     outline: none;
@@ -380,33 +367,31 @@ ul {
     transform: scale(1.15);
 }
 
-#circleButton {
+#expandButton {
     position: absolute;
-    margin: 0 48vw;
-    top: 25vh;
+    margin: 0 0;
+    top: 80vh;
+    left: 57vw;
 
 	width: 4em;
-	height: 4em;
-    background: rgba(226, 53, 94);
-    border-radius: 50px;
     border:none;
     outline: none;
 
     transition: transform .4s ease;
 }
 
-#circleButton:hover {
-    transform: scale(1.1);
-}
-
-.column {
-     margin: 0 auto;
+#expandButton:hover {
+    transform: scale(1.3);
 }
 
 .colTitle {
-    width:75%;
+    width: 35%;
+    top: -17em;
+    left: 14em;
+    position: relative;
+    color: white;
 
-    grid-column: 1 / 2;
+    overflow: visible;
 }
 
 .colProcess {
@@ -414,22 +399,27 @@ ul {
     padding: 0 5vw;
 
     overflow: scroll;
-
-    grid-column: 4 / 5;
 }
 
 .colFigure {
-    height: 100%;
-    width: 100%;
-
-    grid-column: 3 / 4;
+    top: 0em;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
 }
 
 .title {
     font-size: 200%;
     font-style: italic;
+    margin: 0 0 1em;
+}
 
-    margin-top: 27vh;
+.line {
+    position: relative;
+    width: 150%;
+    left: -2em;
+    top: -1.3em;
 }
 
 .description {
@@ -441,12 +431,12 @@ ul {
 
 .titleFigure {
     object-fit: cover;
-    filter: grayscale(100%);
 
     border: none;
 
-    height:100%;
-    width: 100%;
+    width: 100vw;
+    position: relative;
+    top: 0em;
 
     transition: filter 1s ease;    
 }
