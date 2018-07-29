@@ -84,25 +84,15 @@ function expandProject() {
 
     gallery = document.getElementById("gallery");
     figures = document.getElementsByClassName("titleFigure");
-    for (var i = 0; i < figures.length; i++) {
-        console.log(`figure ${i}: found`);
-    }
     nav = document.getElementById("navContent1");
 
     if (galleryExpanded) {
-        gallery.style.left = "0";
-        nav.style.left = "0";
+        window.scrollTo(0, 0);
         galleryExpanded = false;
-        for (var i = 0; i < figures.length; i++) {
-            figures[i].style.filter = "grayscale(100%)";
-        }
+        // grayscale? 
     } else {
-        gallery.style.left = "-40vw";
-        nav.style.left = "-40.8vw";
+        window.scrollTo(0, 500);
         galleryExpanded = true;
-        for (var i = 0; i < figures.length; i++) {
-            figures[i].style.filter = "grayscale(0%)";
-        }
     }
 
     checkToggled();
@@ -145,7 +135,7 @@ function selectProject(num) {
     projectNum = num;
     checkToggled();
 }
-
+/*
 window.addEventListener('wheel', function (e) {
     // listens for wheel event, changes the projectNum and calls selectProject(num)
     gallery = document.getElementById("gallery");
@@ -163,3 +153,4 @@ window.addEventListener('wheel', function (e) {
         console.log("scrolling down; projectNum: " + projectNum);
     }
 });
+*/
