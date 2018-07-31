@@ -1,12 +1,11 @@
 * {
-    /* overflow: hidden; */
     overflow-y: scroll;
     overflow-x: hidden;
 }
 
 body, button {
     font-family: 'Playfair Display', serif;
-    font-size: 1.05em;
+    font-size: 1em;
 
     color: whitesmoke;
 
@@ -32,6 +31,8 @@ hr {
     display: flex;
     align-items: center;
     position: absolute;
+
+    letter-spacing: .5em;
 }
 
 #hamburger hr {
@@ -60,7 +61,7 @@ hr {
 .nameBar {
     margin: 0;
     padding: 0;
-    letter-spacing: .6em;
+    letter-spacing: .5em;
 
     display: flex;
     align-items: center;
@@ -278,10 +279,17 @@ ul {
     margin: 0;
     height: 100vh;
     width: 100vw;
+    background: url("Graphics/body_mantle_cover.jpg");        
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .galleryContent {
-    background: linear-gradient(0deg, rgba(0,0,0,0.75) 0%, rgba(8,8,8,1) 90%, rgba(255,255,255,0.25) 100%);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.75) 0%, rgba(8,8,8,.75) 90%, rgba(255,255,255,0.25) 100%); 
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+
     position: absolute;
     margin: 0 auto;
     left: 0;
@@ -299,7 +307,7 @@ ul {
 }
 
 .gallerySlider {
-    height: 100%;
+    height: auto;
 }
 
 #gallerySlider1 {
@@ -385,29 +393,29 @@ ul {
     transform: scale(1.3);
 }
 
+#scrollContent {
+    top: 32em;
+    position: relative;
+    overflow: visible;
+    width: 73%;
+    margin: 0 auto;
+}
+
 .colTitle {
-    width: 35%;
-    top: -17em;
-    left: 14em;
+    width: 29.1em;
+    top: 0;
+    left: 0;
     position: relative;
     color: white;
-
     overflow: visible;
 }
 
 .colProcess {
-    width:75%;
-    padding: 0 5vw;
+    width: 100%;
+    position: relative;
+    top: 5em;
 
     overflow: scroll;
-}
-
-.colFigure {
-    top: 0em;
-    position: relative;
-    height: 100vh;
-    width: 100vw;
-    z-index: -1;
 }
 
 .title {
@@ -426,6 +434,15 @@ ul {
 .description {
     position: relative;
     margin-top: -1.5vh;
+    width: 30em;
+
+    line-height: 190%
+}
+
+.processDescription {
+    position: relative;
+    margin-top: -1.5vh;
+    width: 35em;
 
     line-height: 190%
 }
@@ -443,9 +460,17 @@ ul {
 }
 
 .figureProcess {
-    object-fit: cover;
-    height:100%;
-    width: 100%;
+    margin: 2em 0;
+    position: relative;
+}
+#figure1 {
+    width: 30em;
+    top: -2em;
+}
+#figure2 {
+    height: 30em;
+    top: -54em;
+    left: 39em;
 }
 
 

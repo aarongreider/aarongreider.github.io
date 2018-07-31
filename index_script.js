@@ -6,10 +6,13 @@ var galleryExpanded = false;
 var about;
 var menu;
 var gallery;
+var scroller;
+var viewport;
 var figures;
 var nav;
 
 var projectNum = 0;
+var scrollerHeight = 0;
 
 
 function populateSubOption() {
@@ -82,16 +85,14 @@ function expandProject() {
     // collapses about and menu, removes greyscale filter of title image
     console.log("expandProject()");
 
-    gallery = document.getElementById("gallery");
-    figures = document.getElementsByClassName("titleFigure");
-    nav = document.getElementById("navContent1");
+    scroller = document.getElementById("scrollContent");
 
     if (galleryExpanded) {
-        window.scrollTo(0, 0);
+        scroller.style.top = 0;
         galleryExpanded = false;
         // grayscale? 
     } else {
-        window.scrollTo(0, 500);
+        scroller.style.top = "20em";
         galleryExpanded = true;
     }
 
@@ -104,31 +105,40 @@ function selectProject(num) {
     console.log("selectProject()");
 
     gallery = document.getElementById("gallery");
+    viewport = document.getElementById("viewport");
 
     switch (num) {
         case 1:
-            gallery.style.top = "0";
+            gallery.style.left = "0";
+            viewport.style.background = `url("Graphics/body_mantle_cover.jpg")`;
             break;
         case 2:
-            gallery.style.top = "-68vh";
+            gallery.style.left = "-100vw";
+            viewport.style.background = `url("Graphics/Patch_title.jpg")`;
             break;
         case 3:
-            gallery.style.top = "-136vh";
+            gallery.style.left = "-200vw";
+            viewport.style.background = `url("Graphics/matiere_cover.jpg")`;
             break;
         case 4:
-            gallery.style.top = "-204vh";
+            gallery.style.left = "-300vw";
+            viewport.style.background = `url("Graphics/body_mantle_cover.jpg")`;
             break;
         case 5:
-            gallery.style.top = "-272vh";
+            gallery.style.left = "-400vw";
+            viewport.style.background = `url("Graphics/body_mantle_cover.jpg")`;
             break;
         case 6:
-            gallery.style.top = "-340vh";
+            gallery.style.left = "-500vw";
+            viewport.style.background = `url("Graphics/body_mantle_cover.jpg")`;
             break;
         case 7:
-            gallery.style.top = "-408vh";
+            gallery.style.left = "-600vw";
+            viewport.style.background = `url("Graphics/body_mantle_cover.jpg")`;
             break;
         case 8:
-            gallery.style.top = "-476vh";
+            gallery.style.left = "-700vw";
+            viewport.style.background = `url("Graphics/body_mantle_cover.jpg")`;
             break;
     }
 
@@ -138,19 +148,19 @@ function selectProject(num) {
 /*
 window.addEventListener('wheel', function (e) {
     // listens for wheel event, changes the projectNum and calls selectProject(num)
-    gallery = document.getElementById("gallery");
+    scroller = document.getElementById("scrollContent");
+    console.log(`e.deltaY: ${e.deltaY}`)
+    if (e.deltaY > 0) {
+        scrollerHeight += 1;
+        scroller.style.top = `${scrollerHeight}em`;
+        console.log("scroller.style.top: " + scroller.style.top);
+        console.log("scrolling down; scrollerHeight: " + scrollerHeight);
 
-    if (e.deltaY > 0 && !galleryExpanded && projectNum != 8) {
-        projectNum += 1;
-        selectProject(projectNum);
-
-        console.log("scrolling down; projectNum: " + projectNum);
-
-    } else if (e.deltaY < 0 && !galleryExpanded && projectNum != 1) {
-        projectNum -= 1;
-        selectProject(projectNum);
-
-        console.log("scrolling down; projectNum: " + projectNum);
+    } else if (e.deltaY < 0) {
+        scrollerHeight -= 1;
+        scroller.style.top = `${scrollerHeight}em`;
+        console.log("scroller.style.top: " + scroller.style.top);
+        console.log("scrolling up; scrollerHeight: " + scrollerHeight);
     }
 });
 */
