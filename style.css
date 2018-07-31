@@ -71,6 +71,8 @@ hr {
     left: 7vw;
     font-size: 100%;
     width: 80vw;
+
+    transition: top .2s ease;
 }
 
 .nameBar hr {

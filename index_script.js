@@ -6,7 +6,7 @@ var galleryExpanded = false;
 var about;
 var menu;
 var gallery;
-var scroller;
+var nameBar;
 var viewport;
 var figures;
 var nav;
@@ -85,14 +85,14 @@ function expandProject() {
     // collapses about and menu, removes greyscale filter of title image
     console.log("expandProject()");
 
-    scroller = document.getElementById("scrollContent");
+    nameBar = document.getElementById("scrollContent");
 
     if (galleryExpanded) {
-        scroller.style.top = 0;
+        nameBar.style.top = 0;
         galleryExpanded = false;
         // grayscale? 
     } else {
-        scroller.style.top = "20em";
+        nameBar.style.top = "20em";
         galleryExpanded = true;
     }
 
@@ -145,22 +145,16 @@ function selectProject(num) {
     projectNum = num;
     checkToggled();
 }
-/*
+
 window.addEventListener('wheel', function (e) {
     // listens for wheel event, changes the projectNum and calls selectProject(num)
-    scroller = document.getElementById("scrollContent");
+    nameBar = document.getElementsByClassName("nameBar");
     console.log(`e.deltaY: ${e.deltaY}`)
     if (e.deltaY > 0) {
-        scrollerHeight += 1;
-        scroller.style.top = `${scrollerHeight}em`;
-        console.log("scroller.style.top: " + scroller.style.top);
-        console.log("scrolling down; scrollerHeight: " + scrollerHeight);
-
+        nameBar[0].style.top = "-5vh";
+        console.log("scrolling down");
     } else if (e.deltaY < 0) {
-        scrollerHeight -= 1;
-        scroller.style.top = `${scrollerHeight}em`;
-        console.log("scroller.style.top: " + scroller.style.top);
-        console.log("scrolling up; scrollerHeight: " + scrollerHeight);
+        nameBar[0].style.top = "5vh";
+        console.log("scrolling up");
     }
 });
-*/
