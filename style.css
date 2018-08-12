@@ -281,10 +281,10 @@ ul {
     margin: 0;
     height: 100vh;
     width: 100vw;
-    background: url("Graphics/body_mantle_cover.jpg");        
-    background-attachment: fixed;
+    background: url("Graphics/body_mantle_cover.jpg") center/cover no-repeat fixed;      
+    /*background-attachment: fixed;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover;*/
 }
 
 .galleryContent {
@@ -464,7 +464,15 @@ ul {
 .figureProcess {
     margin: 2em 0;
     position: relative;
+    object-fit: fill;
+
 }
+
+.figurePatch {
+    width: 100%;
+    margin: 0;
+}
+
 #figure1 {
     width: 30em;
     top: -2em;
@@ -473,6 +481,21 @@ ul {
     height: 30em;
     top: -54em;
     left: 39em;
+}
+#figure6 {
+    height: 30em;
+    top: 0em;
+    left: 39em;
+}
+
+#posterFlex {
+    display: flex;
+    height: 29.5em;
+}
+.posterSubFlex {
+    object-fit: cover;
+
+    margin: 0 2em 0 0;
 }
 
 

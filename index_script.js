@@ -110,35 +110,35 @@ function selectProject(num) {
     switch (num) {
         case 1:
             gallery.style.left = "0";
-            viewport.style.background = `url("Graphics/body_mantle_cover.jpg")`;
+            viewport.style.background = `url("Graphics/body_mantle_cover.jpg") center/cover no-repeat fixed`;
             break;
         case 2:
             gallery.style.left = "-100vw";
-            viewport.style.background = `url("Graphics/Patch_title.jpg")`;
+            viewport.style.background = `url("Graphics/Patch_title.jpg") center/cover no-repeat fixed`;
             break;
         case 3:
             gallery.style.left = "-200vw";
-            viewport.style.background = `url("Graphics/matiere_cover.jpg")`;
+            viewport.style.background = `url("Graphics/POSTER/Poster_studies_cover.png") center/cover no-repeat fixed`;
             break;
         case 4:
             gallery.style.left = "-300vw";
-            viewport.style.background = `url("Graphics/body_mantle_cover.jpg")`;
+            viewport.style.background = `url("Graphics/body_mantle_cover.jpg") center/cover no-repeat fixed`;
             break;
         case 5:
             gallery.style.left = "-400vw";
-            viewport.style.background = `url("Graphics/body_mantle_cover.jpg")`;
+            viewport.style.background = `url("Graphics/body_mantle_cover.jpg") center/cover no-repeat fixed`;
             break;
         case 6:
             gallery.style.left = "-500vw";
-            viewport.style.background = `url("Graphics/body_mantle_cover.jpg")`;
+            viewport.style.background = `url("Graphics/body_mantle_cover.jpg") center/cover no-repeat fixed`;
             break;
         case 7:
             gallery.style.left = "-600vw";
-            viewport.style.background = `url("Graphics/body_mantle_cover.jpg")`;
+            viewport.style.background = `url("Graphics/body_mantle_cover.jpg") center/cover no-repeat fixed`;
             break;
         case 8:
             gallery.style.left = "-700vw";
-            viewport.style.background = `url("Graphics/body_mantle_cover.jpg")`;
+            viewport.style.background = `url("Graphics/body_mantle_cover.jpg") center/cover no-repeat fixed`;
             break;
     }
 
