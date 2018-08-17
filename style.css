@@ -521,10 +521,22 @@ ul {
 }
 
 .dropdownContent {
-
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: visible;
 }
 .slideshow {
     display: flex;
+    width: 500%;
+    transition: all .5s ease;
+}
+.slideshow:hover {
+    transform: translateY(-10em);
+}
+.processPhoto {
+    width: 100%;
+    object-fit: cover;
+    margin: 0;
 }
 
 
