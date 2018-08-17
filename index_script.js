@@ -122,7 +122,7 @@ function selectProject(num) {
             break;
         case 4:
             gallery.style.left = "-300vw";
-            viewport.style.background = `url("Graphics/body_mantle_cover.jpg") center/cover no-repeat fixed`;
+            viewport.style.background = `url("Graphics/digital_3D/shampoo-1.jpg") center/cover no-repeat fixed`;
             break;
         case 5:
             gallery.style.left = "-400vw";

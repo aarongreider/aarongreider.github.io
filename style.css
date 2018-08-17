@@ -482,20 +482,49 @@ ul {
     top: -54em;
     left: 39em;
 }
-#figure6 {
-    height: 30em;
-    top: 0em;
-    left: 39em;
-}
 
+#posterFlexContainer {
+    display: flex;
+    flex-direction: column;
+    height: 121em;
+    width: 100%;
+}
 #posterFlex {
     display: flex;
-    height: 29.5em;
+    height: 32.5em;
 }
 .posterSubFlex {
     object-fit: cover;
 
     margin: 0 2em 0 0;
+    height: 30em;
+}
+
+#process3DGrid {
+    width: 56.5em;
+
+    display: grid;
+    grid-template-columns: 45% 55%;
+    grid-template-rows: repeat(24, 4%);
+
+    margin: 0;
+}
+.processText3D {
+    position: relative;
+    top: 6em;
+    height: 2em;
+    margin: 0;
+}
+.process3D {
+    width: 30em;
+    margin-top: 1em;
+}
+
+.dropdownContent {
+
+}
+.slideshow {
+    display: flex;
 }
 
 
