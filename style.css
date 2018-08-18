@@ -552,6 +552,7 @@ line {
     stroke-width:2;
 }
 .photoLine {
+    width: 30em;
     transition: width .5s ease;
 }
 .photoLineJSActivated {

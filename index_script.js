@@ -14,6 +14,7 @@ var nav;
 var slideshow;
 var dropdownWindow;
 var plusIcon;
+var line;
 
 var projectNum = 0;
 var scrollerHeight = 0;
@@ -155,19 +156,26 @@ function dropdownSlideshow(num) {
     dropdownWindow = document.getElementsByClassName("dropdownContent");
     slideshow = document.getElementsByClassName("slideshow");
     plusIcon = document.getElementsByClassName("plusLines");
+    line = document.getElementsByClassName("photoLine");
+
     if (!slideshowExpanded[num]) {
         // add class to hr to extend line width 
         // wait
-
-        dropdownWindow[num].style.height = "36em";
-        slideshow[num].style.top = "0em";
-        plusIcon[num].classList.add("plusLinesJSActivated");
-        slideshowExpanded[num] = true;
+        line[num].classList.add("photoLineJSActivated");
+        window.setTimeout(function func() {
+            dropdownWindow[num].style.height = "36em";
+            slideshow[num].style.top = "0em";
+            plusIcon[num].classList.add("plusLinesJSActivated");
+            slideshowExpanded[num] = true;
+        }, 150);
     } else {
-        dropdownWindow[num].style.height = "0";
-        slideshow[num].style.top = "-34em";
-        plusIcon[num].classList.remove("plusLinesJSActivated");
-        slideshowExpanded[num] = false;
+        line[num].classList.remove("photoLineJSActivated");
+        window.setTimeout(function func() {
+            dropdownWindow[num].style.height = "0";
+            slideshow[num].style.top = "-34em";
+            plusIcon[num].classList.remove("plusLinesJSActivated");
+            slideshowExpanded[num] = false;
+        }, 150);
     }
 }
 
