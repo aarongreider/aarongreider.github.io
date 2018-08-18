@@ -520,18 +520,57 @@ ul {
     margin-top: 1em;
 }
 
+.photoDescription {
+    position: relative;
+    width: 35em;
+
+    line-height: 190%
+}
+
+.dropdownHeader {
+    display: flex;
+    width: 100%;
+}
+.plusLines {
+    top: 1.7em;
+    left: 1em;
+    position: relative;
+
+    transition: all .2s ease;
+}
+.plusLines:hover {
+    transform: rotate(90deg);
+}
+.plusLinesJSActivated {
+    transform: rotate(45deg);
+}
+.plusLinesJSActivated:hover {
+    transform: rotate(135deg);
+}
+line {
+    stroke:rgba(255, 255, 255, 0.75);
+    stroke-width:2;
+}
+.photoLine {
+    transition: width .5s ease;
+}
+.photoLineJSActivated {
+    width: 100%;
+}
 .dropdownContent {
     width: 100%;
     overflow-x: scroll;
     overflow-y: visible;
+    height: 0;
+    transition: all .5s ease;
 }
 .slideshow {
     display: flex;
     width: 500%;
+    position: relative;
+    top: -34em;
+
     transition: all .5s ease;
-}
-.slideshow:hover {
-    transform: translateY(-10em);
 }
 .processPhoto {
     width: 100%;

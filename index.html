@@ -312,10 +312,28 @@
                     <div class="column colProcess">
                         <p class="title">These are my photos</p>
 
-                        <h2 class="subTitle">Portraits</h2>
-                        <hr>
+                        <p class="photoDescription">I've been photographing things since I was a little kid. I remember receiving my DSi- the first Nintendo
+                            portable device with a camera- which I took everywhere with me. During a family vacation to Yellowstone
+                            National Park, it was clear that this little kid had a passion for taking pictures. Landscapes?
+                            Document. Wildlife? Document. Food? Document. The week we spent camping and hiking around yielded
+                            over 3,000 photos of the amazing things we'd seen.
+                            <br>
+                            <br>Fast forward 8 years, as senior in high school I received a DSLR camera for my birthday. I brought
+                            this camera on every trip I had that summer: a few days in New York City? 30gb. RV in Alaskan
+                            Wilderness? 60gb. 350 mile Biking Trip? 45gb. Even if it fails to become a career, photography
+                            will remain a part myself for the rest of my life.
+                        </p>
+
+                        <div class="dropdownHeader" onclick="dropdownSlideshow(0)">
+                            <h2 class="subTitle">Portraits</h2>
+                            <svg class="plusLines" height="20" width="20">
+                                <line x1="10" y1="0" x2="10" y2="20" />
+                                <line x1="0" y1="10" x2="20" y2="10" />
+                            </svg>
+                        </div>
+                        <hr class="photoLine">
                         <div class="dropdownContent">
-                            <div class="slideshow">
+                            <div class="slideshow" id="slideshow1">
                                 <img class="figureProcess processPhoto" id="figure18.1" src="Graphics/digital_3D/abstract-1.jpg"></img>
                                 <img class="figureProcess processPhoto" id="figure18.2" src="Graphics/digital_3D/abstract-1.jpg"></img>
                                 <img class="figureProcess processPhoto" id="figure18.3" src="Graphics/digital_3D/abstract-1.jpg"></img>
@@ -323,10 +341,17 @@
                                 <img class="figureProcess processPhoto" id="figure18.5" src="Graphics/digital_3D/abstract-1.jpg"></img>
                             </div>
                         </div>
-                        <h2 class="subTitle">Trips</h2>
-                        <hr>
+
+                        <div class="dropdownHeader" onclick="dropdownSlideshow(1)">
+                            <h2 class="subTitle">Trips</h2>
+                            <svg class="plusLines" height="20" width="20">
+                                <line x1="10" y1="0" x2="10" y2="20" />
+                                <line x1="0" y1="10" x2="20" y2="10" />
+                            </svg>
+                        </div>
+                        <hr class="photoLine">
                         <div class="dropdownContent">
-                            <div class="slideshow">
+                            <div class="slideshow" id="slideshow1">
                                 <img class="figureProcess processPhoto" id="figure19.1" src="Graphics/digital_3D/abstract-1.jpg"></img>
                                 <img class="figureProcess processPhoto" id="figure19.2" src="Graphics/digital_3D/abstract-1.jpg"></img>
                                 <img class="figureProcess processPhoto" id="figure19.3" src="Graphics/digital_3D/abstract-1.jpg"></img>
@@ -334,20 +359,6 @@
                                 <img class="figureProcess processPhoto" id="figure19.5" src="Graphics/digital_3D/abstract-1.jpg"></img>
                             </div>
                         </div>
-
-                        <p class="processDescription">The model was meant to liken cascading and asymmetrical movement a nontraditional ebb from bottom
-                            right to upper left culminating in a fractal spiral on the left shoulder.
-                            <br>
-                            <br> Because the poplar planks resembled reeds, I researched styles of traditional reed armor - especially
-                            that of ancient eastern shoguns. I began by creating a duct tape bust of my torso that I could
-                            use to brainstorm, though, I opted to brainstorm in the digital space instead. When I began to
-                            construct the mantle, I found that the skeleton made a better bust than my poplar-reinforced
-                            duct tape one. To create dimension of the overall form, a tiny (>.25in) spacer made of cut, layered,
-                            and glued poplar was placed between each plank. Without the spacers there would be no way to
-                            glue the sticks together. Each joint was held together for 30 minutes with a clothespin to avoid
-                            damage before the adhesive sealed.
-                        </p>
-                        <img class="figureProcess" id="figure18" src="Graphics/body_mantle_process2.jpg"></img>
                     </div>
                 </div>
             </div>
@@ -442,7 +453,7 @@
                 <input type="button" class="circle" onclick="selectProject(8)"></input>
 
             </div>
-            <input type="image" src="Graphics/button.svg" id="expandButton" onclick="expandProject()"></input>
+            <input type="image" src="Graphics/ICONS/button.svg" id="expandButton" onclick="expandProject()"></input>
         </div>
     </div>
 

@@ -3,6 +3,7 @@ console.log('hello werlad');
 var aboutExpanded = false;
 var menuExpanded = false;
 var galleryExpanded = false;
+var slideshowExpanded = [false, false];
 var about;
 var menu;
 var gallery;
@@ -10,6 +11,9 @@ var nameBar;
 var viewport;
 var figures;
 var nav;
+var slideshow;
+var dropdownWindow;
+var plusIcon;
 
 var projectNum = 0;
 var scrollerHeight = 0;
@@ -27,7 +31,7 @@ function populateSubOption() {
         // iterates title selector by 2 ticks to grab the correct project name, skipping 
         // the expanded project title (also denoted by the 'title' classname)
         console.log(`       iterating; subOption ${i} = ${titles[j].innerHTML}`)
-        subOption[i].innerHTML = `${i+1}. ${titles[j].innerHTML}`;
+        subOption[i].innerHTML = `${i + 1}. ${titles[j].innerHTML}`;
         j += 2;
     }
 }
@@ -145,6 +149,28 @@ function selectProject(num) {
     projectNum = num;
     checkToggled();
 }
+
+
+function dropdownSlideshow(num) {
+    dropdownWindow = document.getElementsByClassName("dropdownContent");
+    slideshow = document.getElementsByClassName("slideshow");
+    plusIcon = document.getElementsByClassName("plusLines");
+    if (!slideshowExpanded[num]) {
+        // add class to hr to extend line width 
+        // wait
+
+        dropdownWindow[num].style.height = "36em";
+        slideshow[num].style.top = "0em";
+        plusIcon[num].classList.add("plusLinesJSActivated");
+        slideshowExpanded[num] = true;
+    } else {
+        dropdownWindow[num].style.height = "0";
+        slideshow[num].style.top = "-34em";
+        plusIcon[num].classList.remove("plusLinesJSActivated");
+        slideshowExpanded[num] = false;
+    }
+}
+
 
 window.addEventListener('wheel', function (e) {
     // listens for wheel event, changes the projectNum and calls selectProject(num)
