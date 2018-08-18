@@ -139,7 +139,7 @@ function selectProject(num) {
             break;
         case 7:
             gallery.style.left = "-600vw";
-            viewport.style.background = `url("Graphics/body_mantle_cover.jpg") center/cover no-repeat fixed`;
+            viewport.style.background = `url("Graphics/RAZOR/razor-1-1.jpg") center/cover no-repeat fixed`;
             break;
         case 8:
             gallery.style.left = "-700vw";

@@ -579,6 +579,29 @@ line {
     margin: 0;
 }
 
+#processBrodyGrid {
+    width: 56.5em;
+
+    display: grid;
+    grid-template-columns: 45% 55%;
+    grid-template-rows: repeat(24, 4%);
+
+    margin: 0;
+}
+.processTextBrody {
+    position: relative;
+    top: 6em;
+    max-height: 95%;
+    width: 86%;
+    margin: 0;
+
+    line-height: 190%;
+}
+.processBrody {
+    width: 30em;
+    margin-top: 1em;
+}
+
 
 /* width */
 ::-webkit-scrollbar {
