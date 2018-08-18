@@ -1,0 +1,83 @@
+Package Report
+
+-----------------------------------------------------------------------------
+Document:
+Name: Nev Bro it 8.ai
+Color Mode: CMYK color
+Color Profile: U.S. Web Coated (SWOP) v2
+Ruler Units: inches
+Artboard Dimensions: 12.2777 in x 19.9437 in
+Show Images in Outline Mode: OFF
+Highlight Substituted Fonts: OFF
+Highlight Substituted Glyphs: OFF
+Preserve Text Editability
+Simulate Colored Paper: OFF
+
+-----------------------------------------------------------------------------
+Spot Color Objects:
+
+-----------------------------------------------------------------------------
+Missing Fonts:NONE
+
+-----------------------------------------------------------------------------
+Protected Fonts that were not packaged:NONE
+
+-----------------------------------------------------------------------------
+Fonts:
+BlurLight (Type 1)
+Myriad Pro Black SemiExtended (OTF)
+
+-----------------------------------------------------------------------------
+Embedded Fonts:
+NONE
+
+-----------------------------------------------------------------------------
+Missing Links:
+NONE
+
+-----------------------------------------------------------------------------
+Linked Images:
+
+/Users/aarongreider/Desktop/Neville Brody/Effects Exploration/Paint Spatter.png
+Type: Transparent CMYK
+Bits per Pixel: 40
+Channels: 5
+Size: 98762K, 3556 by 5688 pixels
+Dimensions: 897.09 by 1434.94 points 
+Resolution: 285.403 by 285.403 pixels per inch
+
+
+/Users/aarongreider/Desktop/Neville Brody/Effects Exploration/Grunge/broo.png
+Type: Transparent CMYK
+Bits per Pixel: 40
+Channels: 5
+Size: 19397K, 2261 by 1757 pixels
+Dimensions: 478.022 by 371.466 points 
+Resolution: 340.553 by 340.553 pixels per inch
+
+
+/Users/aarongreider/Desktop/Neville Brody/Effects Exploration/Nev Bro on the wall.png
+Type: Transparent CMYK
+Bits per Pixel: 40
+Channels: 5
+Size: 100195K, 3600 by 5700 pixels
+Dimensions: 932.684 by 1476.749 points 
+Resolution: 277.908 by 277.908 pixels per inch
+
+
+/Users/aarongreider/Desktop/Neville Brody/Effects Exploration/Layer 7.png
+Type: Transparent CMYK
+Bits per Pixel: 40
+Channels: 5
+Size: 97523K, 3504 by 5700 pixels
+Dimensions: 880.939 by 1433.034 points 
+Resolution: 286.385 by 286.385 pixels per inch
+
+
+/Users/aarongreider/Desktop/Neville Brody/Example Work for Poster/IMG_7511 for poster.jpg
+Type: RGB
+Bits per Pixel: 24
+Channels: 3
+Size: 17597K, 2055 by 2923 pixels
+Dimensions: 150.374 by 213.89 points 
+Resolution: 983.946 by 983.946 pixels per inch

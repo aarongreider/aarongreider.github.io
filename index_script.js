@@ -135,7 +135,7 @@ function selectProject(num) {
             break;
         case 6:
             gallery.style.left = "-500vw";
-            viewport.style.background = `url("Graphics/body_mantle_cover.jpg") center/cover no-repeat fixed`;
+            viewport.style.background = `url("Graphics/BRODY/brody-1.jpg") center/cover no-repeat fixed`;
             break;
         case 7:
             gallery.style.left = "-600vw";
