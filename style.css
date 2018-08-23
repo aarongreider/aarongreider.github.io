@@ -601,7 +601,26 @@ line {
     width: 30em;
     margin-top: 1em;
 }
+.processRazorHead {
+    width: 55.5em;
+}
+.processTextRazorHead {
+    position: relative;
+    top: 0;
+    width: 86%;
+    margin: 0;
+    line-height: 190%;
+}
+#processRazorGrid {
+    width: 56.5em;
 
+    display: grid;
+    grid-template-columns: 45% 55%;
+    grid-template-rows: repeat(24, 4%);
+
+    margin: 0;
+    overflow-y: hidden;
+}
 
 /* width */
 ::-webkit-scrollbar {
