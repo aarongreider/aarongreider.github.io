@@ -287,6 +287,13 @@ ul {
     background-size: cover;*/
 }
 
+#scrollClip {
+    position: absolute;
+    height: 110em;
+    width: 100vw;
+    overflow: hidden;
+}
+
 .galleryContent {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.75) 0%, rgba(8,8,8,.75) 90%, rgba(255,255,255,0.25) 100%); 
     background-attachment: scroll;
@@ -418,6 +425,13 @@ ul {
     top: 5em;
 
     overflow: scroll;
+}
+
+.nextProject {
+    border: .5px solid whitesmoke;
+    padding: 2em;
+    width: 23em;
+    text-align: center;
 }
 
 .title {

@@ -1,4 +1,4 @@
-console.log('hello werlad');
+console.log('hello world');
 
 var aboutExpanded = false;
 var menuExpanded = false;
@@ -15,27 +15,39 @@ var slideshow;
 var dropdownWindow;
 var plusIcon;
 var line;
+var nextProjectButton;
+var scrollClipRect;
 
 var projectNum = 0;
 var scrollerHeight = 0;
 
-
-function populateSubOption() {
+window.onload = function populateSubOption() {
     console.log("populateSubOption()");
     var subOption = document.getElementsByClassName("subMenuOption");
     var titles = document.getElementsByClassName("title");
     console.log(`   subOption.length: ${subOption.length}`)
     console.log(`   titles.length: ${titles.length}`)
+
+    nextProjectButton = document.getElementsByClassName("nextProject");
+
     var j = 0;
     for (var i = 0; i < subOption.length; i++) {
         // use .innerHTML to populate the subOptions under menu/WORK with the proper prject name
         // iterates title selector by 2 ticks to grab the correct project name, skipping 
         // the expanded project title (also denoted by the 'title' classname)
+        // added later: populate the Next Project: (x) at the bottom of each project
         console.log(`       iterating; subOption ${i} = ${titles[j].innerHTML}`)
         subOption[i].innerHTML = `${i + 1}. ${titles[j].innerHTML}`;
+        if (i === 0) {
+            console.log(`       i=0; index of nextProjectButton Population: ${nextProjectButton.length - 1}`);
+            nextProjectButton[nextProjectButton.length - 1].innerHTML = `Next Project: ${titles[j].innerHTML}`
+        } else {
+            console.log(`       i!=0; index of nextProjectButton Population: ${i - 1}`);
+            nextProjectButton[i - 1].innerHTML = `Next Project: ${titles[j].innerHTML}`
+        }
         j += 2;
     }
-}
+};
 
 function toggleAbout() {
     console.log("toggleAbout()");
@@ -57,7 +69,6 @@ function toggleAbout() {
 function toggleMenu() {
     console.log("toggleMenu()");
 
-    populateSubOption();
     menu = document.getElementById("colorBar2");
     if (menuExpanded) {
         menu.style.height = "3vh";
@@ -104,14 +115,19 @@ function expandProject() {
     checkToggled();
 }
 
+function incrementProject() {
+    projectNum++;
+    selectProject(projectNum);
+}
+
 function selectProject(num) {
     // called to shift the gallery to display a specific project num
     // will collapse menu and about
     console.log("selectProject()");
+    //window.scrollTo(0, 0);
 
     gallery = document.getElementById("gallery");
     viewport = document.getElementById("viewport");
-
     switch (num) {
         case 1:
             gallery.style.left = "0";
@@ -148,7 +164,33 @@ function selectProject(num) {
     }
 
     projectNum = num;
+    setScrollClip();
     checkToggled();
+}
+
+
+function setScrollClip() {
+    // calculate distance between top and bottom of a project (via a node placed at both ends)
+    // set the height of id scrollClip with overflow:hidden to inhibit scrolling
+    console.log(`setScrollClip()`);
+    viewport = document.getElementById("viewport");
+    nextProjectButton = document.getElementsByClassName("nextProject");
+    scrollClipRect = document.getElementById("scrollClip");
+
+    // calculate
+    var viewportCoords = viewport.getBoundingClientRect();
+    var nextCoords = nextProjectButton[projectNum - 1].getBoundingClientRect();
+    var difference = nextCoords.bottom - viewportCoords.top;
+
+    // set height
+    console.log(`   ${nextCoords.bottom} - ${viewportCoords.top} = ${difference}`);
+    scrollClipRect.style.height = `${difference}px`;
+    console.log(`scrollClipRect.style.height = ${scrollClipRect.style.height}`)
+
+    // scroll to top
+    window.setTimeout(function func() {
+        scrollClipRect.scrollIntoView();
+    }, 1);
 }
 
 
@@ -179,7 +221,7 @@ function dropdownSlideshow(num) {
     }
 }
 
-
+/* 
 window.addEventListener('wheel', function (e) {
     // listens for wheel event, changes the projectNum and calls selectProject(num)
     nameBar = document.getElementsByClassName("nameBar");
@@ -192,3 +234,4 @@ window.addEventListener('wheel', function (e) {
         console.log("scrolling up");
     }
 });
+*/
