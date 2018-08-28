@@ -20,6 +20,7 @@ var scrollClipRect;
 
 var projectNum = 0;
 var scrollerHeight = 0;
+var pictureNum = [0, 0];
 
 window.onload = function populateSubOption() {
     console.log("populateSubOption()");
@@ -164,33 +165,34 @@ function selectProject(num) {
     }
 
     projectNum = num;
-    setScrollClip();
+    setScrollClip(true);
     checkToggled();
 }
 
 
-function setScrollClip() {
+function setScrollClip(scrollAction) {
     // calculate distance between top and bottom of a project (via a node placed at both ends)
     // set the height of id scrollClip with overflow:hidden to inhibit scrolling
     console.log(`setScrollClip()`);
-    viewport = document.getElementById("viewport");
     nextProjectButton = document.getElementsByClassName("nextProject");
     scrollClipRect = document.getElementById("scrollClip");
 
     // calculate
-    var viewportCoords = viewport.getBoundingClientRect();
+    var scrollClipCoords = scrollClipRect.getBoundingClientRect();
     var nextCoords = nextProjectButton[projectNum - 1].getBoundingClientRect();
-    var difference = nextCoords.bottom - viewportCoords.top;
+    var difference = nextCoords.bottom - scrollClipCoords.top;
 
     // set height
-    console.log(`   ${nextCoords.bottom} - ${viewportCoords.top} = ${difference}`);
-    scrollClipRect.style.height = `${difference}px`;
+    console.log(`   ${nextCoords.bottom} - ${scrollClipCoords.top} = ${difference}`);
+    scrollClipRect.style.height = `${difference + 100}px`;
     console.log(`scrollClipRect.style.height = ${scrollClipRect.style.height}`)
 
     // scroll to top
-    window.setTimeout(function func() {
-        scrollClipRect.scrollIntoView();
-    }, 1);
+    if (scrollAction) {
+        window.setTimeout(function func() {
+            scrollClipRect.scrollIntoView();
+        }, 1);
+    }
 }
 
 
@@ -219,7 +221,28 @@ function dropdownSlideshow(num) {
             slideshowExpanded[num] = false;
         }, 150);
     }
+    window.setTimeout(function func() {
+        setScrollClip(false);
+    }, 600);
 }
+
+function incrementSlide(showNum, direction) {
+    var slideshow = document.getElementsByClassName("slideshow");
+    switch (showNum) {
+        case 0:
+            if (direction === 0) {
+                pictureNum[0] -= 1;
+                console.log(`slide left`);
+            } else if (direction === 1) {
+                pictureNum[0] += 1;
+                console.log(`slide right`);
+            }
+            console.log(`pictureNum[0]: ${pictureNum[0]}`);
+            break;
+
+    }
+}
+
 
 /* 
 window.addEventListener('wheel', function (e) {

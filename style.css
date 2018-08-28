@@ -305,7 +305,7 @@ ul {
     top: 0;
 
     /* height: 68vh; */
-    height: 1200vh;
+    height: 1700vh;
     width: 800vw;
 
     display: grid;
@@ -428,6 +428,8 @@ ul {
 }
 
 .nextProject {
+    margin-top: 10em;
+    margin-bottom: 10em;
     border: .5px solid whitesmoke;
     padding: 2em;
     width: 23em;
@@ -574,18 +576,47 @@ line {
 }
 .dropdownContent {
     width: 100%;
-    overflow-x: scroll;
-    overflow-y: visible;
+    overflow-x: hidden;
+    overflow-y: hidden;
     height: 0;
     transition: all .5s ease;
 }
 .slideshow {
     display: flex;
     width: 500%;
+    height: 100%;
     position: relative;
     top: -34em;
+    overflow: hidden;
 
     transition: all .5s ease;
+}
+.slideshowButton {
+    background-color: rgb(44, 44, 44);
+    border: none;
+    outline: none;
+
+    position: relative;
+    width: 7em;
+    height: 37em;
+    top: -36em;
+    opacity: .1;
+
+    transition: opacity .2s ease;
+}
+.slideshowButton:hover {
+    opacity: 1;
+}
+.shiftRight {
+    left: 77.8%;
+}
+.shiftLeftButton {
+    width: 3em;
+    transform: rotate(90deg);
+}
+.shiftRightButton {
+    width: 3em;
+    transform: rotate(-90deg);
 }
 .processPhoto {
     width: 100%;
