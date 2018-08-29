@@ -587,6 +587,7 @@ line {
     height: 100%;
     position: relative;
     top: -34em;
+    left: 0;
     overflow: hidden;
 
     transition: all .5s ease;

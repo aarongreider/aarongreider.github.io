@@ -228,19 +228,16 @@ function dropdownSlideshow(num) {
 
 function incrementSlide(showNum, direction) {
     var slideshow = document.getElementsByClassName("slideshow");
-    switch (showNum) {
-        case 0:
-            if (direction === 0) {
-                pictureNum[0] -= 1;
-                console.log(`slide left`);
-            } else if (direction === 1) {
-                pictureNum[0] += 1;
-                console.log(`slide right`);
-            }
-            console.log(`pictureNum[0]: ${pictureNum[0]}`);
-            break;
+    if (direction === 0 && pictureNum[showNum] > 0) {
+        pictureNum[showNum] -= 1;
+        console.log(`slide left: ${(-100 * pictureNum[showNum])}%`);
 
+    } else if (direction === 1 && pictureNum[showNum] < 4) {
+        pictureNum[showNum] += 1;
+        console.log(`slide right: ${-100 * pictureNum[showNum]}%`);
     }
+    slideshow[showNum].style.left = `${(-100 * pictureNum[showNum])}%`;
+    console.log(`pictureNum[0]: ${pictureNum[showNum]}`);
 }
 
 
