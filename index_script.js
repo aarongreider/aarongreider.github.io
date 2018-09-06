@@ -148,7 +148,7 @@ function selectProject(num) {
             break;
         case 5:
             gallery.style.left = "-400vw";
-            viewport.style.background = `url("Graphics/PHOTOGRAPHY/abstract/_DSC0444.jpg") center/cover no-repeat fixed`;
+            viewport.style.background = `url("Graphics/PHOTOGRAPHY/abstract/leaf-this-path.jpg") center/cover no-repeat fixed`;
             break;
         case 6:
             gallery.style.left = "-500vw";
