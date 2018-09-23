@@ -54,34 +54,9 @@
 
     </button>
 
-    <div id="colorBar2" onclick="toggleMenu()">
-        <div id="menuWrapper">
-            <hr class="mediaLine">
-            <p class="menuOption" onclick="toggleAbout();event.stopPropagation();">ABOUT</p>
-            <hr class="mediaLine">
-            <p class="menuOption" onclick="toggleMenu();event.stopPropagation();">WORK</p>
-            <hr class="mediaLine">
-            <p class="subMenuOption" onclick="selectProject(1);event.stopPropagation();"></p>
-            <hr class="subMediaLine">
-            <p class="subMenuOption" onclick="selectProject(2);event.stopPropagation();"></p>
-            <hr class="subMediaLine">
-            <p class="subMenuOption" onclick="selectProject(3);event.stopPropagation();"></p>
-            <hr class="subMediaLine">
-            <p class="subMenuOption" onclick="selectProject(4);event.stopPropagation();"></p>
-            <hr class="subMediaLine">
-            <p class="subMenuOption" onclick="selectProject(5);event.stopPropagation();"></p>
-            <hr class="subMediaLine">
-            <p class="subMenuOption" onclick="selectProject(6);event.stopPropagation();"></p>
-            <hr class="subMediaLine">
-            <p class="subMenuOption" onclick="selectProject(7);event.stopPropagation();"></p>
-            <hr class="subMediaLine">
-            <p class="subMenuOption" onclick="selectProject(8);event.stopPropagation();"></p>
-            <hr class="subMediaLine">
-        </div>
-    </div>
 
-    <div id="hamburger" class="framingText" onclick="toggleMenu()">
-        <hr class="left">MENU
+    <div id="hamburger" class="framingText" onclick="toggleAbout()">
+        <hr class="left">ABOUT
         <hr class="right">
     </div>
 
@@ -766,44 +741,43 @@
         </div>
 
 
-        <div class="navContent" id="navContent1">
-            <div id="underCircle" class="circleContainer">
-                <div class="menuItem">
-                    <button type="button" class="circle" onclick="selectProject(1)">I.</button>
-                    <p class="navProjectTitle">P L A C E H O L D E R</p>
-                </div>
-                <div class="menuItem">
-                    <button type="button" class="circle" onclick="selectProject(2)">II.</button>
-                    <p class="navProjectTitle">P L A C E H O L D E R</p>
-                </div>
-                <div class="menuItem">
-                    <button type="button" class="circle" onclick="selectProject(3)">III.</button>
-                    <p class="navProjectTitle">P L A C E H O L D E R</p>
-                </div>
-                <div class="menuItem">
-                    <button type="button" class="circle" onclick="selectProjec(4)">IV.</button>
-                    <p class="navProjectTitle">P L A C E H O L D E R</p>
-                </div>
-                <div class="menuItem">
-                    <button type="button" class="circle" onclick="selectProject(5)">V.</button>
-                    <p class="navProjectTitle">P L A C E H O L D E R</p>
-                </div>
-                <div class="menuItem">
-                    <button type="button" class="circle" onclick="selectProject(6)">VI.</button>
-                    <p class="navProjectTitle">P L A C E H O L D E R</p>
-                </div>
-                <div class="menuItem">
-                    <button type="button" class="circle" onclick="selectProject(7)">VII.</button>
-                    <p class="navProjectTitle">P L A C E H O L D E R</p>
-                </div>
-                <div class="menuItem">
-                    <button type="button" class="circle" onclick="selectProject(8)">VIII.</button>
-                    <p class="navProjectTitle">P L A C E H O L D E R</p>
-                </div>
+        <div id="underCircle" class="circleContainer">
+            <div class="menuItem">
+                <button type="button" class="circle" onclick="selectProject(1)">I.</button>
+                <p class="navProjectTitle">P L A C E H O L D E R</p>
             </div>
-
-            <input type="image" src="Graphics/ICONS/button.svg" id="expandButton" onclick="expandProject()"></input>
+            <div class="menuItem">
+                <button type="button" class="circle" onclick="selectProject(2)">II.</button>
+                <p class="navProjectTitle">P L A C E H O L D E R</p>
+            </div>
+            <div class="menuItem">
+                <button type="button" class="circle" onclick="selectProject(3)">III.</button>
+                <p class="navProjectTitle">P L A C E H O L D E R</p>
+            </div>
+            <div class="menuItem">
+                <button type="button" class="circle" onclick="selectProjec(4)">IV.</button>
+                <p class="navProjectTitle">P L A C E H O L D E R</p>
+            </div>
+            <div class="menuItem">
+                <button type="button" class="circle" onclick="selectProject(5)">V.</button>
+                <p class="navProjectTitle">P L A C E H O L D E R</p>
+            </div>
+            <div class="menuItem">
+                <button type="button" class="circle" onclick="selectProject(6)">VI.</button>
+                <p class="navProjectTitle">P L A C E H O L D E R</p>
+            </div>
+            <div class="menuItem">
+                <button type="button" class="circle" onclick="selectProject(7)">VII.</button>
+                <p class="navProjectTitle">P L A C E H O L D E R</p>
+            </div>
+            <div class="menuItem">
+                <button type="button" class="circle" onclick="selectProject(8)">VIII.</button>
+                <p class="navProjectTitle">P L A C E H O L D E R</p>
+            </div>
         </div>
+
+        <input type="image" src="Graphics/ICONS/button.svg" id="expandButton" onclick="expandProject()"></input>
+
     </div>
 
 </body>

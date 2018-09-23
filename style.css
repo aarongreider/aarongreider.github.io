@@ -1,7 +1,6 @@
 * {
     overflow-y: scroll;
     overflow-x: hidden;
-    overflow: visible;
 }
 
 body, button {
@@ -24,16 +23,21 @@ hr {
 }
 
 #hamburger {
-    margin: 38vh -9vw;
+    margin: 82vh -9vw;
     height: 1.5em;
-    width: 25em;
+    width: 19em;
     transform: rotate(-90deg);
 
     display: flex;
     align-items: center;
-    position: absolute;
+    position: fixed;
 
     letter-spacing: .5em;
+    transition: letter-spacing 1s cubic-bezier(0.2, 1.02, 0.61, 1);
+}
+#hamburger:hover {
+    letter-spacing: .8em;
+    transition: letter-spacing 2s cubic-bezier(0.2, 1.02, 0.61, 1);
 }
 
 #hamburger hr {
@@ -41,12 +45,12 @@ hr {
 }
 #hamburger .left {
     float: left;
-    width: 8%;
+    width: 33%;
 }
 
 #hamburger .right {
     float: right;
-    width: 33%;
+    width: 8%;
 }
 
 /* 
@@ -102,22 +106,6 @@ hr {
     outline: none;
 
     transition: height .5s ease;
-}
-
-#colorBar2 {
-    z-index: 2; 
-    top: 97vh;
-    margin-left: 67vw;
-    position: absolute; 
-
-    width: 33%;
-    height: 3vh;
-
-    background-color: #cecece;
-    border: none;
-    outline: none;
-
-    transition: height .5s ease, top .5s ease;
 }
 
 #menuWrapper {
@@ -345,28 +333,25 @@ ul {
     grid-column: 8;
 }
 
-.navContent {
-    position: relative;
+.circleContainer {
+    position: fixed;
     
     left: 0;
     height: 68vh;
     width: 20em;
     overflow: visible;
 
-    transition: top .4s ease, left .4s ease;
-}
-
-.circleContainer {
-    position: relative;
-    left: 0;
-
-    height: 68vh;
-    width: inherit;
-
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-content: flex-start;
+
+    clip-path: polygon(0 0, 20% 0, 20% 100%, 0% 100%);
+    background: linear-gradient(105deg, rgba(0,0,0,.2) 0%, rgba(0,0,0,0.1) 0%, rgba(255,255,255,0) 40%);
+}
+
+.circleContainer:hover {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 
 .menuItem {
@@ -399,6 +384,8 @@ ul {
 .navProjectTitle {
     color: whitesmoke;
     opacity: 0.0;
+    z-index: -10;
+
     transition: all .4s ease;
 }
 .circle:hover + .navProjectTitle {
