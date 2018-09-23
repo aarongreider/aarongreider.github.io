@@ -24,7 +24,7 @@ var pictureNum = [0, 0];
 
 window.onload = function populateSubOption() {
     console.log("populateSubOption()");
-    var subOption = document.getElementsByClassName("subMenuOption");
+    var subOption = document.getElementsByClassName("navProjectTitle");
     var titles = document.getElementsByClassName("title");
     console.log(`   subOption.length: ${subOption.length}`)
     console.log(`   titles.length: ${titles.length}`)
@@ -37,8 +37,9 @@ window.onload = function populateSubOption() {
         // iterates title selector by 2 ticks to grab the correct project name, skipping 
         // the expanded project title (also denoted by the 'title' classname)
         // added later: populate the Next Project: (x) at the bottom of each project
+        // added later: populate new menu instead of old menu
         console.log(`       iterating; subOption ${i} = ${titles[j].innerHTML}`)
-        subOption[i].innerHTML = `${i + 1}. ${titles[j].innerHTML}`;
+        subOption[i].innerHTML = `${titles[j].innerHTML}`;
         if (i === 0) {
             console.log(`       i=0; index of nextProjectButton Population: ${nextProjectButton.length - 1}`);
             nextProjectButton[nextProjectButton.length - 1].innerHTML = `Next Project: ${titles[j].innerHTML}`
