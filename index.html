@@ -84,7 +84,7 @@
                         </div>
                         <div class="column colProcess">
                             <img class="figureProcess" id="figure1" src="Graphics/body_mantle_process1.jpg"></img>
-                            <p class="title">101 Poplar Planks and Wood Glue</p>
+                            <p class="subTitle">101 Poplar Planks and Wood Glue</p>
                             <p class="processDescription">The model was meant to liken cascading and asymmetrical
                                 movement
                                 a nontraditional ebb from bottom right to upper left culminating in a fractal spiral on
@@ -130,7 +130,7 @@
                                 of the software.</p>
                         </div>
                         <div class="column colProcess">
-                            <p class="title">Identity and UI</p>
+                            <p class="subTitle">Identity and UI</p>
                             <img class="figureProcess figurePatch" src="Graphics/typo-corrected_01.jpg"></img>
                             <img class="figureProcess figurePatch" src="Graphics/typo-corrected_02.jpg"></img>
                             <img class="figureProcess figurePatch" src="Graphics/typo-corrected_03.jpg"></img>
@@ -172,7 +172,7 @@
                                 <img class="figureProcess posterSubFlex" id="figure9" src="Graphics/POSTER/poster_2-4.jpg"></img>
                             </div>
 
-                            <p class="title">Iteration After Iteration</p>
+                            <p class="subTitle">Iteration After Iteration</p>
                             <p class="processDescription" id="posterText1">From the project guidelines,
                                 <i>“Using the hierarchy presented below, develop a grid system that accommodates all of
                                     the
@@ -264,7 +264,7 @@
                         </div>
                         <div class="column colProcess">
 
-                            <p class="title">Digital 3D Explorations</p>
+                            <p class="subTitle">Digital 3D Explorations</p>
                             <p class="processDescription">The model was meant to liken cascading and asymmetrical
                                 movement
                                 a nontraditional ebb from bottom right to upper left culminating in a fractal spiral on
@@ -358,7 +358,7 @@
                             <p class="description">Photography.</p>
                         </div>
                         <div class="column colProcess">
-                            <p class="title">These are my photos</p>
+                            <p class="subTitle">These are my photos</p>
 
                             <p class="photoDescription">Photography is a passion of mine which bleeds greatly over into
                                 3D Mod- eling. I find these two arts of composition fascinating
@@ -427,7 +427,30 @@
                         <p class="nextProject" onclick="incrementProject()">Next Project: </p>
                     </div>
                 </div>
+                <!--
+            classes needed for figure grids:
+                full/half/third width horizontal
+                    .fullWidthHorz
+                    .(half)WidthHorzGrid
+                full/half/third height verticle
+                    .(full)HeightVert
+                to specify grid spaces:
+                    .twoCol / .threeCol
+                    .twoRow / .threeRow
+            
+            classes for longest axis of figure:
+                    .wide
+                    .tall
+                    
+                
+                * accompany half-width figures with text
+                * half and third widths are grids
+                * there will be no verticle grids
 
+            Get rid of grid, incorporate 1 row grids
+            Longest line length = 66%
+            Shortest line length = 50%
+        -->
                 <div class="gallerySlider" id="gallerySlider6">
                     <div id="scrollContent">
                         <div class="column colTitle">
@@ -440,8 +463,9 @@
                                 design of their time.
                             </p>
                         </div>
+
                         <div class="column colProcess">
-                            <p class="title">Research</p>
+                            <p class="subTitle">Research</p>
                             <p class="processDescription">Naturally, we drew designers out of a hat. I drew a
                                 particular
                                 rebel named Neville Brody.
@@ -454,59 +478,50 @@
                                 they
                                 deemed his work “uncommercial.”
                             </p>
+                            <p class="subTitle">Inspiration</p>
 
-                            <div id="processBrodyGrid">
-                                <p class="subTitle">Inspiration</p>
-                                <p></p>
-                                <p class="processDescription">Selected works I chose to focus on, each are Brody's own.</p>
-                                <p></p>
-                                <img class="figureProcess processBrody" id="figure18.2" src="Graphics/BRODY/brody-2-2.png">
-                                <img class="figureProcess processBrody" id="figure18.2" src="Graphics/BRODY/brody-3-6.jpg">
+                            <p class="processDescription">Selected works I chose to focus on, each are Brody's own.</p>
 
-                                <p class="subTitle">Digital Ideation</p>
-                                <p class="processDescription">Markmaking is a lifelong iterest of
+
+                            <div class="twoCol">
+                                <img class="figureProcess tall" src="Graphics/BRODY/brody-2-2.png">
+                                <img class="figureProcess tall" src="Graphics/BRODY/brody-3-6.jpg">
+                            </div>
+                            <p class="subTitle">Digital Ideation</p>
+
+                            <div class="twoRow">
+                                <img class="figureProcess halfHeight" src="Graphics/BRODY/brody-3-1.jpg">
+                                <p class="processDescription">Markmaking is a lifelong interest of
                                     Neville Brody. For my first of several iterations, I chose to explore the somewhat
                                     primal effect he found so
                                     intriguing.</p>
-                                <p></p>
-                                <img class="figureProcess processBrody" id="figure19.1" src="Graphics/BRODY/brody-3-1.jpg">
-                                <p></p>
+                            </div>
 
-                                <p></p>
-
-
-                                <p class="processTextBrody" id="figure12Text">A face is often seen in his work,
-                                    especially
-                                    early in his career, the faces were obscured in some way. I took an image of Brody
-                                    as
-                                    a young-un and in photoshop I desaturated it and applied a threshold filter to
-                                    achieve
-                                    the two-tone black and white.</p>
-                                <img class="figureProcess processBrody" id="figure20.1" src="Graphics/BRODY/brody-4-1.jpg"></img>
-
-
-
-                                <p class="processTextBrody" id="figure13Text">Once again experimenting with primality
-                                    of
-                                    human nature, I chose to include paint splatters to imply that the poster has been
-                                    slung
-                                    at carelessly. I obscured Brody's face by converting it to halftones and
-                                    integrating
-                                    it with the background - almost as if it were burnt - with a graphite-textured
-                                    photoshop
-                                    brush.
+                            <div class="twoRow">
+                                <img class="figureProcess halfHeight" src="Graphics/BRODY/brody-4-1.jpg">
+                                <p class="processDescription" id="figure12Text">A face is often seen in his work,
+                                    especially early in his career, the faces were obscured in some way. I took an image of Brody
+                                    as a young-un and in photoshop I desaturated it and applied a threshold filter to
+                                    achieve the two-tone black and white.</p>
+                            </div>
+                            <div class="twoCol">
+                                <img class="figureProcess tall" src="Graphics/BRODY/brody-5-1.jpg">
+                                <p class="processDescription">Once again experimenting with primality
+                                    of human nature, I chose to include paint splatters to imply that the poster has been
+                                    slung at carelessly. I obscured Brody's face by converting it to halftones and
+                                    integrating it with the background - almost as if it were burnt - with a graphite-textured
+                                    photoshop brush.
                                     <br>
                                     <br>This inital experiment was the precursor for the concepts I used in the final.
                                 </p>
-                                <img class="figureProcess processBrody" id="figure21.1" src="Graphics/BRODY/brody-5-1.jpg"></img>
-
-                                <p class="subTitle">Final Poster</p>
-                                <p></p>
-                                <p class="processDescription"></p>
-                                <p></p>
-                                <img class="figureProcess processBrody" id="figure18.2" src="Graphics/BRODY/brody-2-1.jpg">
-                                <img class="figureProcess processBrody" id="figure18.2" src="Graphics/BRODY/brody_6.jpg">
                             </div>
+
+                            <p class="subTitle">Final Poster</p>
+                            <p class="processDescription"></p>
+
+                            <img class="figureProcess fullHeight" src="Graphics/BRODY/brody-2-1.jpg">
+                            <img class="figureProcess wide" src="Graphics/BRODY/brody_6.jpg">
+
                         </div>
 
                         <p class="nextProject" onclick="incrementProject()">Next Project: </p>
@@ -527,7 +542,7 @@
                                 sequence and effectiveness in black and white before optional completion in color.</p>
                         </div>
                         <div class="column colProcess">
-                            <p class="title">Razor Sharp</p>
+                            <p class="subTitle">Razor Sharp</p>
                             <p class="processDescription">This poster project was completed in tandem with the PBS
                                 Designer
                                 Series poster (which also had to be designed by the Fibonacci sequence), so it’s
@@ -562,7 +577,7 @@
                                     of danger or alert, implying that the razor is, in fact, razor sharp and will draw
                                     blood
                                     if used carelessly.</p>
-                                <img class="figureProcess processBrody" id="figure22.2" src="Graphics/RAZOR/razor-1-1.jpg"></img>
+                                <img class="figureProcess" id="figure22.2" src="Graphics/RAZOR/razor-1-1.jpg"></img>
 
                                 <p class="processTextBrody" id="figure11Text">The two-part project began by visually
                                     exploring
@@ -571,17 +586,17 @@
                                     was functional on a large and small scale. It was certainly difficult at times to
                                     come
                                     up with creative, original, and dynamic iterations.</p>
-                                <img class="figureProcess processBrody" id="figure23.1" src="Graphics/RAZOR/razor-2-1.jpg"></img>
+                                <img class="figureProcess" id="figure23.1" src="Graphics/RAZOR/razor-2-1.jpg"></img>
                                 <p></p>
-                                <img class="figureProcess processBrody" id="figure24.1" src="Graphics/RAZOR/razor-3-1.jpg"></img>
+                                <img class="figureProcess" id="figure24.1" src="Graphics/RAZOR/razor-3-1.jpg"></img>
                                 <p></p>
-                                <img class="figureProcess processBrody" id="figure24.2" src="Graphics/RAZOR/razor-3-2.jpg"></img>
+                                <img class="figureProcess" id="figure24.2" src="Graphics/RAZOR/razor-3-2.jpg"></img>
                                 <p></p>
-                                <img class="figureProcess processBrody" id="figure24.3" src="Graphics/RAZOR/razor-3-3.jpg"></img>
+                                <img class="figureProcess" id="figure24.3" src="Graphics/RAZOR/razor-3-3.jpg"></img>
                                 <p></p>
-                                <img class="figureProcess processBrody" id="figure24.4" src="Graphics/RAZOR/razor-3-4.jpg"></img>
+                                <img class="figureProcess" id="figure24.4" src="Graphics/RAZOR/razor-3-4.jpg"></img>
                                 <p></p>
-                                <img class="figureProcess processBrody" id="figure24.5" src="Graphics/RAZOR/razor-3-5.jpg"></img>
+                                <img class="figureProcess" id="figure24.5" src="Graphics/RAZOR/razor-3-5.jpg"></img>
 
 
                                 <p class="processTextBrody" id="figure13Text">We were encouraged to produce a dynamic
@@ -595,15 +610,15 @@
                                     finding reference photos - I created a simple geometric 3D model to aid in my
                                     efforts.
                                 </p>
-                                <img class="figureProcess processBrody" id="figure25.1" src="Graphics/RAZOR/razor-4-1.jpg"></img>
+                                <img class="figureProcess" id="figure25.1" src="Graphics/RAZOR/razor-4-1.jpg"></img>
                                 <p></p>
-                                <img class="figureProcess processBrody" id="figure25.2" src="Graphics/RAZOR/razor-4-2.jpg"></img>
+                                <img class="figureProcess" id="figure25.2" src="Graphics/RAZOR/razor-4-2.jpg"></img>
                                 <p></p>
-                                <img class="figureProcess processBrody" id="figure25.3" src="Graphics/RAZOR/razor-4-3.jpg"></img>
+                                <img class="figureProcess" id="figure25.3" src="Graphics/RAZOR/razor-4-3.jpg"></img>
                                 <p></p>
-                                <img class="figureProcess processBrody" id="figure25.4" src="Graphics/RAZOR/razor-4-4.jpg"></img>
+                                <img class="figureProcess" id="figure25.4" src="Graphics/RAZOR/razor-4-4.jpg"></img>
                                 <p></p>
-                                <img class="figureProcess processBrody" id="figure25.5" src="Graphics/RAZOR/razor-4-5.jpg"></img>
+                                <img class="figureProcess" id="figure25.5" src="Graphics/RAZOR/razor-4-5.jpg"></img>
 
                                 <p class="processTextBrody" id="figure13Text"> Next, we selected our phrases, then
                                     studied
@@ -611,7 +626,7 @@
                                     evoked
                                     by the phrase.
                                 </p>
-                                <img class="figureProcess processBrody" id="figure26.1" src="Graphics/RAZOR/razor-5-1.jpg"></img>
+                                <img class="figureProcess" id="figure26.1" src="Graphics/RAZOR/razor-5-1.jpg"></img>
                             </div>
                         </div>
 
@@ -628,7 +643,7 @@
                         </div>
                         <div class="column colProcess">
 
-                            <p class="title">Digital 3D Explorations</p>
+                            <p class="subTitle">Digital 3D Explorations</p>
                             <p class="processDescription">The model was meant to liken cascading and asymmetrical
                                 movement a nontraditional
                                 ebb from bottom right to upper left culminating in a fractal spiral on the left

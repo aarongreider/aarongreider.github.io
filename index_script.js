@@ -34,7 +34,7 @@ window.onload = function populateSubOption() {
     var j = 0;
     for (var i = 0; i < subOption.length; i++) {
         // use .innerHTML to populate the subOptions under menu/WORK with the proper prject name
-        // iterates title selector by 2 ticks to grab the correct project name, skipping 
+        // iterates title selector by 2 ticks to grab the correct project name, skipping  *******
         // the expanded project title (also denoted by the 'title' classname)
         // added later: populate the Next Project: (x) at the bottom of each project
         // added later: populate new menu instead of old menu
@@ -47,7 +47,8 @@ window.onload = function populateSubOption() {
             console.log(`       i!=0; index of nextProjectButton Population: ${i - 1}`);
             nextProjectButton[i - 1].innerHTML = `Next Project: ${titles[j].innerHTML}`
         }
-        j += 2;
+        //j += 2;
+        j += 1;
     }
 };
 

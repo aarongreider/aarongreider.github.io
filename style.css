@@ -449,6 +449,12 @@ ul {
     margin: 0 0 1em;
 }
 
+.subTitle {
+    font-size: 200%;
+    font-style: italic;
+    margin: 0 0 1em;
+}
+
 .line {
     position: relative;
     width: 150%;
@@ -466,7 +472,7 @@ ul {
 
 .processDescription {
     position: relative;
-    margin-top: -1.5vh;
+    margin-top: 0;
     width: 35em;
 
     line-height: 190%
@@ -485,10 +491,14 @@ ul {
 }
 
 .figureProcess {
-    margin: 2em 0;
     position: relative;
     object-fit: fill;
-
+}
+.wide {
+    width: 50%;
+}
+.tall {
+    height: 50vh;
 }
 
 .figurePatch {
@@ -496,14 +506,36 @@ ul {
     margin: 0;
 }
 
-#figure1 {
-    width: 30em;
-    top: -2em;
+.singleRowGrid {
+    margin: 2em 0;
 }
-#figure2 {
-    height: 30em;
-    top: -54em;
-    left: 39em;
+.fullHeight{
+    height: 90vh;
+}
+.halfHeight {
+    height: 50vh;
+}
+.fullWidth {
+    width: 100%;
+}
+.halfWidth {
+    width: 50%;
+}
+.twoCol {
+    display: grid;
+    grid-template-columns: max-content auto;
+}
+.threeCol {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+}
+.twoRow {
+    display: grid;
+    grid-template-rows: max-content auto;
+}
+.threeRow {
+    display: grid;
+    grid-template-rows: 33% 33% 33%;
 }
 
 #posterFlexContainer {
@@ -632,15 +664,6 @@ line {
     margin: 0;
 }
 
-#processBrodyGrid {
-    width: 56.5em;
-
-    display: grid;
-    grid-template-columns: 45% 55%;
-    grid-template-rows: repeat(24, 4%);
-
-    margin: 0;
-}
 .processTextBrody {
     position: relative;
     top: 6em;
@@ -650,10 +673,7 @@ line {
 
     line-height: 190%;
 }
-.processBrody {
-    width: 30em;
-    margin-top: 1em;
-}
+
 .processRazorHead {
     width: 55.5em;
 }
@@ -704,8 +724,29 @@ line {
         font-size: 70%;
      }
     .galleryContent {
-        width: 237vw;
-        transform: translateZ(-1px);
+        width: 750vw;
+    }
+    .gallerySlider {
+        width: 100vw;
+    }
+    #scrollContent {
+        top: 32em;
+        position: relative;
+        overflow: visible;
+        width: 87%;
+        margin-left: 13%;
+    }
+    .description {    
+        position: relative;
+        margin-top: -1.5vh;
+        width: 90%;
+        line-height: 190%;
+    }
+    .processDescription {
+        position: relative;
+        margin-top: -1.5vh;
+        width: 90%;
+        line-height: 190%;
     }
     #colorBar, #colorBar2 {
         width: 100vw;
@@ -730,5 +771,8 @@ line {
     }
     #hamburger {
         margin: 4em 89vw;
+    }
+    #expandButton {
+        display: none;
     }
 }
