@@ -22,7 +22,15 @@ var projectNum = 0;
 var scrollerHeight = 0;
 var pictureNum = [0, 0];
 
+/* window.onload = function setGroundandScrollClip() {
+    viewport = document.getElementById("viewport");
+    viewport.style.background = `url("Graphics/MANTLE/mantle-11.jpg") center/cover no-repeat fixed`;
+    setScrollClip(true);
+}; */
+
 window.onload = function populateSubOption() {
+    selectProject(1);
+
     console.log("populateSubOption()");
     var subOption = document.getElementsByClassName("navProjectTitle");
     var titles = document.getElementsByClassName("title");
@@ -134,11 +142,11 @@ function selectProject(num) {
     switch (num) {
         case 1:
             gallery.style.left = "0";
-            viewport.style.background = `url("Graphics/body_mantle_cover.jpg") center/cover no-repeat fixed`;
+            viewport.style.background = `url("Graphics/MANTLE/mantle-11.jpg") center/cover no-repeat fixed`;
             break;
         case 2:
             gallery.style.left = "-100vw";
-            viewport.style.background = `url("Graphics/Patch_title.jpg") center/cover no-repeat fixed`;
+            viewport.style.background = `url("Graphics/PATCH/Patch_title.jpg") center/cover no-repeat fixed`;
             break;
         case 3:
             gallery.style.left = "-200vw";
@@ -162,7 +170,7 @@ function selectProject(num) {
             break;
         case 8:
             gallery.style.left = "-700vw";
-            viewport.style.background = `url("Graphics/body_mantle_cover.jpg") center/cover no-repeat fixed`;
+            viewport.style.background = `url("Graphics/jabberwock-1.jpg") center/cover no-repeat fixed`;
             break;
     }
 

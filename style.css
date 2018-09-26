@@ -441,6 +441,12 @@ ul {
     padding: 2em;
     width: 23em;
     text-align: center;
+
+    transition: background-color .4s ease, color .4s ease;
+}
+.nextProject:hover {
+    background-color: whitesmoke;
+    color: rgba(0, 0, 0, 0.8);
 }
 
 .title {
@@ -502,8 +508,8 @@ ul {
 }
 
 .figurePatch {
-    width: 100%;
-    margin: 0;
+    width: 70%;
+    margin: 0 auto;
 }
 
 .singleRowGrid {
@@ -527,7 +533,7 @@ ul {
 }
 .threeCol {
     display: grid;
-    grid-template-columns: 33% 33% 33%;
+    grid-template-columns: max-content max-content max-content;
 }
 .twoRow {
     display: grid;
