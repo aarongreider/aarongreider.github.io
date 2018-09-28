@@ -458,7 +458,7 @@ ul {
 .subTitle {
     font-size: 200%;
     font-style: italic;
-    margin: 0 0 1em;
+    margin: 3em 0 2em;
 }
 
 .line {
@@ -478,8 +478,8 @@ ul {
 
 .processDescription {
     position: relative;
-    margin-top: 0;
-    width: 35em;
+    margin: 0 1em;
+    max-width: 35em;
 
     line-height: 190%
 }
@@ -530,18 +530,22 @@ ul {
 .twoCol {
     display: grid;
     grid-template-columns: max-content auto;
+    margin: .5em 0;
 }
 .threeCol {
     display: grid;
-    grid-template-columns: max-content max-content max-content;
+    grid-template-columns: max-content max-content auto;
+    margin: .5em 0;
 }
 .twoRow {
     display: grid;
     grid-template-rows: max-content auto;
+    margin: .5em 0;
 }
 .threeRow {
     display: grid;
     grid-template-rows: 33% 33% 33%;
+    margin: .5em 0;
 }
 
 #posterFlexContainer {
@@ -638,7 +642,7 @@ line {
     transition: all .5s ease;
 }
 .slideshowButton {
-    background-color: rgb(44, 44, 44);
+    background-color: rgba(44, 44, 44, 0);
     border: none;
     outline: none;
 
@@ -646,7 +650,7 @@ line {
     width: 7em;
     height: 37em;
     top: -36em;
-    opacity: .1;
+    opacity: .3;
 
     transition: opacity .2s ease;
 }
