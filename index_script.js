@@ -146,7 +146,7 @@ function selectProject(num) {
             break;
         case 2:
             gallery.style.left = "-100vw";
-            viewport.style.background = `url("Graphics/PATCH/Patch_title.jpg") center/cover no-repeat fixed`;
+            viewport.style.background = `url("Graphics/PATCH/patch_1-3.jpg") center/cover no-repeat fixed`;
             break;
         case 3:
             gallery.style.left = "-200vw";
@@ -166,10 +166,6 @@ function selectProject(num) {
             break;
         case 7:
             gallery.style.left = "-600vw";
-            viewport.style.background = `url("Graphics/RAZOR/razor-1-1.jpg") center/cover no-repeat fixed`;
-            break;
-        case 8:
-            gallery.style.left = "-700vw";
             viewport.style.background = `url("Graphics/jabberwock-1.jpg") center/cover no-repeat fixed`;
             break;
     }

@@ -329,9 +329,6 @@ ul {
 #gallerySlider7 {
     grid-column: 7;
 }
-#gallerySlider8 {
-    grid-column: 8;
-}
 
 .circleContainer {
     position: fixed;
