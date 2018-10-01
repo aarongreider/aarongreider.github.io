@@ -21,7 +21,7 @@ function transitionPage() {
     setTimeout(function () {
     }, 2000);
 
-    window.open("index.html","_self");
+    window.open("work.html","_self");
 }
 
 /* 

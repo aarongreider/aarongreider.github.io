@@ -526,6 +526,7 @@ ul {
     grid-template-rows: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
     width: 70%;
     height: auto;
+    top: 12em;
 }
 .figurePatch {
     width: 100%;
