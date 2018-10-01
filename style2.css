@@ -31,15 +31,15 @@ body, button {
     margin: 0;
 }
 
-h1 {
-
-}
-
 p {
     position: relative;
     max-width: 28em;
     left: 25vw;
     top: 17vh;
+}
+
+i {
+    letter-spacing: .04em;
 }
 
 hr {
