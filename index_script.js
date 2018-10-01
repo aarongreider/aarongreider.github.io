@@ -58,7 +58,14 @@ window.onload = function populateSubOption() {
         //j += 2;
         j += 1;
     }
+    //remove the white overlay
+    var overlay = document.getElementById("overlay");
+    setTimeout(function () {
+        overlay.style.display = "none";
+    }, 1000);
 };
+
+
 
 function toggleAbout() {
     console.log("toggleAbout()");

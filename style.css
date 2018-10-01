@@ -3,6 +3,23 @@
     overflow-x: hidden;
 }
 
+@keyframes fadeOut {
+    from {opacity: 1;display:visible;}
+    to {opacity: 0;display:visible;}
+}
+#overlay {
+    background: whitesmoke;
+    width:100vw;
+    height:100vh;
+    overflow:  visible;
+    position: absolute;
+    z-index: 9;
+    opacity: 0;
+    display: visible;
+
+    animation: fadeOut 3s 1;
+}
+
 body, button {
     font-family: 'Playfair Display', serif;
     font-size: 1em;
