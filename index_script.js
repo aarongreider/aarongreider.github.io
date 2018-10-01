@@ -142,7 +142,7 @@ function selectProject(num) {
     switch (num) {
         case 1:
             gallery.style.left = "0";
-            viewport.style.background = `url("Graphics/MANTLE/mantle-11.jpg") center/cover no-repeat fixed`;
+            viewport.style.background = `url("Graphics/JABBERWOCKY/jabb_7.jpg") center/cover no-repeat fixed`;
             break;
         case 2:
             gallery.style.left = "-100vw";
@@ -166,7 +166,7 @@ function selectProject(num) {
             break;
         case 7:
             gallery.style.left = "-600vw";
-            viewport.style.background = `url("Graphics/jabberwock-1.jpg") center/cover no-repeat fixed`;
+            viewport.style.background = `url("Graphics/MANTLE/mantle-11.jpg") center/cover no-repeat fixed`;
             break;
     }
 
