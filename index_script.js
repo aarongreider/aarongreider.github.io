@@ -146,23 +146,23 @@ function selectProject(num) {
             break;
         case 2:
             gallery.style.left = "-100vw";
-            viewport.style.background = `url("Graphics/PATCH/patch_1-3.jpg") center/cover no-repeat fixed`;
+            viewport.style.background = `url("Graphics/PHOTOGRAPHY/portrait_2.jpg") center/cover no-repeat fixed`;
             break;
         case 3:
             gallery.style.left = "-200vw";
-            viewport.style.background = `url("Graphics/POSTER/Poster_studies_cover.png") center/cover no-repeat fixed`;
+            viewport.style.background = `url("Graphics/PATCH/patch_1-3.jpg") center/cover no-repeat fixed`;
             break;
         case 4:
             gallery.style.left = "-300vw";
-            viewport.style.background = `url("Graphics/digital_3D/shampoo-1.jpg") center/cover no-repeat fixed`;
+            viewport.style.background = `url("Graphics/BRODY/brody-1.jpg") center/cover no-repeat fixed`;
             break;
         case 5:
             gallery.style.left = "-400vw";
-            viewport.style.background = `url("Graphics/PHOTOGRAPHY/portrait_2.jpg") center/cover no-repeat fixed`;
+            viewport.style.background = `url("Graphics/POSTER/Poster_studies_cover.png") center/cover no-repeat fixed`;
             break;
         case 6:
             gallery.style.left = "-500vw";
-            viewport.style.background = `url("Graphics/BRODY/brody-1.jpg") center/cover no-repeat fixed`;
+            viewport.style.background = `url("Graphics/digital_3D/shampoo-1.jpg") center/cover no-repeat fixed`;
             break;
         case 7:
             gallery.style.left = "-600vw";
