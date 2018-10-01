@@ -521,9 +521,16 @@ ul {
     height: 50vh;
 }
 
-.figurePatch {
+.patchGrid {
+    display: grid;
+    grid-template-rows: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
     width: 70%;
+    height: auto;
+}
+.figurePatch {
+    width: 100%;
     margin: 0 auto;
+    left: -1px;
 }
 
 .singleRowGrid {
