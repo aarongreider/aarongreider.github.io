@@ -21,7 +21,7 @@
     transition: opacity 3s cubic-bezier(0.2, 1.02, 0.61, 1);
 }
 
-body, button {
+body {
     font-family: 'Playfair Display', serif;
     font-size: 1em;
     line-height: 170%;
@@ -29,6 +29,9 @@ body, button {
     color: slategrey;
 
     margin: 0;
+
+    height:100vh;
+    width: 100vw;
 }
 
 p {
