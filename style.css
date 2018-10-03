@@ -40,9 +40,12 @@ hr {
 }
 
 #hamburger {
-    margin: 82vh -9vw;
+    margin: 0em;
+    top: 102vh;
+    left: 1vw;
     height: 1.5em;
     width: 19em;
+    transform-origin: 0% 0%;
     transform: rotate(-90deg);
 
     display: flex;
