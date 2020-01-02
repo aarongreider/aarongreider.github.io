@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <!--<link rel="stylesheet" href="_arrowMixin.css" type="text/css"-->
+    <link rel="stylesheet" href="2_gallery_style.css" type="text/css">
+</head>
+
+
+<div class="circle-btn--container">
+    <div class="circle-btn--outer">
+        <div class="circle-arrow--icon">
+            <div class="circle-arrow--bar"></div>
+            <div class="circle-arrow--triangle">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<script>
+    const btn = document.querySelector('.circle-btn--container');
+    btn.addEventListener('click', function () {
+        document.body.classList.toggle('invert');
+    })
+</script>
+
+
+</html>
