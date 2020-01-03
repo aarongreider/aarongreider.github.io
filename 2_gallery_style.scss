@@ -105,7 +105,7 @@ p {
 
 .colorShift {
     z-index: 0;
-    height:150vh;
+    height:105vh;
     width:100vw;
     top: 100vh;
 
@@ -170,6 +170,7 @@ $img-width: 70vw;
     overflow:hidden;
 
     filter:brightness(70%);
+    cursor: help;
 }
 
 //text format

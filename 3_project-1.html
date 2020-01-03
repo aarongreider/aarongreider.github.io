@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="Graphics/monogram.png" type="image/png" sizes="16x16">
+    <link rel="stylesheet" href="3_project_style.css" type="text/css">
+
+    <!-- Google Fonts 
+        Crimson Pro:        400i,700i
+        Roboto Condensed:   400
+        Roboto:             300,700     -->
+    <link href="https://fonts.googleapis.com/css?family=Crimson+Pro:400i,700i|
+                Roboto+Condensed:400|
+                Roboto:300,500,700  
+                &display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+    <h4>HOMESHAKE</h4>
+    <h1>Midnight Snack</h1>
+    <div class="contentScroll"></div>
+
+
+    <div class="flexContainer">
+        <div class="card">
+            <div class="flexText">
+                <h2 class="cardTitle">PROJECT 1 IPSUM</h2>
+                <p class="cardSupport">Description Ipsum dolor sit amet, consectetuer adipiscing elit, sed diam</p>
+            </div>
+            <img class="cardImg" src="/Users/aarongreider/Documents/aarongreider.github.io/Graphics/about1.jpg">
+        </div>
+        <div class="card">
+            <div class="flexText">
+                <h2 class="cardTitle">PROJECT 1 IPSUM</h2>
+                <p class="cardSupport">Description Ipsum dolor sit amet, consectetuer adipiscing elit, sed diam</p>
+            </div>
+            <img class="cardImg" src="/Users/aarongreider/Documents/aarongreider.github.io/Graphics/about1.jpg">
+        </div>
+        <div class="card">
+            <div class="flexText">
+                <h2 class="cardTitle">PROJECT 1 IPSUM</h2>
+                <p class="cardSupport">Description Ipsum dolor sit amet, consectetuer adipiscing elit, sed diam</p>
+            </div>
+            <img class="cardImg" src="/Users/aarongreider/Documents/aarongreider.github.io/Graphics/about1.jpg">
+        </div>
+
+    </div>
+    
+    
+    
+    
+    
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        
+        ScrollReveal({ reset: true });
+
+        var slideUp = {
+            viewFactor: 0.5,
+            opacity: 0,
+            distance: '16px',
+            orizin: 'bottom',
+            duration: 600,
+            easing: 'ease-out',
+            delay: 200
+        };
+
+        var delayedSlideUp = {
+            viewFactor: 0.5,
+            opacity: 0,
+            distance: '16px',
+            origin: 'bottom',
+            duration: 600,
+            easing: 'ease-out',
+            delay: 500
+        };
+
+        var fadeInSimple = {
+            viewFactor: 0.35,
+            opacity: 0,
+            origin: 'bottom',
+            duration: 1000,
+            easing: 'ease-out',
+            //viewOffset: {
+            //    top: 700,
+            //    bottom: 0
+            //}
+        };
+
+        //ScrollReveal().reveal('.card :not(img)', slideUp);
+        ScrollReveal().reveal('.card img', delayedSlideUp);
+        ScrollReveal().reveal('.colorShift', fadeInSimple);
+    </script>
+</body>
+</html>

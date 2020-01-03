@@ -23,7 +23,7 @@ var delayedSlideUp = {
 };
 
 var fadeInSimple = {
-    viewFactor: 0.25,
+    viewFactor: 0.35,
     opacity: 0,
     origin: 'bottom',
     duration: 1000,
@@ -166,5 +166,17 @@ function waitRemove(direction) {
 }
 
 
+//  CLICK FUNCTIONS
+//  CLICK FUNCTIONS
+//  CLICK FUNCTIONS
+//  CLICK FUNCTIONS
+function openPage(pathname) {
+    console.log("pathname: " + pathname);
+    slideText[activeIndex].classList.add("inactiveInitial");
+    
 
 
+    setTimeout(function () {
+        window.open(pathname, "_self");
+    }, 5000);
+}

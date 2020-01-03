@@ -1,0 +1,149 @@
+$font-stack:    'Roboto', sans-serif;
+$text-color:    #b3b3b3;
+
+$background-color:  #000000;
+$test-color-1:  #ecbbbb;
+
+$z-tier4: 100;
+$z-tier3: 15;
+$z-tier2: 10;
+$z-tier1: 5;
+$z-tier0: 0;
+
+$h1-size: 5em;      /* gallery title */
+$h2-size: 2.5em;      /* card title */
+$h3-size: 2em;     /* gallery support text */
+$h4-size: 1em;     /* card support text */
+$p-size:  .9em;
+
+$duration-text: .8s;
+$duration-image: .7s;
+$bezier: cubic-bezier(0.5, 0.2, 0.15, 1);
+//$bezier: ease-out;
+
+body {
+    height: auto;
+    width: 100vw;
+    margin: 0;
+
+    font-family:    $font-stack;
+    
+    color:          $text-color;
+    background:     $background-color;
+}
+
+// font: font-style font-variant font-weight $h2-size/line-height font-family;
+h1 {
+    font-size: $h1-size;
+    font-weight: 400;
+    color: white;
+    margin:0;
+
+    position: fixed;
+    left: 23vw;
+    top: 30vh;
+}
+h2 {
+    font-size: $h2-size;
+    margin:0;
+}
+h3 {
+    font-size: $h3-size;
+    font-family: Roboto Condensed;
+    font-weight: 400;
+    margin:0;
+}
+h4 {
+    font-size: $h4-size;
+    font-family: Roboto Condensed;
+    font-weight: 400;
+    letter-spacing: .25em;
+    margin: 0;
+
+    position: fixed;
+    left: 48vw;
+    top: 43vh;
+}
+p {
+    font-size: $p-size;
+    font-weight: 300;
+    margin:0;
+}
+
+
+/* SCROLLING CONTENT */
+/* SCROLLING CONTENT */
+/* SCROLLING CONTENT */
+/* SCROLLING CONTENT */
+
+.contentScroll {
+    position: absolute;
+    top: 75vh;
+    left: 20vw;
+
+    background-color: white;
+
+    width: 80vw;
+    height: 300vh;
+
+    box-shadow: 0 0 10em 8em black;
+}
+
+
+
+
+
+/* CARD LAYOUT */
+/* CARD LAYOUT */
+/* CARD LAYOUT */
+/* CARD LAYOUT */
+
+.flexContainer {
+    position: absolute;
+    top: 80vh;
+
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    height: auto;
+    margin-left: 20vw;
+}
+
+.card {
+    order: 3;
+    z-index: 1;
+
+    width: 70vw;
+    height: auto;
+    margin: 5em 0;
+    align-self: center;
+
+    overflow: hidden;
+    //box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    h2 {
+        grid-column: 2 / span 4;
+        grid-row: 5 / span 3;
+    }
+    p {
+        grid-column: 2 / span 2;
+        grid-row: 7 / span 2;
+    }
+    img {
+        height: 25em;
+        grid-column: 7 / span 4;
+        grid-row: 1 / span 4;
+    }
+}
+
+.flexText {
+    display: flex;
+    flex-direction: column;
+
+    width: 13em;
+    padding: 8em 3em;
+}

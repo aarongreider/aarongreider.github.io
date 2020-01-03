@@ -82,7 +82,7 @@ p {
 
 .colorShift {
   z-index: 0;
-  height: 150vh;
+  height: 105vh;
   width: 100vw;
   top: 100vh;
   position: absolute;
@@ -147,6 +147,7 @@ p {
   overflow: hidden;
   -webkit-filter: brightness(70%);
           filter: brightness(70%);
+  cursor: help;
 }
 
 .textContainer {
