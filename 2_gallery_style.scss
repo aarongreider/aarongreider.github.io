@@ -24,10 +24,10 @@ $h3-size: 2em;     /* gallery support text */
 $h4-size: 1em;     /* card support text */
 $p-size:  1em;
 
-$duration-text: .4s;
-$duration-image: .6s;
-//$bezier: cubic-bezier(0.5, 0.2, 0.15, 1);
-$bezier: ease-out;
+$duration-text: .8s;
+$duration-image: .7s;
+$bezier: cubic-bezier(0.5, 0.2, 0.15, 1);
+//$bezier: ease-out;
 
 body {
     height: auto;
@@ -191,7 +191,7 @@ $img-width: 70vw;
         flex-direction: column;
         justify-content: top;
 
-        transition: $duration-text $bezier;
+        transition: opacity $duration-text $bezier;
     }
 
     .inactiveInitial {
@@ -201,26 +201,27 @@ $img-width: 70vw;
         opacity: 0;
         margin-top: 8px;
     }
-    $transition-attr:"";
-    $delay-attr: "margin-top";
+    $transition-attr: all;
+    $delay-attr1: all;
+    $delay-attr2: opacity;
     h1 {
         margin: 0;
         padding: 0.0em 0 0 -7px;
         transition: $duration-text $bezier;
-        transition-delay: $delay-attr .6s;
+        transition-delay: .6s;
     }
 
     h3 {
         margin: 0;
         padding: 3em 0 0 0;
         transition: $duration-text $bezier;
-        transition-delay: $delay-attr 1s;
+        transition-delay: 1s;
     }
 
     h4 {
         margin: 0;
         transition: $duration-text $bezier;
-        transition-delay: $delay-attr .5s;
+        transition-delay: .5s;
     }
         
     p {
@@ -230,7 +231,7 @@ $img-width: 70vw;
         font-size: $p-size;
 
         transition: $duration-text $bezier;
-        transition-delay: $delay-attr 1.2s;
+        transition-delay: 1.2s;
     }
 }
 
@@ -271,7 +272,7 @@ $img-width: 70vw;
         /* margin: 0.5em; */
     }
     img {
-        height: auto;
+        height: 250%;
         grid-column: 7 / span 4;
         grid-row: 1 / span 4;
     }
