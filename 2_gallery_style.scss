@@ -132,7 +132,18 @@ p {
 
 .gallerySlide {
     visibility: hidden;
-    transition: clip-path $duration-image $bezier;
+    //transition: clip-path $duration-image $bezier;
+    transition: all $duration-image $bezier;
+} 
+.transitionPage {
+//.gallerySlide:hover {
+    position: absolute !important;
+    top: 75vh !important;
+    left: 20vw !important;
+    background-color: white;
+    width: 80vw;
+    height: 300vh;
+    filter: brightness(2000);
 }
 
 $img-width: 70vw;

@@ -173,10 +173,10 @@ function waitRemove(direction) {
 function openPage(pathname) {
     console.log("pathname: " + pathname);
     slideText[activeIndex].classList.add("inactiveInitial");
-    
+    active.classList.add("transitionPage");
 
 
     setTimeout(function () {
         window.open(pathname, "_self");
-    }, 5000);
+    }, 500);
 }

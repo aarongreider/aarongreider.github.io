@@ -108,10 +108,19 @@ p {
 
 .gallerySlide {
   visibility: hidden;
-  -webkit-transition: -webkit-clip-path 0.7s cubic-bezier(0.5, 0.2, 0.15, 1);
-  transition: -webkit-clip-path 0.7s cubic-bezier(0.5, 0.2, 0.15, 1);
-  transition: clip-path 0.7s cubic-bezier(0.5, 0.2, 0.15, 1);
-  transition: clip-path 0.7s cubic-bezier(0.5, 0.2, 0.15, 1), -webkit-clip-path 0.7s cubic-bezier(0.5, 0.2, 0.15, 1);
+  -webkit-transition: all 0.7s cubic-bezier(0.5, 0.2, 0.15, 1);
+  transition: all 0.7s cubic-bezier(0.5, 0.2, 0.15, 1);
+}
+
+.transitionPage {
+  position: absolute !important;
+  top: 75vh !important;
+  left: 20vw !important;
+  background-color: white;
+  width: 80vw;
+  height: 300vh;
+  -webkit-filter: brightness(2000);
+          filter: brightness(2000);
 }
 
 .animate {
