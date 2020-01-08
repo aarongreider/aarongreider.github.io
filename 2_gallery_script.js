@@ -51,6 +51,7 @@ var next;
 var duration = 1000;
 
 console.log("activeIndex= " + activeIndex);
+active = slideImage[activeIndex];
 
 // RIGHT BUTTON PRESS
 btnRight.addEventListener('click', function () {
