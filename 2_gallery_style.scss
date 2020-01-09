@@ -236,7 +236,7 @@ $img-width: 70vw;
     h4 {
         margin: 0;
         padding-left: 0.3em;
-        
+
         transition: $duration-text $bezier;
         transition-delay: .5s;
     }
@@ -262,7 +262,7 @@ $img-width: 70vw;
 /* CARD LAYOUT */
 /* CARD LAYOUT */
 
-.card {
+/* .card {
     order: 3;
 
     width: 90vw;
@@ -281,12 +281,12 @@ $img-width: 70vw;
     h2 {
         grid-column: 2 / span 4;
         grid-row: 5 / span 3;
-        /* margin: 0.5em; */
+
     }
     p {
         grid-column: 2 / span 2;
         grid-row: 7 / span 2;
-        /* margin: 0.5em; */
+
     }
     img {
         height: 250%;
@@ -294,6 +294,63 @@ $img-width: 70vw;
         grid-row: 1 / span 4;
     }
 }
+*/
+
+
+.flexContainer {
+    position: absolute;
+    top: 110vh;
+
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: auto;
+}
+
+.card {
+    order: 3;
+    z-index: 1;
+
+    width: 100vw;
+    height: auto;
+    margin: 5em;
+    align-self: center;
+
+    overflow: hidden;
+    //box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    h2 {
+        margin: 0;
+        width: 9em;
+    }
+    p {
+        margin: 10px 0;
+    }
+    img {
+        height: 25em;
+        order: 2;
+    }
+}
+
+.flexText {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+
+    width: 14em;
+    padding: 7em 11em 0 9em;
+
+    order: 2;
+}
+
+
+
+
+
 
 
 
@@ -312,6 +369,7 @@ $btn-weight-px: 3px;
 .circle-btn--container {
     z-index: $z-tier4;
     position: absolute;
+    top: 80vh;
     
     cursor: pointer;
     
@@ -329,11 +387,9 @@ $btn-weight-px: 3px;
 }
 
 .left {
-    top: 80vh;
     left: 35vw;
 }
 .right {
-    top: 80vh;
     left: 50vw;
     transform: rotate(180deg);
 }
@@ -403,7 +459,9 @@ $triangleSize: 6px;
   and (max-device-width: 667px) 
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: portrait) { 
-
+    * {
+        //overflow: visible;
+    }
         body{
             flex-direction: column;
             background:     $test-color-1;
@@ -452,15 +510,16 @@ $triangleSize: 6px;
             left:0;
         }
         $btn-size2: 60px;
-        .left {
+        .circle-btn--container {
             top: 52vh;
+        }
+        .left {
             left: 5vw;
         }
         .right {
-            top: 52vh;
             left: 72vw;
         }
-        .circle-btn--outer {
+        .circle-btn--outer {            
             width: $btn-size2;
             height: $btn-size2;
         }
@@ -479,34 +538,24 @@ $triangleSize: 6px;
                 margin: 0 auto;
                 grid-template-columns: repeat(10, 7em) auto;
                 grid-template-rows: repeat(15, 3em);
-        }
-
-        .card {
             h2 {
                 grid-column: 1 / span 4;
                 grid-row: 12 / span 3;
 
                 margin: $text-margin;
             }
-        }
-
-        .card {
             p {
                 grid-column: 1 / span 2;
                 grid-row: 13 / span 2;
                 margin: $text-margin;
             }
-
-        }
-
-        .card {
             img {
                 height: auto;
                 grid-column: 1 / span 4;
                 grid-row: 1 / span 4;
             }
         }
-}
 
 
 
+    }
