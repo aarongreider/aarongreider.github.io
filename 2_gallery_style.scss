@@ -104,18 +104,6 @@ p {
     order: 1;
 }
 
-.colorShift {
-    z-index: 0;
-    height:105vh;
-    width:100vw;
-    top: 100vh;
-
-    position: absolute;
-
-    background: white;
-
-}
-
 .galleryContainer {
     left: 30vw;
 
@@ -252,7 +240,16 @@ $img-width: 70vw;
     }
 }
 
+.colorShift {
+    z-index: $z-tier0;
+    height:105vh;
+    width:100vw;
+    top: 100vh;
 
+    position: absolute;
+
+    background: white;
+}
 
 
 
@@ -308,8 +305,7 @@ $img-width: 70vw;
 }
 
 .card {
-    order: 3;
-    z-index: 1;
+    z-index: $z-tier1;
 
     width: 100vw;
     height: auto;
@@ -344,7 +340,7 @@ $img-width: 70vw;
     width: 14em;
     padding: 7em 11em 0 9em;
 
-    order: 2;
+    order: 1;
 }
 
 
@@ -446,6 +442,12 @@ $triangleSize: 6px;
 
 
 
+
+
+
+
+
+
 /* PORTRAIT QUERY */
 /* PORTRAIT QUERY */
 /* PORTRAIT QUERY */
@@ -458,7 +460,10 @@ $triangleSize: 6px;
   // and (min-device-width: 375px) 
   and (max-device-width: 667px) 
   and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: portrait) { 
+  and (orientation: portrait) {
+
+    $img-height: 75vh; 
+
     * {
         //overflow: visible;
     }
@@ -479,17 +484,6 @@ $triangleSize: 6px;
             font-size: #{$h2-size - 2.1};
         }
 
-        .section-div {
-            height: 50vh;
-            width: 100vw;
-            margin: 0;
-
-            background: $background-color;
-
-            order: 2;
-        }
-
-        $img-height: 62vh;
         .galleryContainer {
             height: $img-height;
             width:  100vw;
@@ -502,6 +496,8 @@ $triangleSize: 6px;
         .galleryImg {
             height: $img-height;
             width: 100vw;
+
+            filter: brightness(50%) contrast(80%);
         }
         #top {
             left:0;
@@ -509,22 +505,69 @@ $triangleSize: 6px;
         #next {
             left:0;
         }
-        $btn-size2: 60px;
-        .circle-btn--container {
-            top: 52vh;
+
+        .galleryText {
+            top: 22vh !important;
+            left: 0 !important;
+            margin: 0 12vw;
+            width: 18em !important;
+        }
+         
+        .textContainer {
+            text-align: center;
+
+            h3 {
+                padding: 1em 0 0 0;
+            }
+            p {
+                width: inherit;
+            }
+        }
+
+        .section-div {
+            height: #{100-$img-height};
+            width: 100vw;
+            margin: 0;
+
+            background: $background-color;
+
+            order: 2;
+        }
+
+
+        /* BUTTONS */
+        /* BUTTONS */
+        /* BUTTONS */
+
+        $btn-size2: 40px;
+        .btn--flex {
+            order: 3;
+            
+            position: relative;
+            margin: 0 17.5vw;
+            top: #{-(100-$img-height)/1.5};
+            width: 65vw;
+            
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+
+            .circle-btn--container {
+                top: 0; //52vh;
+                position: relative;
+
+                .circle-btn--outer {            
+                    width: $btn-size2;
+                    height: $btn-size2;
+                }
+            }
         }
         .left {
-            left: 5vw;
+            left: 0; //5vw;
         }
         .right {
-            left: 72vw;
+            left: 0; //72vw;
         }
-        .circle-btn--outer {            
-            width: $btn-size2;
-            height: $btn-size2;
-        }
-
-
 
 
         /* CARD LAYOUT */
@@ -533,29 +576,47 @@ $triangleSize: 6px;
 
         $text-margin: 10px;
 
-        .card {
-                width: 85vw;
-                margin: 0 auto;
-                grid-template-columns: repeat(10, 7em) auto;
-                grid-template-rows: repeat(15, 3em);
-            h2 {
-                grid-column: 1 / span 4;
-                grid-row: 12 / span 3;
+        .colorShift {
+            height: 100vh;
+        }
+        
+        .flexContainer {
 
-                margin: $text-margin;
+        }
+
+        .card {
+            flex-direction: column;
+            margin: 0;
+
+            h2 {
+                
             }
             p {
-                grid-column: 1 / span 2;
-                grid-row: 13 / span 2;
-                margin: $text-margin;
+                
             }
             img {
+                order: 1;
+
+                object-fit: contain;
                 height: auto;
-                grid-column: 1 / span 4;
-                grid-row: 1 / span 4;
+                width: 80vw;
+                align-self: center;
             }
+        }
+
+        .flexText {
+            padding: 2em;
+            order: 2;
         }
 
 
 
+
     }
+
+/* PORTRAIT QUERY */
+/* PORTRAIT QUERY */
+/* PORTRAIT QUERY */
+/* PORTRAIT QUERY */
+/* PORTRAIT QUERY */
+/* PORTRAIT QUERY */

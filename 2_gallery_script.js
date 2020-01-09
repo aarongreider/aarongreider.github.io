@@ -34,9 +34,9 @@ var fadeInSimple = {
     //}
 };
 
-ScrollReveal().reveal('.card :not(img)', slideUp);
-ScrollReveal().reveal('.card img', delayedSlideUp,);
-ScrollReveal().reveal('.colorShift', fadeInSimple);
+//ScrollReveal().reveal('.card :not(img)', slideUp);
+//ScrollReveal().reveal('.card img', delayedSlideUp,);
+//ScrollReveal().reveal('.colorShift', fadeInSimple);
 const btnLeft = document.querySelector('.left');
 const btnRight = document.querySelector('.right');
 var slideImage = document.getElementsByClassName("gallerySlide");
