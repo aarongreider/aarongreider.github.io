@@ -18,9 +18,18 @@
 
 
 <body>
-    <h4>HOMESHAKE</h4>
-    <h1>Midnight Snack</h1>
-    <div class="contentScroll"></div>
+    <div class="galleryNav">
+        <h3 style="cursor: pointer;" onclick="openGallery('index.html')">GALLERY</h3>
+        <svg style="cursor: pointer;" onclick="openGallery('index.html')">
+            <rect/>
+        </svg>
+    </div>
+    
+   
+    <h4 class="fadeMe">HOMESHAKE</h4>
+    <h1 class="fadeMe">Midnight Snack</h1>
+
+    <div class="contentScroll fadeMe"></div>
 
 
     <div class="flexContainer">
@@ -29,21 +38,21 @@
                 <h2 class="cardTitle">PROJECT 1 IPSUM</h2>
                 <p class="cardSupport">Description Ipsum dolor sit amet, consectetuer adipiscing elit, sed diam</p>
             </div>
-            <img class="cardImg" src="/Users/aarongreider/Documents/aarongreider.github.io/Graphics/about1.jpg">
+            <img class="cardImg" src="Graphics/about1.jpg">
         </div>
         <div class="card">
             <div class="flexText">
                 <h2 class="cardTitle">PROJECT 1 IPSUM</h2>
                 <p class="cardSupport">Description Ipsum dolor sit amet, consectetuer adipiscing elit, sed diam</p>
             </div>
-            <img class="cardImg" src="/Users/aarongreider/Documents/aarongreider.github.io/Graphics/about1.jpg">
+            <img class="cardImg" src="Graphics/about1.jpg">
         </div>
         <div class="card">
             <div class="flexText">
                 <h2 class="cardTitle">PROJECT 1 IPSUM</h2>
                 <p class="cardSupport">Description Ipsum dolor sit amet, consectetuer adipiscing elit, sed diam</p>
             </div>
-            <img class="cardImg" src="/Users/aarongreider/Documents/aarongreider.github.io/Graphics/about1.jpg">
+            <img class="cardImg" src="Graphics/about1.jpg">
         </div>
 
     </div>
@@ -92,6 +101,40 @@
         //ScrollReveal().reveal('.card :not(img)', slideUp);
         // ScrollReveal().reveal('.card img', delayedSlideUp);
         // ScrollReveal().reveal('.colorShift', fadeInSimple);
+
+
+
+        function openGallery(pathname) {
+            var fadeMe = document.getElementsByClassName("fadeMe");
+            var textContainer = document.getElementsByClassName("flexText");
+            var imgContainer = document.getElementsByClassName("cardImg");
+            var fadeOut = [fadeMe, textContainer, imgContainer];
+            
+            var dur = 0;
+            var fade = function(arr) {
+                if (arr.length > 1) {
+                    for (var i = 0; i < arr.length; i++) {
+                        fade(arr[i]);
+                    }
+                }
+                else {
+                    dur+=200;
+                    setTimeout(function () {
+                        arr.classList.add("inactiveInitial");
+                    }, dur);
+                }
+            }
+
+            fade(fadeOut);
+            
+            
+    
+            console.log("pathname: " + pathname);
+                setTimeout(function () {
+                    window.open(pathname, "_self");
+                    console.log("opening...");
+                }, 2000);
+            }
     </script>
 </body>
 </html>

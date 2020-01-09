@@ -26,6 +26,7 @@ $p-size:  1em;
 
 $duration-text: .8s;
 $duration-image: .7s;
+$duration-page: 1s;
 $bezier: cubic-bezier(0.5, 0.2, 0.15, 1);
 //$bezier: ease-out;
 
@@ -132,11 +133,13 @@ p {
 
 .gallerySlide {
     visibility: hidden;
-    //transition: clip-path $duration-image $bezier;
-    transition: all $duration-image $bezier;
+    transition: clip-path $duration-image $bezier,
+                top $duration-page $bezier, 
+                left $duration-page $bezier, 
+                width $duration-page $bezier,
+                filter #{$duration-page + 2} $bezier;
 } 
 .transitionPage {
-//.gallerySlide:hover {
     position: absolute !important;
     top: 75vh !important;
     left: 20vw !important;
@@ -232,6 +235,8 @@ $img-width: 70vw;
 
     h4 {
         margin: 0;
+        padding-left: 0.3em;
+        
         transition: $duration-text $bezier;
         transition-delay: .5s;
     }

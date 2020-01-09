@@ -98,7 +98,7 @@ h1 {
     margin:0;
 
     position: fixed;
-    left: 23vw;
+    left: 10vw;
     top: 30vh;
 }
 h2 {
@@ -106,10 +106,19 @@ h2 {
     margin:0;
 }
 h3 {
-    font-size: $h3-size;
+    z-index: $z-tier0;
+    font-size: 2em;
     font-family: Roboto Condensed;
-    font-weight: 400;
-    margin:0;
+    font-weight: 700;
+    letter-spacing: .15em;
+    font-variant: all-small-caps;
+    margin: 1em;
+    
+    //position: absolute;
+    left: 77vw;
+    top: 10vh;
+
+    transition: all 1s;
 }
 h4 {
     font-size: $h4-size;
@@ -119,13 +128,49 @@ h4 {
     margin: 0;
 
     position: fixed;
-    left: 48vw;
-    top: 43vh;
+    left: 45vw;
+    top: 50vh;
 }
 p {
     font-size: $p-size;
     font-weight: 300;
     margin:0;
+}
+
+.galleryNav {
+    position: absolute;
+    left: 76vw;
+    top: 10vh;
+
+    svg {
+        z-index: $z-tier4;
+
+        position: relative;
+        top: -4.5em;
+        margin-top: 0;
+        width: 12em;
+        height: 3em;
+        overflow: visible;
+
+        rect {
+            width: inherit;
+            height: inherit;
+
+            fill: rgba(255, 255, 255, 0);
+            stroke: $text-color;
+
+            stroke-width: 0;
+            stroke-dasharray: 8em;
+            stroke-dashoffset: 0;
+
+            transition: all 1s $bezier;    
+            
+            &:hover {
+                stroke-dasharray: 30em;
+                stroke-width:.2em
+            }
+        }
+    }
 }
 
 
@@ -136,8 +181,11 @@ p {
 
 .contentScroll {
     position: absolute;
-    top: 75vh;
-    left: 20vw;
+    //top: 75vh;
+    //left: 20vw;
+    // compensate for parallax
+    top: 162.5vh;
+    left: 25vw;
 
     background-color: white;
 
@@ -146,7 +194,7 @@ p {
 
     box-shadow: 0 0 10em 8em black;
 
-    //@include parallax(1);
+    @include parallax(-.5);
 }
 .card {
     // @include parallax(-.05);
@@ -161,7 +209,7 @@ h1 {
     @include parallax(-1);
 }
 h4 {
-    @include parallax(-1);
+    @include parallax(-.85);
 }
 
 
@@ -217,4 +265,14 @@ h4 {
     padding: 8em 4em 0 12em;
 
     order:2;
+}
+
+
+
+
+.inactiveInitial {
+    //transform-style:preserve-3d;
+    transition: all 1s;
+    opacity: 0;
+    //@include parallax(-.5);
 }

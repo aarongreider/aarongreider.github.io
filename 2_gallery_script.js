@@ -51,7 +51,7 @@ var next;
 var duration = 1000;
 
 console.log("activeIndex= " + activeIndex);
-active = slideImage[activeIndex];
+
 
 // RIGHT BUTTON PRESS
 btnRight.addEventListener('click', function () {
@@ -172,12 +172,16 @@ function waitRemove(direction) {
 //  CLICK FUNCTIONS
 //  CLICK FUNCTIONS
 function openPage(pathname) {
+    active = slideImage[activeIndex];
     console.log("pathname: " + pathname);
-    slideText[activeIndex].classList.add("inactiveInitial");
+    
     active.classList.add("transitionPage");
 
+    setTimeout(function () {
+        slideText[activeIndex].classList.add("inactiveInitial");
+    }, 800);
 
     setTimeout(function () {
         window.open(pathname, "_self");
-    }, 500);
+    }, 2000);
 }

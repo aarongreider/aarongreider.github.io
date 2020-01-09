@@ -38,7 +38,7 @@ h1 {
   color: white;
   margin: 0;
   position: fixed;
-  left: 23vw;
+  left: 10vw;
   top: 30vh;
 }
 
@@ -48,10 +48,17 @@ h2 {
 }
 
 h3 {
+  z-index: 0;
   font-size: 2em;
   font-family: Roboto Condensed;
-  font-weight: 400;
-  margin: 0;
+  font-weight: 700;
+  letter-spacing: .15em;
+  font-variant: all-small-caps;
+  margin: 1em;
+  left: 77vw;
+  top: 10vh;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 
 h4 {
@@ -61,8 +68,8 @@ h4 {
   letter-spacing: .25em;
   margin: 0;
   position: fixed;
-  left: 48vw;
-  top: 43vh;
+  left: 45vw;
+  top: 50vh;
 }
 
 p {
@@ -71,19 +78,54 @@ p {
   margin: 0;
 }
 
+.galleryNav {
+  position: absolute;
+  left: 76vw;
+  top: 10vh;
+}
+
+.galleryNav svg {
+  z-index: 100;
+  position: relative;
+  top: -4.5em;
+  margin-top: 0;
+  width: 12em;
+  height: 3em;
+  overflow: visible;
+}
+
+.galleryNav svg rect {
+  width: inherit;
+  height: inherit;
+  fill: rgba(255, 255, 255, 0);
+  stroke: #b3b3b3;
+  stroke-width: 0;
+  stroke-dasharray: 8em;
+  stroke-dashoffset: 0;
+  -webkit-transition: all 1s cubic-bezier(0.5, 0.2, 0.15, 1);
+  transition: all 1s cubic-bezier(0.5, 0.2, 0.15, 1);
+}
+
+.galleryNav svg rect:hover {
+  stroke-dasharray: 30em;
+  stroke-width: .2em;
+}
+
 /* SCROLLING CONTENT */
 /* SCROLLING CONTENT */
 /* SCROLLING CONTENT */
 /* SCROLLING CONTENT */
 .contentScroll {
   position: absolute;
-  top: 75vh;
-  left: 20vw;
+  top: 162.5vh;
+  left: 25vw;
   background-color: white;
   width: 80vw;
   height: 300vh;
   -webkit-box-shadow: 0 0 10em 8em black;
           box-shadow: 0 0 10em 8em black;
+  -webkit-transform: translateZ(-0.5px) scale(1.5);
+          transform: translateZ(-0.5px) scale(1.5);
 }
 
 .flexText {
@@ -102,8 +144,8 @@ h1 {
 }
 
 h4 {
-  -webkit-transform: translateZ(-1px) scale(2);
-          transform: translateZ(-1px) scale(2);
+  -webkit-transform: translateZ(-0.85px) scale(1.85);
+          transform: translateZ(-0.85px) scale(1.85);
 }
 
 /* CARD LAYOUT */
@@ -167,5 +209,11 @@ h4 {
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;
+}
+
+.inactiveInitial {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  opacity: 0;
 }
 /*# sourceMappingURL=3_project_style.css.map */

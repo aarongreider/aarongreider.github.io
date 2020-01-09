@@ -108,8 +108,10 @@ p {
 
 .gallerySlide {
   visibility: hidden;
-  -webkit-transition: all 0.7s cubic-bezier(0.5, 0.2, 0.15, 1);
-  transition: all 0.7s cubic-bezier(0.5, 0.2, 0.15, 1);
+  -webkit-transition: top 1s cubic-bezier(0.5, 0.2, 0.15, 1), left 1s cubic-bezier(0.5, 0.2, 0.15, 1), width 1s cubic-bezier(0.5, 0.2, 0.15, 1), -webkit-clip-path 0.7s cubic-bezier(0.5, 0.2, 0.15, 1), -webkit-filter 3s cubic-bezier(0.5, 0.2, 0.15, 1);
+  transition: top 1s cubic-bezier(0.5, 0.2, 0.15, 1), left 1s cubic-bezier(0.5, 0.2, 0.15, 1), width 1s cubic-bezier(0.5, 0.2, 0.15, 1), -webkit-clip-path 0.7s cubic-bezier(0.5, 0.2, 0.15, 1), -webkit-filter 3s cubic-bezier(0.5, 0.2, 0.15, 1);
+  transition: clip-path 0.7s cubic-bezier(0.5, 0.2, 0.15, 1), top 1s cubic-bezier(0.5, 0.2, 0.15, 1), left 1s cubic-bezier(0.5, 0.2, 0.15, 1), width 1s cubic-bezier(0.5, 0.2, 0.15, 1), filter 3s cubic-bezier(0.5, 0.2, 0.15, 1);
+  transition: clip-path 0.7s cubic-bezier(0.5, 0.2, 0.15, 1), top 1s cubic-bezier(0.5, 0.2, 0.15, 1), left 1s cubic-bezier(0.5, 0.2, 0.15, 1), width 1s cubic-bezier(0.5, 0.2, 0.15, 1), filter 3s cubic-bezier(0.5, 0.2, 0.15, 1), -webkit-clip-path 0.7s cubic-bezier(0.5, 0.2, 0.15, 1), -webkit-filter 3s cubic-bezier(0.5, 0.2, 0.15, 1);
 }
 
 .transitionPage {
@@ -216,6 +218,7 @@ p {
 
 .textContainer h4 {
   margin: 0;
+  padding-left: 0.3em;
   -webkit-transition: 0.8s cubic-bezier(0.5, 0.2, 0.15, 1);
   transition: 0.8s cubic-bezier(0.5, 0.2, 0.15, 1);
   -webkit-transition-delay: .5s;
