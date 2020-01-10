@@ -2,41 +2,28 @@ console.log('hello world');
 
 ScrollReveal({ reset: true });
 
-var slideUp = {
-    viewFactor: 0.5,
-    opacity: 0,
-    distance: '16px',
-    orizin: 'bottom',
-    duration: 600,
-    easing: 'ease-out',
-    delay: 200
-};
-
 var delayedSlideUp = {
-    viewFactor: 0.5,
+    viewFactor: 0.35,
     opacity: 0,
     distance: '16px',
     origin: 'bottom',
     duration: 600,
     easing: 'ease-out',
-    delay: 500
+    delay: 250,
+    interval: 300
 };
-
-var fadeInSimple = {
-    viewFactor: 0.35,
+var fadeInLong = {
+    viewFactor: 0.25,
     opacity: 0,
     origin: 'bottom',
     duration: 1000,
     easing: 'ease-out',
-    //viewOffset: {
-    //    top: 700,
-    //    bottom: 0
-    //}
 };
 
-//ScrollReveal().reveal('.card :not(img)', slideUp);
-//ScrollReveal().reveal('.card img', delayedSlideUp,);
-//ScrollReveal().reveal('.colorShift', fadeInSimple);
+ScrollReveal().reveal('.colorShift', fadeInLong);
+ScrollReveal().reveal('.card :not(img)', delayedSlideUp);
+ScrollReveal().reveal('.card img', delayedSlideUp,);
+ScrollReveal().reveal('.section-2 p, h2', delayedSlideUp);
 const btnLeft = document.querySelector('.left');
 const btnRight = document.querySelector('.right');
 var slideImage = document.getElementsByClassName("gallerySlide");
