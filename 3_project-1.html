@@ -35,106 +35,80 @@
     <div class="flexContainer">
         <div class="card">
             <div class="flexText">
-                <h2 class="cardTitle">PROJECT 1 IPSUM</h2>
-                <p class="cardSupport">Description Ipsum dolor sit amet, consectetuer adipiscing elit, sed diam</p>
+                <img class="cardImg" style="object-fit: contain;" src="Graphics/midnight_gif2.gif">
             </div>
-            <img class="cardImg" src="Graphics/about1.jpg">
+            <img class="cardImg" src="Graphics/midnight_gif1.gif">
         </div>
         <div class="card">
             <div class="flexText">
-                <h2 class="cardTitle">PROJECT 1 IPSUM</h2>
-                <p class="cardSupport">Description Ipsum dolor sit amet, consectetuer adipiscing elit, sed diam</p>
+                <img class="cardImg" style="object-fit: contain;" src="Graphics/MidnightSnack/MS_process-2.jpg">
             </div>
-            <img class="cardImg" src="Graphics/about1.jpg">
+                <img class="cardImg" src="Graphics/MidnightSnack/MS_process-4.jpg">
         </div>
         <div class="card">
             <div class="flexText">
-                <h2 class="cardTitle">PROJECT 1 IPSUM</h2>
-                <p class="cardSupport">Description Ipsum dolor sit amet, consectetuer adipiscing elit, sed diam</p>
+                <h2 class="cardTitle">Mostly Photoshop</h2>
+                <p class="cardSupport">Homeshake's Midnight Snack is a hypnogic bedroom pop masterwork, which I decided
+                                        to adopt as a humorous metaphor... featuring myself... as the midnight snack...
+                </p>
             </div>
-            <img class="cardImg" src="Graphics/about1.jpg">
+            <img class="cardImg" src="Graphics//MidnightSnack/MS_process-12.jpg">
         </div>
-
+        <div class="card">
+            <div class="flexText">
+                <p class="cardSupport">I experimented with pixel wind filtering and the repeated overlay of imagery to achieve
+                                        a graphic language as hypnotic and disorienting as the accompanying music.
+                </p>
+            </div>
+            <img class="cardImg" style="object-fit: contain; order:2!important;" src="Graphics//MidnightSnack/MS_process-18.jpg">
+        </div>
+        <div class="card">
+            <div class="flexText">
+                <p class="cardSupport">Then planned my imagery to be conceptually uncanny, <br><br> make u go ? ? ?
+                </p>
+            </div>
+            <img class="cardImg" src="Graphics//MidnightSnack/MS_process-15.jpg">
+        </div>
+        <div class="card">
+            <div class="flexText">
+                <img class="cardImg" style="object-fit: contain;" src="Graphics/MidnightSnack/MS_process-9.jpg">
+            </div>
+            <img class="cardImg" src="Graphics/MidnightSnack/MS_process-19.jpg">
+        </div>
+        <div class="card">
+            <div class="flexText">
+                <p class="cardSupport">I began my preparations early by forgetting leftover kraft mac n cheese in my 
+                                        refrigerator for *just* enough time to lose it's color and become a science experiment
+                </p>
+            </div>
+            <img class="cardImg" style="object-fit: contain; order:0!important;"
+                src="Graphics//MidnightSnack/MS_process-7.jpg">
+        </div>
+        <div class="card">
+            <img class="cardImg" style="object-fit: contain; order:0!important;" src="Graphics/MidnightSnack/MS_process-17.jpg">
+            <div class="flexText">
+                <p class="cardSupport">I came to face a dilemma, risk expiring the mayo or freeze it. <br><br>During Midnight Snack take two, I discovered the 
+                                        "pickled brain" effect of frozen-then-thawed mayonaise.
+                </p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="flexText">
+                <img class="cardImg" style="object-fit: contain; width: 24em;" src="Graphics/MidnightSnack/MS_process-22.jpg">
+            </div>
+            <img class="cardImg" src="Graphics/MidnightSnack/MS_process-21.jpg">
+        </div>
     </div>
     
     
     
     
-    
+
     <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="3_project_script.js"></script>
     <script>
-        
-        ScrollReveal({ reset: true });
 
-        var slideUp = {
-            viewFactor: 0.5,
-            opacity: 0,
-            distance: '16px',
-            orizin: 'bottom',
-            duration: 600,
-            easing: 'ease-out',
-            delay: 200
-        };
-
-        var delayedSlideUp = {
-            viewFactor: 0.5,
-            opacity: 0,
-            distance: '16px',
-            origin: 'bottom',
-            duration: 600,
-            easing: 'ease-out',
-            delay: 500
-        };
-
-        var fadeInSimple = {
-            viewFactor: 0.35,
-            opacity: 0,
-            origin: 'bottom',
-            duration: 1000,
-            easing: 'ease-out',
-            //viewOffset: {
-            //    top: 700,
-            //    bottom: 0
-            //}
-        };
-
-        //ScrollReveal().reveal('.card :not(img)', slideUp);
-        // ScrollReveal().reveal('.card img', delayedSlideUp);
-        // ScrollReveal().reveal('.colorShift', fadeInSimple);
-
-
-
-        function openGallery(pathname) {
-            var fadeMe = document.getElementsByClassName("fadeMe");
-            var textContainer = document.getElementsByClassName("flexText");
-            var imgContainer = document.getElementsByClassName("cardImg");
-            var fadeOut = [fadeMe, textContainer, imgContainer];
-            
-            var dur = 0;
-            var fade = function(arr) {
-                if (arr.length > 1) {
-                    for (var i = 0; i < arr.length; i++) {
-                        fade(arr[i]);
-                    }
-                }
-                else {
-                    dur+=200;
-                    setTimeout(function () {
-                        arr.classList.add("inactiveInitial");
-                    }, dur);
-                }
-            }
-
-            fade(fadeOut);
-            
-            
-    
-            console.log("pathname: " + pathname);
-                setTimeout(function () {
-                    window.open(pathname, "_self");
-                    console.log("opening...");
-                }, 2000);
-            }
+       
     </script>
 </body>
 </html>

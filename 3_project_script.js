@@ -1,0 +1,71 @@
+ScrollReveal({ reset: true });
+
+var slideUp = {
+    viewFactor: 0.5,
+    opacity: 0,
+    distance: '16px',
+    orizin: 'bottom',
+    duration: 600,
+    easing: 'ease-out',
+    delay: 200
+};
+
+var delayedSlideUp = {
+    viewFactor: 0.5,
+    opacity: 0,
+    distance: '16px',
+    origin: 'bottom',
+    duration: 600,
+    easing: 'ease-out',
+    delay: 500
+};
+
+var fadeInSimple = {
+    viewFactor: 0.35,
+    opacity: 0,
+    origin: 'bottom',
+    duration: 1000,
+    easing: 'ease-out',
+    //viewOffset: {
+    //    top: 700,
+    //    bottom: 0
+    //}
+};
+
+//ScrollReveal().reveal('.card :not(img)', slideUp);
+// ScrollReveal().reveal('.card img', delayedSlideUp);
+// ScrollReveal().reveal('.colorShift', fadeInSimple);
+
+
+
+function openGallery(pathname) {
+    var fadeMe = document.getElementsByClassName("fadeMe");
+    var textContainer = document.getElementsByClassName("flexText");
+    var imgContainer = document.getElementsByClassName("cardImg");
+    var fadeOut = [fadeMe, textContainer, imgContainer];
+
+    var dur = 0;
+    var fade = function (arr) {
+        if (arr.length > 1) {
+            for (var i = 0; i < arr.length; i++) {
+                fade(arr[i]);
+            }
+        }
+        else {
+            dur += 50;
+            setTimeout(function () {
+                arr.classList.add("inactiveInitial");
+            }, dur);
+        }
+    }
+
+    fade(fadeOut);
+
+
+
+    console.log("pathname: " + pathname);
+    setTimeout(function () {
+        window.open(pathname, "_self");
+        console.log("opening...");
+    }, 2000);
+}

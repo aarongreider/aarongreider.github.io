@@ -23,7 +23,7 @@ var fadeInLong = {
 ScrollReveal().reveal('.colorShift', fadeInLong);
 ScrollReveal().reveal('.card :not(img)', delayedSlideUp);
 ScrollReveal().reveal('.card img', delayedSlideUp,);
-ScrollReveal().reveal('.section-2 p, h2', delayedSlideUp);
+ScrollReveal().reveal('.section-2 p, h2, h4', delayedSlideUp);
 const btnLeft = document.querySelector('.left');
 const btnRight = document.querySelector('.right');
 var slideImage = document.getElementsByClassName("gallerySlide");
