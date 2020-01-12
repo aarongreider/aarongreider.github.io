@@ -345,12 +345,19 @@ p {
 
 .mediaLinks p {
   font-weight: bold;
-  -webkit-transition: all 0.4s cubic-bezier(0, 1, 0.35, 1.5);
-  transition: all 0.4s cubic-bezier(0, 1, 0.35, 1.5);
   cursor: pointer;
 }
 
-.mediaLinks p:hover {
+.mediaLinks div {
+  height: auto;
+  width: auto;
+  -webkit-transition: -webkit-transform 0.4s cubic-bezier(0, 1, 0.35, 1.5);
+  transition: -webkit-transform 0.4s cubic-bezier(0, 1, 0.35, 1.5);
+  transition: transform 0.4s cubic-bezier(0, 1, 0.35, 1.5);
+  transition: transform 0.4s cubic-bezier(0, 1, 0.35, 1.5), -webkit-transform 0.4s cubic-bezier(0, 1, 0.35, 1.5);
+}
+
+.mediaLinks div:hover {
   -webkit-transform: rotate3d(0.5, 1, 0, 25deg);
           transform: rotate3d(0.5, 1, 0, 25deg);
 }

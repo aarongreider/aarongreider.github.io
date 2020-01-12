@@ -1,3 +1,16 @@
+var div = document.getElementsByClassName("galleryNav")[1];
+var rect = div.getBoundingClientRect();
+x = rect.left;
+y = rect.top;
+w = rect.width;
+h = rect.height;
+//alert("Left: " + x + ", Top: " + y + ", Width: " + w + ", Height: " + h);
+
+//document.getElementsByClassName("contentScroll")[0].style.height = `${y}px`;
+
+
+
+
 ScrollReveal({ reset: true });
 
 var slideUp = {

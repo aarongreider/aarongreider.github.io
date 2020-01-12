@@ -353,10 +353,14 @@ $flexText-width: 60em;
 	
     p {
         font-weight: bold;
-        transition: all .4s cubic-bezier(0, 1, 0.35, 1.5);
         cursor: pointer;
     }
-    p:hover {
+    div {
+        height: auto;
+        width: auto;
+        transition: transform .4s cubic-bezier(0, 1, 0.35, 1.5);
+    }
+    div:hover {
          transform: rotate3d(0.5, 1, 0, 25deg);
     }
 }
