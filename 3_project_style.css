@@ -148,6 +148,11 @@ h4 {
           transform: translateZ(-0.85px) scale(1.85);
 }
 
+.mosquito {
+  -webkit-transform: translateZ(0.5px) scale(0.5);
+          transform: translateZ(0.5px) scale(0.5);
+}
+
 /* CARD LAYOUT */
 /* CARD LAYOUT */
 /* CARD LAYOUT */
@@ -164,6 +169,17 @@ h4 {
           flex-direction: column;
   width: 100vw;
   height: auto;
+}
+
+.mosquito {
+  font-size: 1.3em;
+  font-weight: 300;
+  margin: 0;
+  position: absolute;
+  top: 275vh;
+  left: 50.5vw;
+  z-index: 100;
+  color: whitesmoke;
 }
 
 .card {
