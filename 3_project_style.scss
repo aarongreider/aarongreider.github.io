@@ -179,6 +179,8 @@ p {
 /* SCROLLING CONTENT */
 /* SCROLLING CONTENT */
 
+$duration-page: 1s;
+
 .contentScroll {
     position: absolute;
     //top: 75vh;
@@ -196,6 +198,16 @@ p {
 
     @include parallax(-.5);
 }
+.contentScrollPost {
+        transform:  translateX(-1vw); //scaleX(10)
+        opacity: 0 !important;
+
+        transition: transform #{$duration-page / 2} cubic-bezier(1,-0.01, 1, 1) 300ms,
+                    filter #{$duration-page + 3} ease,
+                    opacity #{$duration-page / 1} ease 500ms;
+}
+
+
 .card {
     // @include parallax(-.05);
 }

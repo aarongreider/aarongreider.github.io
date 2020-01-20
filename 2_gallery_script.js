@@ -2,6 +2,17 @@ console.log('hello world');
 
 ScrollReveal({ reset: true });
 
+var slideUp = {
+    viewFactor: 0.15,
+    opacity: 0,
+    distance: '16px',
+    origin: 'bottom',
+    duration: 600,
+    easing: 'ease-out',
+    //delay: 250,
+    interval: 100
+};
+
 var delayedSlideUp = {
     viewFactor: 0.35,
     opacity: 0,
@@ -21,7 +32,7 @@ var fadeInLong = {
 };
 
 ScrollReveal().reveal('.colorShift', fadeInLong);
-ScrollReveal().reveal('.card :not(img)', delayedSlideUp);
+ScrollReveal().reveal('.card :not(img)', slideUp);
 ScrollReveal().reveal('.card img', delayedSlideUp,);
 ScrollReveal().reveal('.section-2 p, h2, h4', delayedSlideUp);
 const btnLeft = document.querySelector('.left');
@@ -67,7 +78,7 @@ btnRight.addEventListener('click', function () {
              
         //assign .animate class to animate the shifted clip path then hide active
         console.log("animating");
-        active.classList.add("animate");
+        active.classList.add("animateClipPath");
 
         //wait duration then return active image to and remove .animate class
         animating = true;
@@ -106,7 +117,7 @@ btnLeft.addEventListener('click', function () {
 
         //assign .animate class to animate the shifted clip path then hide active
         console.log("animating");
-        active.classList.add("animate");
+        active.classList.add("animateClipPath");
 
         //wait duration then return active image to and remove .animate class
         animating = true;
@@ -127,7 +138,7 @@ function waitRemove(direction) {
     //remove top ID and animate class
     //console.log("timer up; returning active to stack");
     active.removeAttribute('id');
-    active.classList.remove("animate");
+    active.classList.remove("animateClipPath");
 
     //decrement and reassign active images to shift the top and next images
     if (direction == "up") {
@@ -166,9 +177,10 @@ function openPage(pathname) {
 
     setTimeout(function () {
         slideText[activeIndex].classList.add("inactiveInitial");
-    }, 800);
+        document.getElementsByClassName("btn--flex")[0].classList.add("inactiveInitial");
+    }, 200);
 
     setTimeout(function () {
         window.open(pathname, "_self");
-    }, 2000);
+    }, 3000);
 }

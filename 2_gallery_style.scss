@@ -11,6 +11,7 @@
     Operators */
 
 $font-stack:    'Roboto', sans-serif;
+$font-accent: 'Roboto Condensed', sans-serif;
 $text-color:    #b3b3b3;
 
 $background-color:  #000000;
@@ -65,13 +66,13 @@ h2 {
 
 h3 {
     font-size: $h3-size;
-    font-family: Roboto Condensed;
+    font-family:  $font-accent;
     font-weight: 400;
 }
 
 h4 {
     font-size: $h4-size;
-    font-family: Roboto Condensed;
+    font-family: $font-accent;
     font-weight: 400;
     letter-spacing: .25em;
 }
@@ -124,30 +125,36 @@ p {
 }
 
 .gallerySlide {
-    visibility: hidden;
-    transition: clip-path $duration-image $bezier,
-                top $duration-page $bezier, 
-                left $duration-page $bezier, 
-                width $duration-page $bezier,
-                filter #{$duration-page + 2} $bezier;
+    //visibility: hidden;
+    opacity: 0;
+    transition: clip-path $duration-image $bezier;
+                
+    will-change: clip-path;
 } 
 .transitionPage {
-    position: absolute !important;
-    top: 75vh !important;
-    left: 20vw !important;
+    //position: absolute !important;
     background-color: white;
-    width: 80vw;
-    height: 300vh;
-    filter: brightness(2000);
+
+    transform: scaleX(10) translateX(-100vw);
+    opacity: 0 !important;
+    filter: brightness(1000);
+
+    transition: transform #{$duration-page / 2} cubic-bezier(1,-0.01, 1, 1) 300ms,
+                filter #{$duration-page + 3} ease,
+                opacity #{$duration-page / 1} ease 500ms;
 }
 
 $img-width: 70vw;
-.animate {
+.animateClipPath {
     clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%) !important;
+}
+.inactiveInitial {
+    opacity: 0;
 }
 
 #top {
-    visibility: visible !important;
+    //visibility: visible !important;
+    opacity: 1;
 
     z-index: $z-tier2;
     position: absolute;
@@ -156,9 +163,11 @@ $img-width: 70vw;
     top: 0;
 
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    will-change: clip-path;
 }
 #next {
-    visibility: visible !important;
+    //visibility: visible !important;
+    opacity: 1;
 
     z-index: $z-tier0;
     position: absolute;
@@ -167,6 +176,7 @@ $img-width: 70vw;
     top:0;
 
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    will-change: clip-path;
 }
 
 .galleryImg {
@@ -180,8 +190,17 @@ $img-width: 70vw;
 }
 
 //text format
+
 .textContainer {
     display: inline-flex;
+
+    .inactiveInitial {
+        opacity: 0;
+    }
+    .inactiveFinal {
+        opacity: 0;
+        margin-top: 8px;
+    }
 
     .galleryText {
         z-index: $z-tier3;
@@ -199,14 +218,6 @@ $img-width: 70vw;
         justify-content: top;
 
         transition: opacity $duration-text $bezier;
-    }
-
-    .inactiveInitial {
-        opacity: 0;
-    }
-    .inactiveFinal {
-        opacity: 0;
-        margin-top: 8px;
     }
     $transition-attr: all;
     $delay-attr1: all;
