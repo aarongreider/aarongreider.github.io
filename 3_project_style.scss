@@ -26,7 +26,7 @@ $parallax-ios         : true !default;
     perspective: $perspective * 1px;
     transform-style: preserve-3d;
     // Allows for smooth scrolling but disables parallax effects.
-    @if $parallax-ios == false {
+    @if $parallax-ios == true {
       -webkit-overflow-scrolling: touch;
     }
     // Preserve 3D
@@ -38,10 +38,12 @@ $parallax-ios         : true !default;
 
 @mixin parallax(
   $distance    : 0,
-  $perspective : $parallax-perspective
+  $perspective : $parallax-perspective,
+  $translateX  : 0
   ) {
   transform:
     translateZ($distance * $perspective * 1px)
+    translateX($translateX)
     scale(abs($distance - 1));
   //z-index: $distance * 1000;
 }
@@ -57,6 +59,7 @@ $parallax-ios         : true !default;
 
 
 $font-stack:    'Roboto', sans-serif;
+$font-accent:   'Roboto Condensed', sans-serif;
 $text-color:    #b3b3b3;
 
 $background-color:  #000000;
@@ -97,7 +100,7 @@ h1 {
     color: white;
     margin:0;
 
-    position: fixed;
+    position: absolute;
     left: 10vw;
     top: 30vh;
 }
@@ -108,7 +111,7 @@ h2 {
 h3 {
     z-index: $z-tier0;
     font-size: 2em;
-    font-family: Roboto Condensed;
+    font-family: $font-accent;
     font-weight: 700;
     letter-spacing: .15em;
     font-variant: all-small-caps;
@@ -122,12 +125,12 @@ h3 {
 }
 h4 {
     font-size: $h4-size;
-    font-family: Roboto Condensed;
+    font-family: $font-accent;
     font-weight: 400;
     letter-spacing: .25em;
     margin: 0;
 
-    position: fixed;
+    position: absolute;
     left: 45vw;
     top: 50vh;
 }
@@ -135,6 +138,13 @@ p {
     font-size: $p-size;
     font-weight: 300;
     margin:0;
+}
+
+a {
+  color: rgba(91, 196, 238, 0.753);
+}
+a:visited {
+  color: pink;
 }
 
 .galleryNav {
@@ -196,11 +206,11 @@ $duration-page: 1s;
 
     box-shadow: 0 0 10em 8em black;
 
-    @include parallax(-.5);
+   @include parallax(-.5);
 }
 .contentScrollPost {
-        transform:  translateX(-1vw); //scaleX(10)
-        opacity: 0 !important;
+        //transform:  translate3d(0vw, 0px, 0px) !important; //scaleX(10)
+        //opacity: 0 !important;
 
         transition: transform #{$duration-page / 2} cubic-bezier(1,-0.01, 1, 1) 300ms,
                     filter #{$duration-page + 3} ease,
@@ -264,7 +274,7 @@ h4 {
     margin: 5em;
     align-self: center;
 
-    overflow: hidden;
+    // overflow: hidden;
     //box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 
     display: flex;
@@ -280,6 +290,7 @@ h4 {
     img {
         height: 25em;
         order:1;
+        margin: 2em;
     }
 }
 

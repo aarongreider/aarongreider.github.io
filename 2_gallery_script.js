@@ -49,7 +49,7 @@ var next;
 var duration = 1000;
 
 console.log("activeIndex= " + activeIndex);
-
+console.log("slideImage.length= " + slideImage.length);
 
 // RIGHT BUTTON PRESS
 btnRight.addEventListener('click', function () {

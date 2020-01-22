@@ -49,8 +49,9 @@ var fadeInSimple = {
 // ScrollReveal().reveal('.card img', delayedSlideUp);
 // ScrollReveal().reveal('.colorShift', fadeInSimple);
 
-var whiteRect = document.getElementsByClassName("contentScroll");
-whiteRect[0].classList.add("contentScrollPost");
+//var whiteRect = document.getElementsByClassName("contentScroll");
+//whiteRect[0].classList.add("contentScrollPost");
+//var theCSSprop = window.getComputedStyle(document.getElementById("test"), null).getPropertyValue("background-color");
 
 function openGallery(pathname) {
     var fadeMe = document.getElementsByClassName("fadeMe");
