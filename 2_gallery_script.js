@@ -184,3 +184,20 @@ function openPage(pathname) {
         window.open(pathname, "_self");
     }, 3000);
 }
+
+function openPageBtn() {
+    active = slideImage[activeIndex];
+    var projectNum = (activeIndex + 1);
+    var pathname = "3_project-" + projectNum + ".html";
+    
+    active.classList.add("transitionPage");
+
+    setTimeout(function () {
+        slideText[activeIndex].classList.add("inactiveInitial");
+        document.getElementsByClassName("btn--flex")[0].classList.add("inactiveInitial");
+    }, 200);
+
+    setTimeout(function () {
+        window.open(pathname, "_self");
+    }, 3000);
+}

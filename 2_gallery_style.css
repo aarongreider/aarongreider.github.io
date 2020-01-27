@@ -52,8 +52,16 @@ h4 {
 }
 
 p {
-  font-size: 1em;
+  font-size: 1.2em;
   font-weight: 300;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: pink;
 }
 
 #grid {
@@ -111,8 +119,8 @@ p {
   -webkit-transform: scaleX(10) translateX(-100vw);
           transform: scaleX(10) translateX(-100vw);
   opacity: 0 !important;
-  -webkit-filter: brightness(1000);
-          filter: brightness(1000);
+  -webkit-filter: brightness(2000);
+          filter: brightness(2000);
   -webkit-transition: opacity 1s ease 500ms, -webkit-transform 0.5s cubic-bezier(1, -0.01, 1, 1) 300ms, -webkit-filter 4s ease;
   transition: opacity 1s ease 500ms, -webkit-transform 0.5s cubic-bezier(1, -0.01, 1, 1) 300ms, -webkit-filter 4s ease;
   transition: transform 0.5s cubic-bezier(1, -0.01, 1, 1) 300ms, filter 4s ease, opacity 1s ease 500ms;
@@ -180,7 +188,7 @@ p {
   z-index: 15;
   position: absolute;
   margin-right: 25vw;
-  top: 40vh;
+  top: 30vh;
   left: 10vw;
   height: auto;
   width: auto;
@@ -229,7 +237,7 @@ p {
   margin: 0;
   padding: 1em 0 0 0;
   width: 16em;
-  font-size: 1em;
+  font-size: 1.2em;
   -webkit-transition: 0.8s cubic-bezier(0.5, 0.2, 0.15, 1);
   transition: 0.8s cubic-bezier(0.5, 0.2, 0.15, 1);
   -webkit-transition-delay: 1.2s;
@@ -379,7 +387,7 @@ p {
 .circle-btn--container {
   z-index: 100;
   position: absolute;
-  top: 80vh;
+  top: 63vh;
   cursor: pointer;
 }
 
@@ -409,8 +417,8 @@ p {
 }
 
 .circle-btn--outer {
-  width: 5em;
-  height: 5em;
+  width: 4em;
+  height: 4em;
   border: 3px solid #ffffff;
   border-radius: 50%;
   -webkit-transition: opacity 0.7s cubic-bezier(0.5, 0, 0, 1), -webkit-transform 0.7s cubic-bezier(1, 0, 0.25, 1), -webkit-transform 0.7s cubic-bezier(0.5, 0, 0, 1);
@@ -465,6 +473,62 @@ p {
   transition: .3s ease;
   width: 0;
   height: 0;
+}
+
+.btnExpandProj {
+  position: absolute;
+  left: 76vw;
+  top: 83vh;
+  z-index: 100;
+  color: white;
+}
+
+.btnExpandProj h3 {
+  font-size: 2em;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 700;
+  letter-spacing: .15em;
+  font-variant: all-small-caps;
+}
+
+.btnExpandProj svg {
+  z-index: 100;
+  position: relative;
+  top: -4.6em;
+  left: -.9em;
+  margin-top: 0;
+  width: 16.5em;
+  height: 3em;
+  overflow: visible;
+}
+
+.btnExpandProj svg rect {
+  width: inherit;
+  height: inherit;
+  fill: rgba(255, 255, 255, 0);
+  stroke: white;
+  stroke-width: 0;
+  stroke-dasharray: 8em;
+  stroke-dashoffset: 0;
+  -webkit-transition: all 1s cubic-bezier(0.5, 0.2, 0.15, 1);
+  transition: all 1s cubic-bezier(0.5, 0.2, 0.15, 1);
+}
+
+.btnExpandProj svg rect:hover {
+  stroke-dasharray: 39em;
+  stroke-width: .2em;
+}
+
+#about {
+  position: absolute;
+  left: 10vw;
+  top: 83vh;
+  z-index: 100;
+  font-size: 2em;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 400;
+  letter-spacing: .15em;
+  font-variant: all-small-caps;
 }
 
 /* PORTRAIT QUERY */

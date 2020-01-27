@@ -75,7 +75,7 @@ $h1-size: 5em;      /* gallery title */
 $h2-size: 2.5em;      /* card title */
 $h3-size: 2em;     /* gallery support text */
 $h4-size: 1em;     /* card support text */
-$p-size:  .9em;
+$p-size:  1.2em;
 
 $duration-text: .8s;
 $duration-image: .7s;
@@ -298,8 +298,9 @@ h4 {
     display: flex;
     flex-direction: column;
 
-    width: 13em;
-    padding: 8em 4em 0 12em;
+    width: 18em;
+    //padding: 8em 4em 0 12em;
+        padding: 10em 0em 0 8em;
 
     order:2;    
 }

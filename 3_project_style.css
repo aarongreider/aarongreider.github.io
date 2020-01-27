@@ -74,7 +74,7 @@ h4 {
 }
 
 p {
-  font-size: 0.9em;
+  font-size: 1.2em;
   font-weight: 300;
   margin: 0;
 }
@@ -236,8 +236,8 @@ h4 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 13em;
-  padding: 8em 4em 0 12em;
+  width: 18em;
+  padding: 10em 0em 0 8em;
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;

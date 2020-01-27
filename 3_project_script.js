@@ -82,5 +82,5 @@ function openGallery(pathname) {
     setTimeout(function () {
         window.open(pathname, "_self");
         console.log("opening...");
-    }, 2000);
+    }, 2500);
 }
