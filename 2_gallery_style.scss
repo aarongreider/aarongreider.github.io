@@ -31,6 +31,20 @@ $duration-page: 1s;
 $bezier: cubic-bezier(0.5, 0.2, 0.15, 1);
 //$bezier: ease-out;
 
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+*::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE and Edge */
+* {
+  -ms-overflow-style: none;
+}
+
+
+
+
 body {
     height: auto;
     width: 100vw;
@@ -240,7 +254,7 @@ $img-width: 70vw;
     }
 
     h4 {
-        margin: 0;
+        margin: 0 0 .3em 0;
         padding-left: 0.3em;
 
         transition: $duration-text $bezier;
@@ -396,8 +410,9 @@ $btn-weight-px: 3px;
 .circle-btn--container {
     z-index: $z-tier4;
     position: absolute;
-    top: 63vh;
-    
+    top: 89vh;
+    opacity: .6;
+
     cursor: pointer;
     
         &:hover {
@@ -414,10 +429,10 @@ $btn-weight-px: 3px;
 }
 
 .left {
-    left: 35vw;
+    left: 28vw;
 }
 .right {
-    left: 50vw;
+    left: 44vw;
     transform: rotate(180deg);
 }
 
@@ -425,7 +440,7 @@ $btn-weight-px: 3px;
 .circle-btn--outer {
     width: $btn-size;
     height: $btn-size;
-    border: $btn-weight-px solid $btn-border-color;
+    border: 0px solid $btn-border-color;
     border-radius: 50%;
     transition:     transform .7s cubic-bezier(1,0,.25,1),      opacity .7s cubic-bezier(.5,0,0,1),
     transform .7s cubic-bezier(.5,0,0,1);
@@ -473,7 +488,7 @@ $triangleSize: 6px;
 .btnExpandProj {
     position: absolute;
     left: 76vw;
-    top: 83vh;
+    top: 86vh;
     z-index: $z-tier4;
     color: white;
 
@@ -519,11 +534,11 @@ $triangleSize: 6px;
 
 #about {
     position: absolute;
-    left: 10vw;
-    top: 83vh;
+    left: 2vw;
+    top: 90vh;
     z-index: $z-tier4;
 
-    font-size: 2em;
+    font-size: $h4-size;
     font-family: $font-accent;
     font-weight: 400;
     letter-spacing: .15em;
