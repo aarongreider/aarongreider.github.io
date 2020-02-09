@@ -236,6 +236,7 @@ $img-width: 70vw;
 
         transition: opacity $duration-text $bezier;
     }
+
     $transition-attr: all;
     $delay-attr1: all;
     $delay-attr2: opacity;
@@ -269,6 +270,11 @@ $img-width: 70vw;
 
         transition: $duration-text $bezier;
         transition-delay: 1.2s;
+    }
+
+    span {
+        transition: $duration-text $bezier;
+        transition-delay: 2s;
     }
 }
 

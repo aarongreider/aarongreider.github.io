@@ -54,10 +54,17 @@ var fadeInSimple = {
 //var theCSSprop = window.getComputedStyle(document.getElementById("test"), null).getPropertyValue("background-color");
 
 function openGallery(pathname) {
+    console.log("pathname: " + pathname);
     var fadeMe = document.getElementsByClassName("fadeMe");
     var textContainer = document.getElementsByClassName("flexText");
     var imgContainer = document.getElementsByClassName("cardImg");
     var fadeOut = [fadeMe, textContainer, imgContainer];
+
+    if (pathname=='0') {
+        var currentURL = window.location.href;
+        var projNum = parseInt(currentURL.charAt(currentURL.length-6));
+        pathname = '3_project-' + (projNum+1) + '.html';
+    }
 
     var dur = 0;
     var fade = function (arr) {
