@@ -199,18 +199,18 @@ h4 {
 }
 
 .card {
-  -webkit-box-ordinal-group: 2;
-      -ms-flex-order: 1;
-          order: 1;
   z-index: 1;
-  width: 78vw;
+  width: 100vw;
   height: auto;
-  margin: 5em;
+  margin: 5em 0;
   -ms-flex-item-align: center;
       align-self: center;
+  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -221,11 +221,27 @@ h4 {
 }
 
 .card img {
-  height: 25em;
-  -webkit-box-ordinal-group: 2;
-      -ms-flex-order: 1;
-          order: 1;
-  margin: 2em;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin: 1em;
+  width: inherit;
+}
+
+.flexTwo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: inherit;
+}
+
+.flexTwo img {
+  max-height: 29vw;
+  width: auto;
 }
 
 .flexText {
@@ -236,11 +252,10 @@ h4 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 18em;
-  padding: 10em 0em 0 8em;
-  -webkit-box-ordinal-group: 3;
-      -ms-flex-order: 2;
-          order: 2;
+  width: 30em;
+  padding: 10em 8em;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .inactiveInitial {

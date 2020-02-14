@@ -219,7 +219,7 @@ $duration-page: 1s;
 
 
 .card {
-    // @include parallax(-.05);
+    //@include parallax(0);
 }
 .flexText {
     @include parallax(-.3);
@@ -266,18 +266,18 @@ h4 {
 }
 
 .card {
-    order: 1;
     z-index: 1;
 
-    width: 78vw;
+    width: 100vw;
     height: auto;
-    margin: 5em;
+    margin: 5em 0;
     align-self: center;
 
-    // overflow: hidden;
+    overflow: hidden;
     //box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
 
@@ -288,9 +288,23 @@ h4 {
 
     }
     img {
-        height: 25em;
-        order:1;
-        margin: 2em;
+        //width:100vw;
+        //flex-grow: 1;
+        object-fit: contain;
+        margin: 1em;
+        width: inherit;
+    }
+}
+
+.flexTwo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: inherit;
+
+    img {
+        max-height: 29vw;
+        width: auto;
     }
 }
 
@@ -298,11 +312,12 @@ h4 {
     display: flex;
     flex-direction: column;
 
-    width: 18em;
+    width: 30em;
     //padding: 8em 4em 0 12em;
-        padding: 10em 0em 0 8em;
+    padding: 10em 8em;
+    margin: 0 auto;
 
-    order:2;    
+    text-align: center;
 }
 
 .inactiveInitial {
