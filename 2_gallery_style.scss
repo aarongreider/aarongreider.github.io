@@ -93,10 +93,15 @@ p {
 }
 
 a {
-  text-decoration: none;
+    color: rgb(125, 190, 255);
+    font-size: #{$h4-size - 0.3};
+    font-family: $font-accent;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-decoration: none;
 }
 a:visited {
-  color: pink;
+  color: rgb(90, 90, 90);
 }
 
 #grid {

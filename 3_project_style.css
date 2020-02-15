@@ -80,11 +80,16 @@ p {
 }
 
 a {
-  color: rgba(91, 196, 238, 0.753);
+  color: #7dbeff;
+  font-size: 0.7em;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-decoration: none;
 }
 
 a:visited {
-  color: pink;
+  color: #5a5a5a;
 }
 
 .galleryNav {
@@ -223,7 +228,7 @@ h4 {
 .card img {
   -o-object-fit: contain;
      object-fit: contain;
-  margin: 1em;
+  margin: 0 auto;
   width: inherit;
 }
 
@@ -242,6 +247,7 @@ h4 {
 .flexTwo img {
   max-height: 29vw;
   width: auto;
+  margin: 1em;
 }
 
 .flexText {
