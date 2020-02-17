@@ -71,7 +71,7 @@ h1 {
 
 h2 {
     font-size: $h2-size;
-    font: font-style font-variant font-weight $h2-size/line-height font-family;
+    //font: font-style font-variant font-weight $h2-size/line-height font-family;
 }
 
 h3 {
@@ -85,6 +85,10 @@ h4 {
     font-family: $font-accent;
     font-weight: 400;
     letter-spacing: .25em;
+}
+
+h5 {
+    font-size: $h2-size;
 }
 
 p {
@@ -113,7 +117,96 @@ a:visited {
 
 
 
+/* ANNOUNCEMENT */
+/* ANNOUNCEMENT */
+/* ANNOUNCEMENT */
+.lockScrolling {
+    overflow: hidden;
+}
 
+.show {
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.heyThere {
+    visibility: hidden;
+    opacity: 0;
+
+    z-index: $z-tier4+100;
+    position: absolute;
+
+    width: 100vw;
+    height: 100vh;
+
+    color: grey;
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.8) 100%);
+
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    overflow: visible;
+
+    transition: opacity 1s $bezier;
+
+    h2 {
+        visibility: inherit !important;
+        opacity: inherit !important;
+    }
+    p {
+        visibility: inherit !important;
+        opacity: inherit !important;
+
+        margin: 0 auto;
+        padding: 1em;
+        max-width: 25em;
+    }
+}
+
+.continueBtn {
+    position: relative;
+    color: grey;
+
+    h3 {
+        font-size: 2em;
+        font-family: $font-accent;
+        font-weight: 700;
+        letter-spacing: .15em;
+        font-variant: all-small-caps;
+    }    
+
+    svg {
+        position: relative;
+        top: -4.6em;
+        left: -.2em;
+        margin-top: 0;
+        width: 16.5em;
+        height: 3em;
+        overflow: visible;
+
+        rect {
+            width: inherit;
+            height: inherit;
+
+            fill: rgba(255, 255, 255, 0);
+            stroke: grey;
+
+            stroke-width: 0;
+            stroke-dasharray: 8em;
+            stroke-dashoffset: 0;
+
+            transition: all 1s $bezier;    
+            
+            &:hover {
+                stroke-dasharray: 39em;
+                stroke-width:.2em
+            }
+        }
+    }
+}
 
 
 

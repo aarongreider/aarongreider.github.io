@@ -1,5 +1,27 @@
 console.log('hello world');
 
+// Get the user-agent string 
+let userAgentString =
+    navigator.userAgent;
+// Detect Chrome 
+let chromeAgent =
+    userAgentString.indexOf("Chrome") > -1;
+
+if (chromeAgent) {
+    console.log("chrome!");
+} else {
+    console.log("not chrome :/");
+    var popUp = document.getElementsByClassName("heyThere");
+    popUp[0].classList.add("show")
+}
+function dismiss() {
+    popUp[0].classList.remove("show");
+    //document.body.classList.add("lockScrolling")
+}
+
+
+
+
 ScrollReveal({ reset: true });
 
 var slideUp = {
