@@ -188,7 +188,7 @@ function openPage(pathname) {
 function openPageBtn() {
     active = slideImage[activeIndex];
     var projectNum = (activeIndex + 1);
-    var pathname = "3_project-" + projectNum + ".html";
+    var pathname = "project-" + projectNum + ".html";
     
     active.classList.add("transitionPage");
 

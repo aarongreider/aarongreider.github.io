@@ -63,7 +63,7 @@ function openGallery(pathname) {
     if (pathname=='0') {
         var currentURL = window.location.href;
         var projNum = parseInt(currentURL.charAt(currentURL.length-6));
-        pathname = '3_project-' + (projNum+1) + '.html';
+        pathname = 'project-' + (projNum+1) + '.html';
     }
 
     var dur = 0;
