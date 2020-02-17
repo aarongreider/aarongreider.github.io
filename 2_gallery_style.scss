@@ -49,7 +49,7 @@ body {
     height: auto;
     width: 100vw;
     margin: 0;
-
+    overflow-x: hidden;
     
     display: flex;
     flex-direction: row;
@@ -166,7 +166,7 @@ a:visited {
                 opacity #{$duration-page / 1} ease 500ms;
 }
 
-$img-width: 70vw;
+$img-width: 68vw;
 .animateClipPath {
     clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%) !important;
 }
@@ -181,7 +181,8 @@ $img-width: 70vw;
     z-index: $z-tier2;
     position: absolute;
 
-    left: 30vw;
+    //left: 30vw; OLD spacing
+    left: 32vw;
     top: 0;
 
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
@@ -194,7 +195,8 @@ $img-width: 70vw;
     z-index: $z-tier0;
     position: absolute;
 
-    left: 30vw;
+    //left: 30vw; OLD spacing
+    left: 32vw;    
     top:0;
 
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
@@ -230,7 +232,7 @@ $img-width: 70vw;
         position: absolute;
         margin-right: 25vw; 
         top: 30vh;
-        left: 10vw;
+        left: 8vw;
 
         height: auto;
         width: auto;
