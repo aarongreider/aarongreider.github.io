@@ -20,9 +20,16 @@ function dismiss() {
 }
 
 
+function isMobile() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
 
+if (!isMobile()) {
+    //place script you don't want to run on mobile here
 
-ScrollReveal({ reset: true }, { mobile: false });
+}
+
+ScrollReveal({ reset: true });
 
 var slideUp = {
     viewFactor: 0.15,

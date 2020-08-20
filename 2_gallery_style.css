@@ -693,7 +693,7 @@ a:visited {
     left: 0;
   }
   .galleryText {
-    top: 22vh !important;
+    top: 16vh !important;
     left: 0 !important;
     margin: 0 12vw;
     width: 18em !important;
@@ -701,9 +701,13 @@ a:visited {
   .textContainer {
     text-align: center;
   }
+  .textContainer * {
+    -webkit-transition-delay: 0s !important;
+            transition-delay: 0s !important;
+  }
   .textContainer h3 {
     position: absolute;
-    top: 49vh;
+    top: 55vh;
     left: 33vw;
   }
   .textContainer p {

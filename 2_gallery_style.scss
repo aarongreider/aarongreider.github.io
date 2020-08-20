@@ -716,7 +716,7 @@ $triangleSize: 6px;
         }
 
         .galleryText {
-            top: 22vh !important;
+            top: 16vh !important;
             left: 0 !important;
             margin: 0 12vw;
             width: 18em !important;
@@ -724,13 +724,16 @@ $triangleSize: 6px;
          
         .textContainer {
             text-align: center;
-
+            * {
+                transition-delay: 0s !important;
+            }
             h3 {
                 // padding: 1em 0 0 0; //old
                 position: absolute;
-                top: 49vh;
+                top: 55vh;
                 left: 33vw;
             }
+    
             p {
                 width: inherit;
             }
