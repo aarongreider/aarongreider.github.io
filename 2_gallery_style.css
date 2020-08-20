@@ -735,6 +735,12 @@ a:visited {
         -ms-flex-direction: row;
             flex-direction: row;
   }
+  .btn--flex .btnExpandProj {
+    position: absolute;
+    top: -11vh;
+    left: 0;
+    margin: 0;
+  }
   .btn--flex .circle-btn--container {
     top: 0;
     position: relative;
@@ -784,6 +790,9 @@ a:visited {
         -ms-flex-order: 2;
             order: 2;
     width: 100%;
+  }
+  #about {
+    width: auto;
   }
 }
 
