@@ -685,6 +685,10 @@ $triangleSize: 6px;
             font-size: #{$h2-size - 1.5};
         }
 
+        h3 {
+            font-size: #{$h3-size - .5}!important;
+        }
+
         p {
             font-size: #{$h2-size - 2.1};
         }
@@ -722,7 +726,10 @@ $triangleSize: 6px;
             text-align: center;
 
             h3 {
-                padding: 1em 0 0 0;
+                // padding: 1em 0 0 0; //old
+                position: absolute;
+                top: 49vh;
+                left: 33vw;
             }
             p {
                 width: inherit;
@@ -749,9 +756,12 @@ $triangleSize: 6px;
             order: 3;
             
             position: relative;
-            margin: 0 17.5vw;
-            top: #{-(100-$img-height)/1.5};
-            width: 65vw;
+            //margin: 0 17.5vw; //old
+            margin: 0 6.5vw; //new
+            //top: #{-(100-$img-height)/1.5};
+            //width: 65vw;
+            top: -18.66667vh; //new, non responsive
+            width: 87vw;
             
             display: flex;
             justify-content: space-between;
@@ -759,9 +769,21 @@ $triangleSize: 6px;
 
             .btnExpandProj {
                 position: absolute;
-                top: -11vh;
-                left: 0;
+                //top: -11vh;
+                //left: 10vw;
+                top: -17vh; //new, smaller
+                left: 20vw;
                 margin: 0;
+
+                    h3 {
+                        //font-size
+                    }
+                    svg {
+                        top: -3.4em;
+                        left: -0.9em;
+                        width: 12.5em;
+                        height: 2em;
+                    }
             }
             .circle-btn--container {
                 top: 0; //52vh;
@@ -789,10 +811,16 @@ $triangleSize: 6px;
 
         .colorShift {
             height: 100vh;
+            visibility: hidden !important;
         }
         
         .flexContainer {
-
+            h2 {
+                margin: .8em 1.5em;
+                writing-mode: horizontal-tb !important;
+                text-orientation: upright;
+                transform: rotate(0deg);
+            }
         }
 
         .card {
@@ -801,8 +829,9 @@ $triangleSize: 6px;
             margin: 0;
 
             h2 {
-                
+
             }
+
             p {
                 column-count: 1;
             }
@@ -826,6 +855,7 @@ $triangleSize: 6px;
         #about {
             //top: 80vh;
             width: auto;
+            visibility: hidden!important;
         }
 
 

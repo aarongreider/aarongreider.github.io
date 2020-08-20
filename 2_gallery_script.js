@@ -22,7 +22,7 @@ function dismiss() {
 
 
 
-ScrollReveal({ reset: true });
+ScrollReveal({ reset: true }, { mobile: false });
 
 var slideUp = {
     viewFactor: 0.15,
