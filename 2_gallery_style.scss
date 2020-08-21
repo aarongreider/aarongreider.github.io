@@ -444,6 +444,10 @@ $flexText-width: 60vw;
         //width: #{$flexText-width/2};
         column-count: 2;
     }
+    .show-mobile {
+        display: none;
+    }
+
     img {
         //width: #{$flexText-width/1};///1.5
         width:100%;
@@ -838,6 +842,13 @@ $triangleSize: 6px;
             p {
                 column-count: 1;
             }
+            .show-desktop {
+                display: none;
+            }
+            .show-mobile {
+                display: contents;
+            }
+
             img {
                 order: 1;
 
