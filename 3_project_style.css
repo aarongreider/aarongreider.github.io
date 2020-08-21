@@ -179,11 +179,6 @@ h4 {
           transform: translateZ(-0.85px) translateX(0) scale(1.85);
 }
 
-.mosquito {
-  -webkit-transform: translateZ(0.5px) translateX(0) scale(0.5);
-          transform: translateZ(0.5px) translateX(0) scale(0.5);
-}
-
 /* CARD LAYOUT */
 /* CARD LAYOUT */
 /* CARD LAYOUT */
@@ -200,17 +195,6 @@ h4 {
           flex-direction: column;
   width: 100vw;
   height: auto;
-}
-
-.mosquito {
-  font-size: 1.3em;
-  font-weight: 300;
-  margin: 0;
-  position: absolute;
-  top: 275vh;
-  left: 50.5vw;
-  z-index: 100;
-  color: whitesmoke;
 }
 
 .card {
@@ -255,7 +239,6 @@ h4 {
 }
 
 .flexTwo img, .flexTwo video {
-  max-height: 29vw;
   width: auto;
   margin: 1em;
 }
@@ -339,4 +322,84 @@ h4 {
   -webkit-transform: rotate3d(0.5, 1, 0, 0.015deg);
           transform: rotate3d(0.5, 1, 0, 0.015deg);
 }
+
+/* PORTRAIT QUERY */
+/* PORTRAIT QUERY */
+/* PORTRAIT QUERY */
+/* PORTRAIT QUERY */
+/* PORTRAIT QUERY */
+/* PORTRAIT QUERY */
+@media only screen and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  body {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background: #000000;
+  }
+  h1 {
+    font-size: 3em;
+    left: -2vw;
+    top: -8vh;
+  }
+  h2 {
+    font-size: 1.5em;
+    margin: 0;
+  }
+  h3 {
+    font-size: 1.75em;
+    left: 77vw;
+    top: 10vh;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+  }
+  h4 {
+    font-size: 1em;
+    position: absolute;
+    left: -6vw;
+    top: -10vh;
+  }
+  h5 {
+    font-size: 0.8em;
+  }
+  p {
+    font-size: 1.2em;
+  }
+  .galleryNav {
+    left: 0vw;
+    top: -1vh;
+  }
+  .flexContainer {
+    top: 30vh;
+  }
+  .card img {
+    max-height: -webkit-fit-content !important;
+    max-height: -moz-fit-content !important;
+    max-height: fit-content !important;
+    width: 100vw !important;
+  }
+  .flexText {
+    padding: 2em 1em;
+  }
+  .flexTwo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100vh;
+    width: inherit;
+  }
+  .flexTwo img, .flexTwo video {
+    margin: 0 0;
+  }
+  .section-2 {
+    width: 85vw;
+  }
+}
+
+/* PORTRAIT QUERY */
+/* PORTRAIT QUERY */
+/* PORTRAIT QUERY */
+/* PORTRAIT QUERY */
+/* PORTRAIT QUERY */
+/* PORTRAIT QUERY */
 /*# sourceMappingURL=3_project_style.css.map */

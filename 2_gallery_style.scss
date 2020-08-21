@@ -444,9 +444,6 @@ $flexText-width: 60vw;
         //width: #{$flexText-width/2};
         column-count: 2;
     }
-    .show-mobile {
-        display: none;
-    }
 
     img {
         //width: #{$flexText-width/1};///1.5
@@ -843,10 +840,7 @@ $triangleSize: 6px;
                 column-count: 1;
             }
             .show-desktop {
-                display: none;
-            }
-            .show-mobile {
-                display: contents;
+                display: none !important;
             }
 
             img {
@@ -864,6 +858,9 @@ $triangleSize: 6px;
             order: 2;
 
             width: 100%;
+        }
+        .section-2 {
+            width: 85vw;
         }
 
         #about {

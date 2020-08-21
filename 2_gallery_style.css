@@ -426,10 +426,6 @@ a:visited {
           column-count: 2;
 }
 
-.card .show-mobile {
-  display: none;
-}
-
 .card img {
   width: 100%;
   margin: 0 0 1em 0;
@@ -803,10 +799,7 @@ a:visited {
             column-count: 1;
   }
   .card .show-desktop {
-    display: none;
-  }
-  .card .show-mobile {
-    display: contents;
+    display: none !important;
   }
   .card img {
     -webkit-box-ordinal-group: 2;
@@ -825,6 +818,9 @@ a:visited {
         -ms-flex-order: 2;
             order: 2;
     width: 100%;
+  }
+  .section-2 {
+    width: 85vw;
   }
   #about {
     width: auto;
