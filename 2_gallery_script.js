@@ -20,7 +20,7 @@ function dismiss() {
 }
 
 
-ScrollReveal({ reset: true });
+ScrollReveal({ reset: false });
 
 var slideUp = {
     viewFactor: 0.1,

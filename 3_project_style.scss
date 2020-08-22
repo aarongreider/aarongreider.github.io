@@ -5,7 +5,7 @@
 
 $parallax-perspective : 1 !default;
 $parallax-element     : "body" !default;
-$parallax-ios         : true !default;
+$parallax-ios         : false !default;
 
 @mixin parallax-init(
   $perspective  : $parallax-perspective,
