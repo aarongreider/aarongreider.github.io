@@ -62,6 +62,7 @@ var slideText = document.getElementsByClassName("galleryText");
 var slideTextChilds;
 var activeIndex = 0;
 var animating = false;
+var menuOpen = false;
 
 var active;
 var next;
@@ -108,8 +109,6 @@ btnRight.addEventListener('click', function () {
     }
 })
 
-
-
 // LEFT BUTTON PRESS
 btnLeft.addEventListener('click', function () {
     console.log("left button press");
@@ -146,8 +145,6 @@ btnLeft.addEventListener('click', function () {
         }, duration);
     }
 })
-
-
 
 
 //  WAIT    //  WAIT
@@ -220,4 +217,21 @@ function openPageBtn() {
     setTimeout(function () {
         window.open(pathname, "_self");
     }, 3000);
+}
+
+function openProjectNav() {
+    var menuItemContainer = document.getElementsByClassName("menuItemsContainer")[0];
+    if (menuOpen == false) {
+        console.log("opening menu");
+        menuItemContainer.classList.add("menuItems-Toggled");
+        //var menuItems = menuItemContainer.querySelectorAll("p");
+        //menuItemContainer.querySelectorAll("p").forEach(element => {
+        //    element.classList.add("menuItems-Toggled");
+        //});
+        menuOpen = true;
+    } else {
+        console.log("closing menu");
+        menuItemContainer.classList.remove("menuItems-Toggled");
+        menuOpen = false;
+    }
 }
