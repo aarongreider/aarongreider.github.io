@@ -335,7 +335,8 @@ nav {
 
     //background-color: blue;
     
-    p {
+    a {
+        color: $text-color;
         font-size: $h3-size;
         font-family:  $font-accent;
         font-weight: 400;

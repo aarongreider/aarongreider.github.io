@@ -146,7 +146,6 @@ btnLeft.addEventListener('click', function () {
     }
 })
 
-
 //  WAIT    //  WAIT
 //  WAIT    //  WAIT
 //  WAIT    //  WAIT
@@ -234,4 +233,35 @@ function openProjectNav() {
         menuItemContainer.classList.remove("menuItems-Toggled");
         menuOpen = false;
     }
+}
+
+
+
+
+
+window.onload = function populateMenuTitles() {
+    //document.getElementsByTagName("input").checked = false;
+
+
+    var projectTitles = document.querySelectorAll("h1");
+    var menuItemContainer = document.getElementsByClassName("menuItemsContainer")[0];
+    // var menuItems = document.querySelectorAll(".menuItemsContainer p");
+    //var menuItemClone = menuItems[0].cloneNode(true);
+    var i = 1;
+    projectTitles.forEach(title => {
+        var menuItemNew = document.createElement("a");
+        console.log(`i=${i}       project title ${title.innerHTML}`);
+        console.log(`project-${i}.html`);
+        menuItemNew.innerHTML = `${title.innerHTML}`;
+        //menuItemNew.href = `project-${i}.html`;
+        //menuItemNew.onclick = function () { window.open(`project-${i}.html`, "_self");};
+        
+        menuItemNew.onclick = function () { 
+            document.getElementsByTagName("input").checked = false; 
+            openPage(`project-7.html`) };
+
+        menuItemContainer.appendChild(menuItemNew);
+        i++;
+    });
+
 }
