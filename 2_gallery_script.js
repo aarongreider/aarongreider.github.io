@@ -220,6 +220,7 @@ function openPageBtn() {
 
 function openProjectNav() {
     var menuItemContainer = document.getElementsByClassName("menuItemsContainer")[0];
+    var navImgContainer = document.getElementsByClassName("menuImgContainer")[0];
     if (menuOpen == false) {
         console.log("opening menu");
         menuItemContainer.classList.add("menuItems-Toggled");
@@ -231,37 +232,57 @@ function openProjectNav() {
     } else {
         console.log("closing menu");
         menuItemContainer.classList.remove("menuItems-Toggled");
+        navImgContainer.classList.remove("menuItems-Toggled");
         menuOpen = false;
     }
 }
 
 
+//add CSS class for hover animation and populate the proper img src for menu text hover
+function mouseoverMenuImg(imgSrc) {
+    var navImgContainer = document.getElementsByClassName("menuImgContainer")[0];
+    var navImg = document.getElementById("navImg");
+    //var galleryImg = document.getElementsByClassName("galleryImg");
+    //on in
+    console.log(`mouseOver ${imgSrc}`);
+    navImg.src = imgSrc;
+    navImgContainer.classList.add("menuItems-Toggled");
+}
+function mouseoutMenuImg() {
+    var navImgContainer = document.getElementsByClassName("menuImgContainer")[0];
+
+    //on out
+    navImgContainer.classList.remove("menuItems-Toggled");
+}
 
 
 
 window.onload = function populateMenuTitles() {
-    //document.getElementsByTagName("input").checked = false;
-
+    //populate the menu options on pageload by iterating foreach through the innerHTML of each h1 tag
 
     var projectTitles = document.querySelectorAll("h1");
     var menuItemContainer = document.getElementsByClassName("menuItemsContainer")[0];
     // var menuItems = document.querySelectorAll(".menuItemsContainer p");
     //var menuItemClone = menuItems[0].cloneNode(true);
+    var galleryImg = document.getElementsByClassName("galleryImg");
+    //var navImg = document.getElementById("navImg");
     var i = 1;
+
     projectTitles.forEach(title => {
         var menuItemNew = document.createElement("a");
-        console.log(`i=${i}       project title ${title.innerHTML}`);
+
+        console.log(`i=${i}, project title ${title.innerHTML}`);
+        console.log(`src ${galleryImg[i-1].src}`);
         console.log(`project-${i}.html`);
+
         menuItemNew.innerHTML = `${title.innerHTML}`;
-        //menuItemNew.href = `project-${i}.html`;
-        //menuItemNew.onclick = function () { window.open(`project-${i}.html`, "_self");};
-        
-        menuItemNew.onclick = function () { 
-            document.getElementsByTagName("input").checked = false; 
-            openPage(`project-7.html`) };
+        menuItemNew.href = `project-${i}.html`;
+ 
+        //menuItemNew.onmouseover = function () { mouseoverMenuImg('Graphics/project1_cover.png') };
+        menuItemNew.onmouseover = function () { mouseoverMenuImg(`${galleryImg[i-2].src}`) };
+        //navImg.src = `${galleryImg[i - 1].src}`;
 
         menuItemContainer.appendChild(menuItemNew);
         i++;
     });
-
 }

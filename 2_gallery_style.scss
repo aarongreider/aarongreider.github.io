@@ -236,7 +236,7 @@ nav {
   
   opacity: 0; /* hide this */
   //z-index: 2; /* and place it over the hamburger */
-  z-index: $z-tier4+10;
+  z-index: $z-tier5+10;
 
   -webkit-touch-callout: none;
 }
@@ -316,18 +316,19 @@ nav {
 
 .menuItemsContainer {
     position: absolute;
-    height: auto;
-    width: 100vw;
-    left: -84em;
+    height: 77vh;
+    width: 30em;
+    left: 0vw;
+    padding: 6em;
 
     display: flex;
+    justify-content: space-between;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 
     visibility: hidden;
     //z-index: -100;
-    z-index: $z-tier5;
+    z-index: $z-tier5+1;
 
     opacity: 0;
     //transition-delay: 10s;
@@ -343,10 +344,40 @@ nav {
         letter-spacing: .15em;
         font-variant: all-small-caps;
 
-        padding: 1em;
+        //padding: 1em;
     }
 }
 
+.menuImgContainer {
+    position: absolute;
+    height: auto;
+    width: 50vw;
+    left: 45vw;
+    top: 17vh;
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+
+    visibility: hidden;
+    //z-index: -100;
+    z-index: $z-tier5+1;
+
+    opacity: 0;
+    //transition-delay: 10s;
+    transition: opacity $duration-text+1 $bezier;
+}
+
+#navImg {
+    //visibility: hidden;
+
+    position: absolute;
+    height: auto;
+    width: 100%;
+
+    z-index: $z-tier5+1;;
+}
 .menuItems-Toggled {
     visibility: visible;
     opacity: 1 !important;

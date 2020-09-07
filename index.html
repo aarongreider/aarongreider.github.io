@@ -42,11 +42,18 @@
     <!--HAMBURGER-->
     <!--HAMBURGER-->
     <!--HAMBURGER-->    
+<div class="menuItemsContainer">
+        
+</div>
+<div class="menuImgContainer">
+    <img id="navImg" mouseover="" src="">
+</div>
+
 <nav role="navigation">
     <div id="menuToggle">
         <!-- A fake / hidden checkbox is used as click reciever,
     so you can use the :checked selector on it. -->
-        <input type="checkbox" onclick="openProjectNav()" unchecked/>
+        <input type="checkbox" onclick="openProjectNav()" unchecked autocomplete="off"/>
 
         <!-- 1 span = 1 line of hamburger -->
         <span></span>
@@ -56,14 +63,6 @@
         <!-- The menu has to be inside of the button -->
         <div id="menu">
         </div>
-    </div>
-    <div class="menuItemsContainer">
-        <!--
-            <p class="">Project 1</p>
-            <p class="">Project 2</p>
-            <p class="">Project 3</p>
-            <p class="">Project 4</p> 
-        -->
     </div>
 </nav>
     <!--HAMBURGER-->
@@ -80,8 +79,7 @@
 
     <!--The id defines which project is on top and on deck by modifying the active CSS applied to each element-->
     <div class="galleryContainer">
-        <div class="gallerySlide" id="top">        <img class="galleryImg" onclick="openPage('project-1.html')" src="Graphics/project1_cover.png"></div>
-        
+        <div class="gallerySlide" id="top">         <img class="galleryImg" onclick="openPage('project-1.html')" src="Graphics/project1_cover.png"></div>
         <div class="gallerySlide" id="null">        <img class="galleryImg" onclick="openPage('project-2.html')" src="Graphics/project2-1_cover.jpg"></div>
         <div class="gallerySlide" id="null">        <img class="galleryImg" onclick="openPage('project-3.html')" src="Graphics/project6_cover.jpg"></div>
         <div class="gallerySlide" id="null">        <img class="galleryImg" onclick="openPage('project-4.html')" src="Graphics/project4_cover.jpg"></div>
