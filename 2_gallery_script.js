@@ -237,7 +237,10 @@ function openProjectNav() {
     }
 }
 
-
+function mouseoverTemp(evt) {
+    console.log('imgsrc=' + evt.target.imgSrc);
+    mouseoverMenuImg(evt.target.imgSrc);
+}
 //add CSS class for hover animation and populate the proper img src for menu text hover
 function mouseoverMenuImg(imgSrc) {
     var navImgContainer = document.getElementsByClassName("menuImgContainer")[0];
@@ -277,12 +280,16 @@ window.onload = function populateMenuTitles() {
 
         menuItemNew.innerHTML = `${title.innerHTML}`;
         menuItemNew.href = `project-${i}.html`;
+        menuItemNew.imgSrc = `${galleryImg[i - 1].src}`
+        menuItemContainer.appendChild(menuItemNew);
  
         //menuItemNew.onmouseover = function () { mouseoverMenuImg('Graphics/project1_cover.png') };
-        menuItemNew.onmouseover = function () { mouseoverMenuImg(`${galleryImg[i-2].src}`) };
+        // menuItemNew.onmouseover = function () { console.log('i =' + i); mouseoverMenuImg(`${galleryImg[i-2].src}`) };
+        menuItemNew.onmouseover = mouseoverTemp;
+        menuItemNew.onmouseout = function () { mouseoutMenuImg() };
         //navImg.src = `${galleryImg[i - 1].src}`;
 
-        menuItemContainer.appendChild(menuItemNew);
+        
         i++;
     });
 }

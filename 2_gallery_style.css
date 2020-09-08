@@ -308,8 +308,8 @@ nav {
   visibility: hidden;
   z-index: 101;
   opacity: 0;
-  -webkit-transition: opacity 1.8s cubic-bezier(0.5, 0.2, 0.15, 1);
-  transition: opacity 1.8s cubic-bezier(0.5, 0.2, 0.15, 1);
+  -webkit-transition: all 0.1s cubic-bezier(0.5, 0.2, 0.15, 1) 0.1s;
+  transition: all 0.1s cubic-bezier(0.5, 0.2, 0.15, 1) 0.1s;
 }
 
 .menuItemsContainer a {
@@ -319,6 +319,15 @@ nav {
   font-weight: 400;
   letter-spacing: .15em;
   font-variant: all-small-caps;
+  -webkit-transition: -webkit-transform 0.4s cubic-bezier(0, 1, 0.35, 1.5);
+  transition: -webkit-transform 0.4s cubic-bezier(0, 1, 0.35, 1.5);
+  transition: transform 0.4s cubic-bezier(0, 1, 0.35, 1.5);
+  transition: transform 0.4s cubic-bezier(0, 1, 0.35, 1.5), -webkit-transform 0.4s cubic-bezier(0, 1, 0.35, 1.5);
+}
+
+.menuItemsContainer a:hover {
+  -webkit-transform: rotate3d(0.5, 1, 0, 15deg);
+          transform: rotate3d(0.5, 1, 0, 15deg);
 }
 
 .menuImgContainer {
@@ -327,24 +336,11 @@ nav {
   width: 50vw;
   left: 45vw;
   top: 17vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   visibility: hidden;
   z-index: 101;
   opacity: 0;
-  -webkit-transition: opacity 1.8s cubic-bezier(0.5, 0.2, 0.15, 1);
-  transition: opacity 1.8s cubic-bezier(0.5, 0.2, 0.15, 1);
+  -webkit-transition: all 0.15s cubic-bezier(0.5, 0.2, 0.15, 1) 0.1s !important;
+  transition: all 0.15s cubic-bezier(0.5, 0.2, 0.15, 1) 0.1s !important;
 }
 
 #navImg {
@@ -357,6 +353,8 @@ nav {
 .menuItems-Toggled {
   visibility: visible;
   opacity: 1 !important;
+  -webkit-transition: all 1.8s cubic-bezier(0.5, 0.2, 0.15, 1) 0.3s;
+  transition: all 1.8s cubic-bezier(0.5, 0.2, 0.15, 1) 0.3s;
 }
 
 /* GALLERY */
