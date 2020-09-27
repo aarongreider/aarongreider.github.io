@@ -11,43 +11,40 @@ h = rect.height;
 
 
 
-ScrollReveal({ reset: true });
+ScrollReveal({ reset: false });
 
 var slideUp = {
-    viewFactor: 0.5,
-    opacity: 0,
-    distance: '16px',
-    orizin: 'bottom',
-    duration: 600,
-    easing: 'ease-out',
-    delay: 200
-};
-
-var delayedSlideUp = {
-    viewFactor: 0.5,
+    viewFactor: 0.1,
     opacity: 0,
     distance: '16px',
     origin: 'bottom',
     duration: 600,
     easing: 'ease-out',
-    delay: 500
+    //delay: 250,
+    interval: 100
 };
 
-var fadeInSimple = {
-    viewFactor: 0.35,
+var delayedSlideUp = {
+    viewFactor: 0.25,
+    opacity: 0,
+    distance: '16px',
+    origin: 'bottom',
+    duration: 600,
+    easing: 'ease-out',
+    delay: 250,
+    interval: 300
+};
+var fadeInLong = {
+    viewFactor: 0.25,
     opacity: 0,
     origin: 'bottom',
     duration: 1000,
     easing: 'ease-out',
-    //viewOffset: {
-    //    top: 700,
-    //    bottom: 0
-    //}
 };
 
-//ScrollReveal().reveal('.card :not(img)', slideUp);
-// ScrollReveal().reveal('.card img', delayedSlideUp);
-// ScrollReveal().reveal('.colorShift', fadeInSimple);
+//ScrollReveal().reveal('.card', slideUp);
+//ScrollReveal().reveal('.card img', delayedSlideUp,);
+ScrollReveal().reveal('h1, h2, h4, p, .card, .section-2 p', delayedSlideUp);
 
 //var whiteRect = document.getElementsByClassName("contentScroll");
 //whiteRect[0].classList.add("contentScrollPost");
