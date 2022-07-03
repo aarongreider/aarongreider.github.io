@@ -375,6 +375,7 @@ nav {
   height: 100%;
   width: 70vw;
   margin: 0;
+  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -394,6 +395,17 @@ nav {
   transition: clip-path 0.7s cubic-bezier(0.5, 0.2, 0.15, 1);
   transition: clip-path 0.7s cubic-bezier(0.5, 0.2, 0.15, 1), -webkit-clip-path 0.7s cubic-bezier(0.5, 0.2, 0.15, 1);
   will-change: clip-path;
+}
+
+.gallerySlide p {
+  height: 100vh;
+  width: 68vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+  overflow: hidden;
+  -webkit-filter: brightness(70%);
+          filter: brightness(70%);
+  cursor: help;
 }
 
 .transitionPage {
@@ -535,7 +547,7 @@ nav {
 
 .colorShift {
   z-index: 0;
-  height: 105vh;
+  height: 100vh;
   width: 100vw;
   top: 100vh;
   position: absolute;
@@ -570,12 +582,22 @@ nav {
           transform: rotate(180deg);
 }
 
-.card {
+#aboutGrouper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+#aboutCard {
   z-index: 5;
   width: 60vw;
   height: auto;
-  margin-left: 10vw;
-  margin-top: -18em;
+  /*     margin-left: 10vw;
+    margin-top: -18em; */
   overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -589,14 +611,12 @@ nav {
           justify-content: space-evenly;
 }
 
-.card p {
+#aboutCard p {
   margin: 1em 2em 0 0;
   font-size: 1.3em;
-  -webkit-column-count: 2;
-          column-count: 2;
 }
 
-.card img {
+#aboutCard img {
   width: 100%;
   margin: 0 0 1em 0;
   -webkit-box-ordinal-group: 1;
@@ -610,24 +630,37 @@ nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   max-width: 100%;
 }
 
-.section-2 {
+footer {
   z-index: 5;
-  width: 42vw;
-  height: auto;
+  width: 100vw;
   -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
       align-self: center;
   margin-top: 12em;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #000000;
+}
+
+footer h4 {
   text-align: center;
 }
 
@@ -639,8 +672,7 @@ nav {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin: 0;
-  width: 100%;
-  height: 10em;
+  width: 60vw;
 }
 
 .mediaLinks p {
@@ -963,10 +995,6 @@ nav {
         -ms-flex-direction: column;
             flex-direction: column;
     margin: 0;
-  }
-  .card p {
-    -webkit-column-count: 1;
-            column-count: 1;
   }
   .card .show-desktop {
     display: none !important;

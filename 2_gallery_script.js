@@ -1,4 +1,4 @@
-console.log('hello world');
+
 
 // Get the user-agent string 
 let userAgentString =

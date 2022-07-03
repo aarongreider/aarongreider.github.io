@@ -6,12 +6,14 @@
     Extend/Inheritance
     Operators */
 
-$font-stack:    'Roboto', sans-serif;
-$font-accent: 'Roboto Condensed', sans-serif;
-$text-color:    #b3b3b3;
+$font-stack: 'Roboto',
+sans-serif;
+$font-accent: 'Roboto Condensed',
+sans-serif;
+$text-color: #b3b3b3;
 
-$background-color:  #000000;
-$test-color-1:  #ecbbbb;
+$background-color: #000000;
+$test-color-1: #ecbbbb;
 
 $z-tier5: 100;
 $z-tier4: 50;
@@ -20,11 +22,15 @@ $z-tier2: 10;
 $z-tier1: 5;
 $z-tier0: 0;
 
-$h1-size: 5em;      /* gallery title */
-$h2-size: 3em;      /* card title */
-$h3-size: 2em;     /* gallery support text */
-$h4-size: 1em;     /* card support text */
-$p-size:  1.2em;
+$h1-size: 5em;
+/* gallery title */
+$h2-size: 3em;
+/* card title */
+$h3-size: 2em;
+/* gallery support text */
+$h4-size: 1em;
+/* card support text */
+$p-size: 1.2em;
 
 $duration-text: .8s;
 $duration-image: .7s;
@@ -32,15 +38,17 @@ $duration-page: 1s;
 $bezier: cubic-bezier(0.5, 0.2, 0.15, 1);
 //$bezier: ease-out;
 
+$img-width: 68vw;
+
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 *::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 /* Hide scrollbar for IE and Edge */
 * {
-  -ms-overflow-style: none;
+    -ms-overflow-style: none;
 }
 
 
@@ -51,16 +59,16 @@ body {
     width: 100vw;
     margin: 0;
     overflow-x: hidden;
-    
+
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 
 
-    font-family:    $font-stack;
-    
-    color:          $text-color;
-    background:     $background-color;
+    font-family: $font-stack;
+
+    color: $text-color;
+    background: $background-color;
 }
 
 h1 {
@@ -77,7 +85,7 @@ h2 {
 
 h3 {
     font-size: $h3-size;
-    font-family:  $font-accent;
+    font-family: $font-accent;
     font-weight: 400;
 }
 
@@ -105,14 +113,15 @@ a {
     letter-spacing: 0;
     text-decoration: none;
 }
+
 a:visited {
-  color: rgb(90, 90, 90);
+    color: rgb(90, 90, 90);
 }
 
 #grid {
     display: grid;
     grid-template-columns: repeat(12, 6em);
-    grid-template-rows: repeat(7,6em);
+    grid-template-rows: repeat(7, 6em);
     align-self: center;
 }
 
@@ -141,8 +150,8 @@ a:visited {
     height: 100vh;
 
     color: grey;
-    background: rgb(255,255,255);
-    background: radial-gradient(circle, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.8) 100%);
+    background: rgb(255, 255, 255);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.8) 100%);
 
     text-align: center;
     display: flex;
@@ -157,6 +166,7 @@ a:visited {
         visibility: inherit !important;
         opacity: inherit !important;
     }
+
     p {
         visibility: inherit !important;
         opacity: inherit !important;
@@ -177,7 +187,7 @@ a:visited {
         font-weight: 700;
         letter-spacing: .15em;
         font-variant: all-small-caps;
-    }    
+    }
 
     svg {
         position: relative;
@@ -199,11 +209,11 @@ a:visited {
             stroke-dasharray: 8em;
             stroke-dashoffset: 0;
 
-            transition: all 1s $bezier;    
-            
+            transition: all 1s $bezier;
+
             &:hover {
                 stroke-dasharray: 39em;
-                stroke-width:.2em
+                stroke-width: .2em
             }
         }
     }
@@ -220,72 +230,71 @@ nav {
     z-index: $z-tier5;
 }
 
-#menuToggle {
-    
-}
+#menuToggle {}
 
 #menuToggle input {
-  display: block;
-  width: 40px;
-  height: 32px;
-  position: absolute;
-  top: -7px;
-  left: -5px;
-  
-  cursor: pointer;
-  
-  opacity: 0; /* hide this */
-  //z-index: 2; /* and place it over the hamburger */
-  z-index: $z-tier5+10;
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    top: -7px;
+    left: -5px;
 
-  -webkit-touch-callout: none;
+    cursor: pointer;
+
+    opacity: 0;
+    /* hide this */
+    //z-index: 2; /* and place it over the hamburger */
+    z-index: $z-tier5+10;
+
+    -webkit-touch-callout: none;
 }
 
 /* Just a quick hamburger */
 #menuToggle span {
-  display: block;
-  width: 33px;
-  height: 4px;
-  margin-bottom: 5px;
-  position: relative;
-  
-  background: #cdcdcd;
-  border-radius: 3px;
-  
-  //z-index: 1;
-  z-index: $z-tier2;
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
 
-  transform-origin: 4px 0px;
-  
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-              opacity 0.55s ease;
+    background: #cdcdcd;
+    border-radius: 3px;
+
+    //z-index: 1;
+    z-index: $z-tier2;
+
+    transform-origin: 4px 0px;
+
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+        background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+        opacity 0.55s ease;
 }
 
 #menuToggle span:first-child {
-  transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
 }
 
 #menuToggle span:nth-last-child(2) {
-  transform-origin: 0% 100%;
+    transform-origin: 0% 100%;
 }
 
 /* Transform all the slices of hamburger into a crossmark */
-#menuToggle input:checked ~ span {
-  
-  transform: rotate(45deg) translate(-2px, -1px);
-  background: #232323;
+#menuToggle input:checked~span {
+
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: #232323;
 }
 
 /* Hide the middle one */
-#menuToggle input:checked ~ span:nth-last-child(3) {
-  opacity: 0;
-  transform: rotate(0deg) scale(0.2, 0.2);
+#menuToggle input:checked~span:nth-last-child(3) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
 }
 
 /* Last one should go the other direction */
-#menuToggle input:checked ~ span:nth-last-child(2) {
-  transform: rotate(-45deg) translate(0, -1px);
+#menuToggle input:checked~span:nth-last-child(2) {
+    transform: rotate(-45deg) translate(0, -1px);
 }
 
 /* Make this absolute positioned at the top left of the screen */
@@ -303,14 +312,14 @@ nav {
     /* to stop flickering of text in safari */
     will-change: transform;
     transform-origin: center;
-   
-    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
 }
 
 /* And let's slide it in from the left */
-#menuToggle input:checked ~ div {
-  transform: scale(100);
-  background-color: whitesmoke;
+#menuToggle input:checked~div {
+    transform: scale(100);
+    background-color: whitesmoke;
 }
 
 
@@ -332,19 +341,20 @@ nav {
 
     opacity: 0;
     transition: all .1s $bezier .1s;
-    
+
     a {
         color: $text-color;
         font-size: $h3-size;
-        font-family:  $font-accent;
+        font-family: $font-accent;
         font-weight: 400;
         letter-spacing: .15em;
         font-variant: all-small-caps;
         transition: transform .4s cubic-bezier(0, 1, 0.35, 1.5);
         //padding: 1em;
     }
+
     a:hover {
-         transform: rotate3d(0.5, 1, 0, 15deg);
+        transform: rotate3d(0.5, 1, 0, 15deg);
     }
 }
 
@@ -369,8 +379,10 @@ nav {
     height: auto;
     width: 100%;
 
-    z-index: $z-tier5+1;;
+    z-index: $z-tier5+1;
+    ;
 }
+
 .menuItems-Toggled {
     visibility: visible;
     opacity: 1 !important;
@@ -397,10 +409,10 @@ nav {
     left: 30vw;
 
     height: 100%;
-    width:  70vw;
+    width: 70vw;
     margin: 0;
 
- //   overflow: hidden;
+    overflow: hidden;
 
     display: flex;
     flex-direction: row;
@@ -412,9 +424,20 @@ nav {
     //visibility: hidden;
     opacity: 0;
     transition: clip-path $duration-image $bezier;
-                
+
     will-change: clip-path;
-} 
+
+    p {
+        height: 100vh;
+        width: $img-width;
+        object-fit: cover;
+        overflow: hidden;
+
+        filter: brightness(70%);
+        cursor: help;
+    }
+}
+
 .transitionPage {
     //position: absolute !important;
     background-color: white;
@@ -423,15 +446,15 @@ nav {
     opacity: 0 !important;
     filter: brightness(2000);
 
-    transition: transform #{$duration-page / 2} cubic-bezier(1,-0.01, 1, 1) 300ms,
-                filter #{$duration-page + 3} ease,
-                opacity #{$duration-page / 1} ease 500ms;
+    transition: transform #{$duration-page / 2} cubic-bezier(1, -0.01, 1, 1) 300ms,
+    filter #{$duration-page + 3} ease,
+    opacity #{$duration-page / 1} ease 500ms;
 }
 
-$img-width: 68vw;
 .animateClipPath {
     clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%) !important;
 }
+
 .inactiveInitial {
     opacity: 0;
 }
@@ -450,6 +473,7 @@ $img-width: 68vw;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     will-change: clip-path;
 }
+
 #next {
     //visibility: visible !important;
     opacity: 1;
@@ -458,8 +482,8 @@ $img-width: 68vw;
     position: absolute;
 
     //left: 30vw; OLD spacing
-    left: 32vw;    
-    top:0;
+    left: 32vw;
+    top: 0;
 
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     will-change: clip-path;
@@ -469,9 +493,9 @@ $img-width: 68vw;
     height: 100vh;
     width: $img-width;
     object-fit: cover;
-    overflow:hidden;
+    overflow: hidden;
 
-    filter:brightness(70%);
+    filter: brightness(70%);
     cursor: help;
 }
 
@@ -483,6 +507,7 @@ $img-width: 68vw;
     .inactiveInitial {
         opacity: 0;
     }
+
     .inactiveFinal {
         opacity: 0;
         margin-top: 8px;
@@ -492,7 +517,7 @@ $img-width: 68vw;
         z-index: $z-tier3;
 
         position: absolute;
-        margin-right: 25vw; 
+        margin-right: 25vw;
         top: 30vh;
         left: 8vw;
 
@@ -509,6 +534,7 @@ $img-width: 68vw;
     $transition-attr: all;
     $delay-attr1: all;
     $delay-attr2: opacity;
+
     h1 {
         margin: 0;
         padding: 0.0em 0 0 -7px;
@@ -530,7 +556,7 @@ $img-width: 68vw;
         transition: $duration-text $bezier;
         transition-delay: .5s;
     }
-        
+
     p {
         margin: 0;
         padding: 1em 0 0 0;
@@ -549,8 +575,8 @@ $img-width: 68vw;
 
 .colorShift {
     z-index: $z-tier0;
-    height:105vh;
-    width:100vw;
+    height: 100vh;
+    width: 100vw;
     top: 100vh;
 
     position: absolute;
@@ -589,14 +615,18 @@ $img-width: 68vw;
 
 $flexText-width: 60vw;
 
-.card {
+#aboutGrouper {
+    display: flex;
+    flex-direction: row;
+}
+
+#aboutCard {
     z-index: $z-tier1;
 
     width: $flexText-width;
     height: auto;
-    //margin: 5em;
-    margin-left: 10vw;
-    margin-top: -18em;
+    /*     margin-left: 10vw;
+    margin-top: -18em; */
     //align-self: center;
 
     overflow: hidden;
@@ -611,12 +641,11 @@ $flexText-width: 60vw;
         margin: 1em 2em 0 0;
         font-size: 1.3em;
         //width: #{$flexText-width/2};
-        column-count: 2;
     }
 
     img {
         //width: #{$flexText-width/1};///1.5
-        width:100%;
+        width: 100%;
         margin: 0 0 1em 0;
         order: 0;
 
@@ -626,18 +655,27 @@ $flexText-width: 60vw;
 
 .flexText {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     max-width: 100%;
 }
 
-.section-2 {
+footer {
     z-index: $z-tier1;
-    width: 42vw;
-    height: auto;
+    width: 100vw;
     align-self: center;
     margin-top: 12em;
     text-align: center;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    background-color: #000000;
+
+    h4 {
+        text-align: center;
+    }
+
 }
 
 .mediaLinks {
@@ -645,20 +683,21 @@ $flexText-width: 60vw;
     justify-content: space-between;
 
     margin: 0;
-	width: 100%;
-	height: 10em;
-	
+    width: $flexText-width;
+
     p {
         font-weight: bold;
         cursor: pointer;
     }
+
     div {
         height: auto;
         width: auto;
         transition: transform .4s cubic-bezier(0, 1, 0.35, 1.5);
     }
+
     div:hover {
-         transform: rotate3d(0.5, 1, 0, 25deg);
+        transform: rotate3d(0.5, 1, 0, 25deg);
     }
 }
 
@@ -683,23 +722,26 @@ $btn-weight-px: 3px;
     opacity: .6;
 
     cursor: pointer;
-    
-        &:hover {
-            .circle-btn--outer {
-                transform: translateX(-8px) translateZ(0);
-            }
-            .circle-arrow--icon {
-                transform: translateX(-8px);
-            }
-            .circle-arrow--bar {
-                transform: scaleX(.55);
-            }
+
+    &:hover {
+        .circle-btn--outer {
+            transform: translateX(-8px) translateZ(0);
         }
+
+        .circle-arrow--icon {
+            transform: translateX(-8px);
+        }
+
+        .circle-arrow--bar {
+            transform: scaleX(.55);
+        }
+    }
 }
 
 .left {
     left: 28vw;
 }
+
 .right {
     left: 44vw;
     transform: rotate(180deg);
@@ -711,8 +753,8 @@ $btn-weight-px: 3px;
     height: $btn-size;
     border: 0px solid $btn-border-color;
     border-radius: 50%;
-    transition:     transform .7s cubic-bezier(1,0,.25,1),      opacity .7s cubic-bezier(.5,0,0,1),
-    transform .7s cubic-bezier(.5,0,0,1);
+    transition: transform .7s cubic-bezier(1, 0, .25, 1), opacity .7s cubic-bezier(.5, 0, 0, 1),
+        transform .7s cubic-bezier(.5, 0, 0, 1);
 }
 
 .circle-arrow--icon {
@@ -722,7 +764,7 @@ $btn-weight-px: 3px;
     width: 75%;
     height: 8px;
     transform: translateX(0) translateZ(0);
-    transition: transform .7s cubic-bezier(1,0,.25,1);
+    transition: transform .7s cubic-bezier(1, 0, .25, 1);
     will-change: transform;
 }
 
@@ -736,12 +778,13 @@ $btn-weight-px: 3px;
     transform: translateZ(0);
     transform-origin: 0 0;
     transition:
-    transform .7s cubic-bezier(1,0,.25,1),
-    opacity .7s cubic-bezier(1,0,.25,1);
+        transform .7s cubic-bezier(1, 0, .25, 1),
+        opacity .7s cubic-bezier(1, 0, .25, 1);
     will-change: transform opacity;
 }
 
 $triangleSize: 6px;
+
 .circle-arrow--triangle {
     border-bottom: solid $triangleSize transparent;
     border-right: solid $triangleSize transparent;
@@ -767,7 +810,7 @@ $triangleSize: 6px;
         font-weight: 700;
         letter-spacing: .15em;
         font-variant: all-small-caps;
-    }    
+    }
 
     svg {
         z-index: $z-tier4;
@@ -791,11 +834,11 @@ $triangleSize: 6px;
             stroke-dasharray: 8em;
             stroke-dashoffset: 0;
 
-            transition: all 1s $bezier;    
-            
+            transition: all 1s $bezier;
+
             &:hover {
                 stroke-dasharray: 39em;
-                stroke-width:.2em
+                stroke-width: .2em
             }
         }
     }
@@ -831,215 +874,224 @@ $triangleSize: 6px;
 /* PORTRAIT QUERY */
 
 
-@media only screen 
-  // and (min-device-width: 375px) 
-  and (max-device-width: 667px) 
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: portrait) {
+@media only screen // and (min-device-width: 375px) 
 
-    $img-height: 75vh; 
+and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+
+    $img-height: 75vh;
 
     * {
         //overflow: visible;
     }
-        body{
-            flex-direction: column;
-            background:     $background-color;
-        }
 
-        h1 {
-            font-size: #{$h1-size - 2};
-        }
+    body {
+        flex-direction: column;
+        background: $background-color;
+    }
 
-        h2 {
-            font-size: #{$h2-size - 1.5};
+    h1 {
+        font-size: #{$h1-size - 2};
+    }
+
+    h2 {
+        font-size: #{$h2-size - 1.5};
+    }
+
+    h3 {
+        font-size: #{$h3-size - .5} !important;
+    }
+
+    p {
+        font-size: #{$h2-size - 2.1};
+    }
+
+    .galleryContainer {
+        height: $img-height;
+        width: 100vw;
+        margin: 0;
+
+        overflow: hidden;
+
+        order: 1;
+    }
+
+    .galleryImg {
+        height: $img-height;
+        width: 100vw;
+
+        filter: brightness(50%) contrast(80%);
+    }
+
+    #top {
+        left: 0;
+    }
+
+    #next {
+        left: 0;
+    }
+
+    .galleryText {
+        top: 16vh !important;
+        left: 0 !important;
+        margin: 0 12vw;
+        width: 18em !important;
+    }
+
+    .textContainer {
+        text-align: center;
+
+        * {
+            transition-delay: 0s !important;
         }
 
         h3 {
-            font-size: #{$h3-size - .5}!important;
+            // padding: 1em 0 0 0; //old
+            position: absolute;
+            top: 55vh;
+            left: 33vw;
         }
 
         p {
-            font-size: #{$h2-size - 2.1};
+            width: inherit;
         }
-
-        .galleryContainer {
-            height: $img-height;
-            width:  100vw;
-            margin: 0;
-
-            overflow: hidden;
-
-            order: 1;
-        }
-        .galleryImg {
-            height: $img-height;
-            width: 100vw;
-
-            filter: brightness(50%) contrast(80%);
-        }
-        #top {
-            left:0;
-        }
-        #next {
-            left:0;
-        }
-
-        .galleryText {
-            top: 16vh !important;
-            left: 0 !important;
-            margin: 0 12vw;
-            width: 18em !important;
-        }
-         
-        .textContainer {
-            text-align: center;
-            * {
-                transition-delay: 0s !important;
-            }
-            h3 {
-                // padding: 1em 0 0 0; //old
-                position: absolute;
-                top: 55vh;
-                left: 33vw;
-            }
-    
-            p {
-                width: inherit;
-            }
-        }
-
-        .section-div {
-            height: #{100-$img-height};
-            width: 100vw;
-            margin: 0;
-
-            background: $background-color;
-
-            order: 2;
-        }
-
-
-        /* BUTTONS */
-        /* BUTTONS */
-        /* BUTTONS */
-
-        $btn-size2: 40px;
-        .btn--flex {
-            order: 3;
-            
-            position: relative;
-            //margin: 0 17.5vw; //old
-            margin: 0 6.5vw; //new
-            //top: #{-(100-$img-height)/1.5};
-            //width: 65vw;
-            top: -18.66667vh; //new, non responsive
-            width: 87vw;
-            
-            display: flex;
-            justify-content: space-between;
-            flex-direction: row;
-
-            .btnExpandProj {
-                position: absolute;
-                //top: -11vh;
-                //left: 10vw;
-                top: -17vh; //new, smaller
-                left: 20vw;
-                margin: 0;
-
-                    h3 {
-                        //font-size
-                    }
-                    svg {
-                        top: -3.4em;
-                        left: -0.9em;
-                        width: 12.5em;
-                        height: 2em;
-                    }
-            }
-            .circle-btn--container {
-                top: 0; //52vh;
-                position: relative;
-
-                .circle-btn--outer {            
-                    width: $btn-size2;
-                    height: $btn-size2;
-                }
-            }
-        }
-        .left {
-            left: 0; //5vw;
-        }
-        .right {
-            left: 0; //72vw;
-        }
-
-
-        /* CARD LAYOUT */
-        /* CARD LAYOUT */
-        /* CARD LAYOUT */
-
-        $text-margin: 10px;
-
-        .colorShift {
-            height: 100vh;
-            visibility: hidden !important;
-        }
-        
-        .flexContainer {
-            h2 {
-                margin: .8em 1.5em;
-                writing-mode: horizontal-tb !important;
-                text-orientation: upright;
-                transform: rotate(0deg);
-            }
-        }
-
-        .card {
-            width:100vw;
-            flex-direction: column;
-            margin: 0;
-
-            h2 {
-
-            }
-
-            p {
-                column-count: 1;
-            }
-            .show-desktop {
-                display: none !important;
-            }
-
-            img {
-                order: 1;
-
-                object-fit: contain;
-                height: auto;
-                //width: 100%;
-                align-self: center;
-            }
-        }
-
-        .flexText {
-            padding: 2em;
-            order: 2;
-
-            width: 100%;
-        }
-        .section-2 {
-            width: 85vw;
-        }
-
-        #about {
-            //top: 80vh;
-            width: auto;
-            visibility: hidden!important;
-        }
-
-
     }
+
+    .section-div {
+        height: #{100-$img-height};
+        width: 100vw;
+        margin: 0;
+
+        background: $background-color;
+
+        order: 2;
+    }
+
+
+    /* BUTTONS */
+    /* BUTTONS */
+    /* BUTTONS */
+
+    $btn-size2: 40px;
+
+    .btn--flex {
+        order: 3;
+
+        position: relative;
+        //margin: 0 17.5vw; //old
+        margin: 0 6.5vw; //new
+        //top: #{-(100-$img-height)/1.5};
+        //width: 65vw;
+        top: -18.66667vh; //new, non responsive
+        width: 87vw;
+
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+
+        .btnExpandProj {
+            position: absolute;
+            //top: -11vh;
+            //left: 10vw;
+            top: -17vh; //new, smaller
+            left: 20vw;
+            margin: 0;
+
+            h3 {
+                //font-size
+            }
+
+            svg {
+                top: -3.4em;
+                left: -0.9em;
+                width: 12.5em;
+                height: 2em;
+            }
+        }
+
+        .circle-btn--container {
+            top: 0; //52vh;
+            position: relative;
+
+            .circle-btn--outer {
+                width: $btn-size2;
+                height: $btn-size2;
+            }
+        }
+    }
+
+    .left {
+        left: 0; //5vw;
+    }
+
+    .right {
+        left: 0; //72vw;
+    }
+
+
+    /* CARD LAYOUT */
+    /* CARD LAYOUT */
+    /* CARD LAYOUT */
+
+    $text-margin: 10px;
+
+    .colorShift {
+        height: 100vh;
+        visibility: hidden !important;
+    }
+
+    .flexContainer {
+        h2 {
+            margin: .8em 1.5em;
+            writing-mode: horizontal-tb !important;
+            text-orientation: upright;
+            transform: rotate(0deg);
+        }
+    }
+
+    .card {
+        width: 100vw;
+        flex-direction: column;
+        margin: 0;
+
+        h2 {}
+
+        p {
+            //column-count: 1;
+        }
+
+        .show-desktop {
+            display: none !important;
+        }
+
+        img {
+            order: 1;
+
+            object-fit: contain;
+            height: auto;
+            //width: 100%;
+            align-self: center;
+        }
+    }
+
+    .flexText {
+        padding: 2em;
+        order: 2;
+
+        width: 100%;
+    }
+
+    .section-2 {
+        width: 85vw;
+    }
+
+    #about {
+        //top: 80vh;
+        width: auto;
+        visibility: hidden !important;
+    }
+
+
+}
 
 /* PORTRAIT QUERY */
 /* PORTRAIT QUERY */
