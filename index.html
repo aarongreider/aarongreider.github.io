@@ -20,9 +20,19 @@
 
     <link rel="stylesheet" href="2_gallery_style.css" type="text/css">
 
-    <link
+    <!-- <link
         href="https://fonts.googleapis.com/css?family=Crimson+Pro:400i,700i|Roboto+Condensed:400|Roboto:300,500,700&display=swap"
-        rel="stylesheet">
+        rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 48
+        }
+    </style>
     <title>Aaron Greider</title>
 </head>
 
@@ -34,52 +44,10 @@
     <!-- End Google Tag Manager (noscript) -->
 
 
-
-
-    <!--HAMBURGER-->
-    <!--HAMBURGER-->
-    <!--HAMBURGER-->
-    <!--HAMBURGER-->
-    <!--HAMBURGER-->
-    <div class="menuItemsContainer">
-
-    </div>
-    <div class="menuImgContainer">
-        <img id="navImg" mouseover="" src="">
-    </div>
-
-    <nav role="navigation">
-        <div id="menuToggle">
-            <!-- A fake / hidden checkbox is used as click reciever,
-    so you can use the :checked selector on it. -->
-            <input type="checkbox" onclick="openProjectNav()" unchecked autocomplete="off" />
-
-            <!-- 1 span = 1 line of hamburger -->
-            <span></span>
-            <span></span>
-            <span></span>
-
-            <!-- The menu has to be inside of the button -->
-            <div id="menu">
-            </div>
-        </div>
-    </nav>
-    <!--HAMBURGER-->
-    <!--HAMBURGER-->
-    <!--HAMBURGER-->
-    <!--HAMBURGER-->
-    <!--HAMBURGER-->
-
-
-
-
-
-    <div class="section-div"></div>
-
     <!--The id defines which project is on top and on deck by modifying the active CSS applied to each element-->
     <div class="galleryContainer">
         <div class="gallerySlide" id="top"> <img class="galleryImg" onclick="openPage('project-1.html')"
-                src="Graphics/project1_cover.png"></div>
+                src="Graphics/project1_cover.jpg"></div>
         <div class="gallerySlide" id="null"> <img class="galleryImg" onclick="openPage('project-2.html')"
                 src="Graphics/project2-2_cover.jpg"></div>
         <div class="gallerySlide" id="null"> <img class="galleryImg" onclick="openPage('project-3.html')"
@@ -94,157 +62,19 @@
                 src="Graphics/project7_cover.jpg"></div>
     </div>
 
-    <div class="textContainer">
-
-        <div class="galleryText">
-            <h4 class="">ALBUM COVER</h4>
-            <h1 class="">Mezzanine</h1>
-            <h3 class="">1 <span class="" style="font-size: .6em;">/ 7</span></h3>
-            <p class="">Mezzanine is a trip hop classic, and there was no better location to embody its ambient
-                sound than the local abandoned pool.</p>
-        </div>
-
-        <div class="galleryText">
-            <h4 class="inactiveFinal">MOTION</h4>
-            <h1 class="inactiveFinal">Celluloid</h1>
-            <h3 class="inactiveFinal">2 <span class="inactiveFinal" style="font-size: .6em;">/ 7</span></h3>
-            <p class="inactiveFinal">In a world where men run large corporations, one blob has no choice but to save
-                mankind.</p>
-        </div>
-
-        <div class="galleryText">
-            <h4 class="inactiveFinal">CLIENT WORK</h4>
-            <h1 class="inactiveFinal">ChangeUp</h1>
-            <h3 class="inactiveFinal">3 <span class="inactiveFinal" style="font-size: .6em;">/ 7</span></h3>
-            <p class="inactiveFinal">I spent eight months as an environmental graphics intern for ChangeUp,
-                working on projects for internal use, Buffalo Wild Wings, and Wawa stores.
-            </p>
-        </div>
-
-        <div class="galleryText">
-            <h4 class="inactiveFinal">MAGAZINE</h4>
-            <h1 class="inactiveFinal">Alley Fiend</h1>
-            <h3 class="inactiveFinal">4 <span class="inactiveFinal" style="font-size: .6em;">/ 7</span></h3>
-            <p class="inactiveFinal">Alley Fiend is a lifestyle publication that celebrates anarcho-punk culture and a
-                near pointless glorification of gratuitous self-indulgence.
-            </p>
-        </div>
-
-        <div class="galleryText">
-            <h4 class="inactiveFinal">COMPETITION</h4>
-            <h1 class="inactiveFinal">Allbirds Packaging</h1>
-            <h3 class="inactiveFinal">5 <span class="inactiveFinal" style="font-size: .6em;">/ 7</span></h3>
-            <p class="inactiveFinal">Students from all majors and years were encouraged to apply to UC's off-campus
-                maker space
-                for an opportunity to present two redesigns of the Allbirds shoe packaging to Tim Brown, the CEO.
-            </p>
-        </div>
-
-        <div class="galleryText">
-            <h4 class="inactiveFinal">UX/UI</h4>
-            <h1 class="inactiveFinal">Craigslist Redesign</h1>
-            <h3 class="inactiveFinal">6 <span class="inactiveFinal" style="font-size: .6em;">/ 7</span></h3>
-            <p class="inactiveFinal">The current UI is truly a relic from the dawn of the internet,
-                it's a miracle it's survived this long. I analyzed and user tested craigslist, then redesigned it.
-            </p>
-        </div>
-
-        <div class="galleryText">
-            <h4 class="inactiveFinal">EXPERIMENTAL</h4>
-            <h1 class="inactiveFinal">One-Off Designs</h1>
-            <h3 class="inactiveFinal">7 <span class="inactiveFinal" style="font-size: .6em;">/ 7</span></h3>
-            <p class="inactiveFinal">From photography to 3D rendering to abstract noodling in photoshop,
-                these are my favorite one-off design explorations.
-            </p>
-        </div>
-
-
-        <!--    <div class="galleryText">
-                        <h4 class="inactiveFinal">GIFT CARDS</h4>
-                        <h1 class="inactiveFinal">Buffalo Wild Wings</h1>
-                        <h3 class="inactiveFinal">3 <span class="inactiveFinal" style="font-size: .6em;">/ 8</span></h3>
-                        <p class="inactiveFinal">After having done a full rebrand of B-Dubs, Inspire Brands hit us with a fresh task: create a bunch
-                                                 of different gift card concepts that <s>are better than Starbucks</s> have unique carriers and designs.
-                        </p>
-                    </div>  -->
-
-        <!--    <div class="galleryText">
-                <h4 class="inactiveFinal">ALBUM COVER</h4>
-                <h1 class="inactiveFinal">Midnight Snack</h1>
-                <h3 class="inactiveFinal">5 <span class="inactiveFinal" style="font-size: .6em;">/ 8</span></h3>
-                <p class="inactiveFinal">A man, a ten second camera timer, and an empty refrigerator. I designed a new album cover for
-                    Homeshake's Midnight snack
-                    featuring myself, as the midnight snack...</p>
-            </div> -->
-
-        <!--    <div class="galleryText">
-                <h4 class="inactiveFinal">MURAL</h4>
-                <h1 class="inactiveFinal">Wawa, Gainesville</h1>
-                <h3 class="inactiveFinal">6 <span class="inactiveFinal" style="font-size: .6em;">/ 8</span></h3>
-                <p class="inactiveFinal">The Wawa Convenience Store in Gainseville Florida is a block away from the 
-                                        University of Florida campus. Naturally, they requested a mural that depicted iconic UF locations.
-                </p>
-            </div> -->
-
-        <!--    <div class="galleryText">
-                <h4 class="inactiveFinal">ALBUM COVER</h4>
-                <h1 class="inactiveFinal">Boys Will Be Bugs</h1>
-                <h3 class="inactiveFinal">8 <span class="inactiveFinal" style="font-size: .6em;">/ 8</span></h3>
-                <p class="inactiveFinal">This moment I captured is worth much more than the plastic CD case I placed them in. I captured my little cousins
-                playing in a creek waterfall, being the tiny carefree bugs they are.</p>
-            </div> -->
-
+    <div class="projectContainer">
+        <a><span></span>Resume</a>
+        <br>
+        <a><span></span>Oxley</a>
+        <a><span></span>Alchemist</a>
+        <a><span></span>Wawa</a>
+        <a><span></span>Helion branding and website</a>
+        <a><span></span>Selected Artworks — Image Imagination</a>
+        <br>
+        <a>About</a>
     </div>
 
-
-    <!--- ANNOUNCEMENT -->
-    <div class="heyThere fadeMeIn">
-        <h5 class="fadeMeIn">Hey There!</h5>
-        <p class="fadeMeIn">As I am but one simple man in a world where browser support is the complicated beast that it
-            is,
-            I've optimized my portfolio for Google Chrome. If you're able, please switch over to Chrome as
-            there are a few performance issues here and there on other browsers. Thanks!
-        </p>
-
-        <div class="continueBtn fadeMeIn">
-            <h3 style="cursor: pointer;" onclick="dismiss()">OKIE DOKIE!</h3>
-            <svg style="cursor: pointer;" onclick="dismiss()">
-                <rect />
-            </svg>
-        </div>
-
-    </div>
-    <!--- ARROWS -->
-    <!--- ARROWS -->
     <h4 id="about">ABOUT &#8595;</h4>
-
-    <div class="btn--flex">
-        <div class="btnExpandProj">
-            <h3 style="cursor: pointer;" onclick="openPageBtn()">OPEN PROJECT</h3>
-            <svg style="cursor: pointer;" onclick="openPageBtn()">
-                <rect />
-            </svg>
-        </div>
-        <div class="circle-btn--container left">
-            <div class="circle-btn--outer">
-                <div class="circle-arrow--icon">
-                    <div class="circle-arrow--bar"></div>
-                    <div class="circle-arrow--triangle">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="circle-btn--container right">
-            <div class="circle-btn--outer">
-                <div class="circle-arrow--icon">
-                    <div class="circle-arrow--bar"></div>
-                    <div class="circle-arrow--triangle">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
     <!--- CARD -->
@@ -255,43 +85,14 @@
             <h2 class="cardTitle">ABOUT ME?</h2>
             <div id="aboutCard">
                 <img class="cardImg" src="Graphics/about1.jpg">
-
                 <p>Strategic and technical creativity is my passion, from motion design to front-end web development.
                     Speaking of which,
                     this entire website was hand coded by yours truly.
                     <br><br>
-                    I'm currently searching for an internship for Spring 2021 – get in touch!
-
+                    I'm currently searching for a full time position for 2022 – get in touch!
                 </p>
             </div>
         </div>
-
-        <footer>
-            <h4>THIS ENTIRE WEBSITE WAS HAND CODED BY YOURS TRULY.</h4>
-            <div class="mediaLinks">
-                <a href="DOWNLOADS/aaron_greider_resume_S20.pdf" target="_blank">
-                    <div>
-                        <p>resume</p>
-                    </div>
-                </a>
-                <a href="https://www.linkedin.com/in/aaron-greider" target="_blank">
-                    <div>
-                        <p>linkedin</p>
-                    </div>
-                </a>
-                <a href="https://www.behance.net/aaron_greider" target="_blank">
-                    <div>
-                        <p>behance</p>
-                    </div>
-                </a>
-                <a href="https://github.com/aarongreider" target="_blank">
-                    <div>
-                        <p>github repo</p>
-                    </div>
-                </a>
-
-            </div>
-        </footer>
 
     </div>
 
@@ -304,8 +105,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
 
-
     <script src="2_gallery_script.js"></script>
+
 </body>
 
 </html>

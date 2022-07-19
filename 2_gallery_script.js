@@ -72,83 +72,62 @@ var duration = 1000;
 console.log("activeIndex= " + activeIndex);
 console.log("slideImage.length= " + slideImage.length);
 
-// RIGHT BUTTON PRESS
-btnRight.addEventListener('click', function () {
-    console.log("right button press");
-    // right button next is x+1
-    if (activeIndex == slideImage.length - 1 || animating == true) {
-        console.log("cannot increment")
-    } else {
-        active = slideImage[activeIndex];
-        next = slideImage[activeIndex + 1];
+document.onkeydown = checkKey;
+function checkKey(e) {
 
-        // set id's
-        active.id = "top";
-        next.id = "next";
+    e = e || window.event;
 
-        //TEXT DISAPPEAR
-        //TEXT DISAPPEAR
-        //TEXT DISAPPEAR
-        slideText[activeIndex].classList.add("inactiveInitial");
+    if (e.keyCode == '37') {
+        // left arrow
+        console.log("left button press");
+        // left button next is x-1
+        if (activeIndex == 0) {
+            console.log("cannot decrement")
+        } else {
+            active = slideImage[activeIndex];
+            next = slideImage[activeIndex - 1];
 
-        slideTextChilds = slideText[activeIndex].querySelectorAll("*");        
-        slideTextChilds.forEach(function(item, index) {
-            slideTextChilds[index].classList.add("inactiveFinal");
-        })
-             
-             
-        //assign .animate class to animate the shifted clip path then hide active
-        console.log("animating");
-        active.classList.add("animateClipPath");
+            // set id's
+            active.id = "top";
+            next.id = "next";
 
-        //wait duration then return active image to and remove .animate class
-        animating = true;
-        window.setTimeout(function () {
-            waitRemove("up");
-        }, duration);
+            //assign .animate class to animate the shifted clip path then hide active
+            console.log("animating");
+            active.classList.add("animateClipPath");
+
+            //wait duration then return active image to and remove .animate class
+            animating = true;
+            window.setTimeout(function () {
+                waitRemove("down");
+            }, duration);
+        }
     }
-})
+    else if (e.keyCode == '39') {
+        // right arrow
+        console.log("right button press");
+        // right button next is x+1
+        if (activeIndex == slideImage.length - 1) {
+            console.log("cannot increment")
+        } else {
+            active = slideImage[activeIndex];
+            next = slideImage[activeIndex + 1];
 
-// LEFT BUTTON PRESS
-btnLeft.addEventListener('click', function () {
-    console.log("left button press");
-    // left button next is x-1
-    if (activeIndex == 0 || animating == true) {
-        console.log("cannot decrement")
-    } else {
-        active = slideImage[activeIndex];
-        next = slideImage[activeIndex - 1];
+            // set id's
+            active.id = "top";
+            next.id = "next";
 
-        // set id's
-        active.id = "top";
-        next.id = "next";
+            //assign .animate class to animate the shifted clip path then hide active
+            console.log("animating");
+            active.classList.add("animateClipPath");
 
-        //TEXT DISAPPEAR
-        //TEXT DISAPPEAR
-        //TEXT DISAPPEAR
-        slideText[activeIndex].classList.add("inactiveInitial");
-
-        slideTextChilds = slideText[activeIndex].querySelectorAll("*");
-        slideTextChilds.forEach(function (item, index) {
-            slideTextChilds[index].classList.add("inactiveFinal");
-        })
-
-
-        //assign .animate class to animate the shifted clip path then hide active
-        console.log("animating");
-        active.classList.add("animateClipPath");
-
-        //wait duration then return active image to and remove .animate class
-        animating = true;
-        window.setTimeout(function () {
-            waitRemove("down");
-        }, duration);
+            //wait duration then return active image to and remove .animate class
+            animating = true;
+            window.setTimeout(function () {
+                waitRemove("up");
+            }, duration);
+        }
     }
-})
-
-//  WAIT    //  WAIT
-//  WAIT    //  WAIT
-//  WAIT    //  WAIT
+}
 //  WAIT    //  WAIT
 function waitRemove(direction) {
     //remove top ID and animate class
@@ -158,23 +137,12 @@ function waitRemove(direction) {
 
     //decrement and reassign active images to shift the top and next images
     if (direction == "up") {
-        console.log("increment activeIndex");
         activeIndex++;
+        console.log(`increment activeIndex ${activeIndex}`);
     } else {
-        console.log("decrement activeIndex");
+        console.log(`decrement activeIndex ${activeIndex}`);
         activeIndex--;
     }
-
-    //  REMOVE inactiveInitial TO PREP FOR STAGGERED FADE IN
-    slideText[activeIndex].classList.remove("inactiveInitial");
-    //  TEXT STATE 2 - remove inactiveFinal from all children for staggered FADE IN
-    //  TEXT STATE 2 - remove inactiveFinal from all children for staggered FADE IN
-    slideTextChilds = slideText[activeIndex].querySelectorAll("*");
-    slideTextChilds.forEach(function (item, index) {
-        slideTextChilds[index].classList.remove("inactiveFinal");
-    })
-
-
 
     console.log("activeIndex= " + activeIndex);
     animating = false;
@@ -188,13 +156,8 @@ function waitRemove(direction) {
 function openPage(pathname) {
     active = slideImage[activeIndex];
     console.log("pathname: " + pathname);
-    
-    active.classList.add("transitionPage");
 
-    setTimeout(function () {
-        slideText[activeIndex].classList.add("inactiveInitial");
-        document.getElementsByClassName("btn--flex")[0].classList.add("inactiveInitial");
-    }, 200);
+    active.classList.add("transitionPage");
 
     setTimeout(function () {
         window.open(pathname, "_self");
@@ -205,13 +168,8 @@ function openPageBtn() {
     active = slideImage[activeIndex];
     var projectNum = (activeIndex + 1);
     var pathname = "project-" + projectNum + ".html";
-    
-    active.classList.add("transitionPage");
 
-    setTimeout(function () {
-        slideText[activeIndex].classList.add("inactiveInitial");
-        document.getElementsByClassName("btn--flex")[0].classList.add("inactiveInitial");
-    }, 200);
+    active.classList.add("transitionPage");
 
     setTimeout(function () {
         window.open(pathname, "_self");
@@ -275,21 +233,21 @@ window.onload = function populateMenuTitles() {
         var menuItemNew = document.createElement("a");
 
         console.log(`i=${i}, project title ${title.innerHTML}`);
-        console.log(`src ${galleryImg[i-1].src}`);
+        console.log(`src ${galleryImg[i - 1].src}`);
         console.log(`project-${i}.html`);
 
         menuItemNew.innerHTML = `${title.innerHTML}`;
         menuItemNew.href = `project-${i}.html`;
         menuItemNew.imgSrc = `${galleryImg[i - 1].src}`
         menuItemContainer.appendChild(menuItemNew);
- 
+
         //menuItemNew.onmouseover = function () { mouseoverMenuImg('Graphics/project1_cover.png') };
         // menuItemNew.onmouseover = function () { console.log('i =' + i); mouseoverMenuImg(`${galleryImg[i-2].src}`) };
         menuItemNew.onmouseover = mouseoverTemp;
         menuItemNew.onmouseout = function () { mouseoutMenuImg() };
         //navImg.src = `${galleryImg[i - 1].src}`;
 
-        
+
         i++;
     });
 }
