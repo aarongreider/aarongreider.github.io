@@ -2,27 +2,9 @@
 <html>
 
 <head>
-    <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
-            w[l] = w[l] || []; w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            }); var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-TTM5PJ9');</script>
-    <!-- End Google Tag Manager -->
-
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-
-    <link rel="shortcut icon" href="Graphics/fav.ico" type="image/x-icon">
-    <link rel="icon" href="Graphics/fav.ico" type="image/x-icon">
-
     <link rel="stylesheet" href="2_gallery_style.css" type="text/css">
 
-    <!-- <link
-        href="https://fonts.googleapis.com/css?family=Crimson+Pro:400i,700i|Roboto+Condensed:400|Roboto:300,500,700&display=swap"
-        rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
     <style>
         .material-symbols-outlined {
@@ -38,74 +20,477 @@
 
 
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TTM5PJ9" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
 
-
-    <!--The id defines which project is on top and on deck by modifying the active CSS applied to each element-->
-    <div class="galleryContainer">
-        <div class="gallerySlide" id="top"> <img class="galleryImg" onclick="openPage('project-1.html')"
-                src="Graphics/project1_cover.jpg"></div>
-        <div class="gallerySlide" id="null"> <img class="galleryImg" onclick="openPage('project-2.html')"
-                src="Graphics/project2-2_cover.jpg"></div>
-        <div class="gallerySlide" id="null"> <img class="galleryImg" onclick="openPage('project-3.html')"
-                src="Graphics/project3_cover-2.jpg"></div>
-        <div class="gallerySlide" id="null"> <img class="galleryImg" onclick="openPage('project-4.html')"
-                src="Graphics/project4_cover.jpg"></div>
-        <div class="gallerySlide" id="null"> <img class="galleryImg" onclick="openPage('project-5.html')"
-                src="Graphics/project5_cover-2.jpg"></div>
-        <div class="gallerySlide" id="null"> <img class="galleryImg" onclick="openPage('project-6.html')"
-                src="Graphics/project6_cover-2.jpg"></div>
-        <div class="gallerySlide" id="null"> <img class="galleryImg" onclick="openPage('project-7.html')"
-                src="Graphics/project7_cover.jpg"></div>
-    </div>
-
-    <div class="projectContainer">
-        <a><span></span>Resume</a>
+    <div id="projectContainer">
+        <h1 id="welcomeText">Hello, <span>I'm Aaron!</span></h1>
+        <a href="https://aaron.greider.org/DOWNLOADS/AaronGreider_Resume_Fall20.pdf"
+            target="_blank"><span>Resume</span></a>
         <br>
-        <a><span></span>Oxley</a>
-        <a><span></span>Alchemist</a>
-        <a><span></span>Wawa</a>
-        <a><span></span>Helion branding and website</a>
-        <a><span></span>Selected Artworks — Image Imagination</a>
+        <a class="projectLink" href="oxley.html"><span>Oxley</span></a>
+        <a class="projectLink"><span>Alchemist</span></a>
+        <a class="projectLink"><span>Wawa</span></a>
+        <a class="projectLink"><span>Helion branding and website</span></a>
+        <a class="projectLink"><span>Selected Artworks — Image Imagination</span></a>
         <br>
-        <a>About</a>
+        <a id="aboutLink">About</a>
     </div>
+    <a id="galleryLink">Gallery</a>
+    <p id="aboutText">Strategic and technical creativity is my passion, from motion design to front-end web development.
+        Speaking of which, this entire website was hand coded by yours truly.
+        <br><br>
+        I'm currently searching for a full time position for Fall 2022 – get in touch!
+    </p>
 
-    <h4 id="about">ABOUT &#8595;</h4>
+    <div id="mouse"></div>
+    <canvas class="webgl"></canvas>
 
-
-    <!--- CARD -->
-    <!--- CARD -->
-    <div class="colorShift"></div>
-    <div class="flexContainer">
-        <div id="aboutGrouper">
-            <h2 class="cardTitle">ABOUT ME?</h2>
-            <div id="aboutCard">
-                <img class="cardImg" src="Graphics/about1.jpg">
-                <p>Strategic and technical creativity is my passion, from motion design to front-end web development.
-                    Speaking of which,
-                    this entire website was hand coded by yours truly.
-                    <br><br>
-                    I'm currently searching for a full time position for 2022 – get in touch!
-                </p>
-            </div>
-        </div>
-
-    </div>
-
-
-
-
-    <!-- scrollReveal CDN -->
-    <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- SCRIPTS -->
+    <!-- SCRIPTS -->
+    <!-- SCRIPTS -->
+    <!-- SCRIPTS -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/CustomEase.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/Draggable.js"></script>
 
-    <script src="2_gallery_script.js"></script>
+
+    <!-- THREE JS -->
+    <script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
+    <!-- https://unpkg.com/three@0.142.0/build/three.js -->
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.142.0/build/three.module.js"
+            
+        }
+      }
+    </script>
+
+    <script type="module">
+        import * as THREE from 'three';
+        //import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
+        //import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
+        import { OrbitControls } from 'https://unpkg.com/three@0.142.0/examples/jsm/controls/OrbitControls.js';
+        import { GLTFLoader } from 'https://unpkg.com/three@0.142.0/examples/jsm/loaders/GLTFLoader.js';
+        //import * as dat from 'dat.gui'
+
+        // Debug
+        //const gui = new dat.GUI()
+
+        //#region Three Init
+
+        // Canvas
+        const canvas = document.querySelector('canvas.webgl')
+
+        // Scene
+        const scene = new THREE.Scene()
+        scene.background = '0xff0000';
+        scene.fog = new THREE.Fog(0xffffff, 0.0025, 15);
+
+        // Lights
+
+        const pointLight = new THREE.PointLight(0xffffff, 0.1)
+        pointLight.position.x = 2
+        pointLight.position.y = 3
+        pointLight.position.z = 4
+        scene.add(pointLight)
+
+        /**
+         * Sizes
+         */
+        const sizes = {
+            width: window.innerWidth,
+            height: window.innerHeight
+        }
+
+        window.addEventListener('resize', () => {
+            setFrameGroupPos();
+            setPlanesGroupPos();
+
+            // Update sizes
+            sizes.width = window.innerWidth
+            sizes.height = window.innerHeight
+
+            // Update camera
+            camera.aspect = sizes.width / sizes.height
+            camera.updateProjectionMatrix()
+
+            // Update renderer
+            renderer.setSize(sizes.width, sizes.height)
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+        })
+
+        /**
+         * Camera
+         */
+        // Base camera
+        const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
+        camera.position.set(0, .25, 10)
+        //camera.lookAt(-.75, .25, 0)
+        camera.lookAt(0, 0, 0)
+        camera.fov = 20;
+        camera.updateProjectionMatrix();
+        scene.add(camera)
+
+        // Controls
+        /* const controls = new OrbitControls(camera, canvas)
+        controls.enableDamping = true */
+
+        /**
+         * Renderer
+         */
+        const renderer = new THREE.WebGLRenderer({
+            canvas: canvas,
+            alpha: true
+        })
+        renderer.setSize(sizes.width, sizes.height)
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+        renderer.setClearColor(0xffffff, 0);
+        //#endregion
+
+        /**
+         * Init
+         */
+        //#region Init
+        let inGallery = true;
+        let hovering = false;
+        let planes = [];
+        let projects = [];
+        const planesGroup = new THREE.Group();
+        const frameGroup = new THREE.Group();
+        function projectObj(name, num, plane, imgPath, rad) {
+            this.name = name;
+            this.num = num;
+            this.plane = plane;
+            this.imgPath = imgPath;
+            this.rad = rad;
+        }
+
+        const t1 = gsap.timeline({ repeat: -1 });
+        const t2 = gsap.timeline({ repeat: 0 });
+
+        let projectLinks = document.getElementsByClassName("projectLink");
+        let distance = 2 * (Math.PI) / (projectLinks.length);
+        let radius = 1.5;
+
+        for (let i = 0; i < projectLinks.length; i++) {
+            populatePlanes(distance, i);
+        }
+
+        planes.forEach(plane => {
+            planesGroup.add(plane);
+        });
+        // planesGroup.position.set(.75, -.25, 0);
+        setPlanesGroupPos();
+        scene.add(planesGroup);
+        gsapNeutralAnim();
+
+        let oxley = new projectObj(
+            "oxley", 0, planes[0],
+            function () {
+                return `Graphics/project${this.num}_cover.jpg`;
+            },
+            function () {
+                return distance * this.num;
+            }
+        );
+        projects.push(oxley);
+        console.log(oxley)
+
+        //#endregion
+        /**
+         * About Section Init
+         */
+        //#region About
+        let planeSize = 2;
+        let spaceSize = 1.2;
+        const frameGeo = new THREE.PlaneGeometry(planeSize, planeSize);
+        const frameMat = new THREE.MeshBasicMaterial({
+            color: 0xffffff,
+            //side: THREE.DoubleSide
+        });
+        const frameObj1 = new THREE.Mesh(frameGeo, frameMat);
+        const frameObj2 = new THREE.Mesh(frameGeo, frameMat);
+        const frameObj3 = new THREE.Mesh(frameGeo, frameMat);
+        const frameObj4 = new THREE.Mesh(frameGeo, frameMat);
+        const portrait = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), new THREE.MeshBasicMaterial({
+            map: new THREE.TextureLoader().load('Graphics/about_img.jpg'),
+            fog: false,
+        }))
+        frameObj1.position.set(planeSize / -spaceSize, 0, 0);
+        frameObj2.position.set(planeSize / spaceSize, 0, 0);
+        frameObj3.position.set(0, planeSize / spaceSize, 0);
+        frameObj4.position.set(0, planeSize / -spaceSize, 0);
+        portrait.position.set(0, 0, -1);
+        //scene.add(frameObj1, frameObj2, frameObj3, frameObj4, portrait);
+        frameGroup.add(frameObj1, frameObj2, frameObj3, frameObj4, portrait);
+        // frameGroup.position.set(calcFrameX(), -4.75, 0)
+        setFrameGroupPos();
+        //frameGroup.position.set(-2.25, -4.75, 0)
+        //frameGroup.position.set(0, 0, 0)
+        scene.add(frameGroup);
+
+        //#endregion
+
+        /**
+         * Methods
+         */
+        function populatePlanes(dist, projectNum) {
+            let x = radius * Math.cos(dist * projectNum);
+            let y = radius * Math.sin(dist * projectNum);
+            //console.log(`project ${projectNum} x: ${x} y: ${y}`)
+
+            const planeGeo = new THREE.PlaneGeometry(1, 0.5625);
+            const planeMat = new THREE.MeshBasicMaterial({
+                map: new THREE.TextureLoader().load(`Graphics/project${projectNum + 1}_cover.jpg`),
+                side: THREE.DoubleSide
+            });
+            const planeObj = new THREE.Mesh(planeGeo, planeMat);
+            planeObj.position.set(y, 0, x);
+            planeObj.lookAt(0, 0, 0);
+            scene.add(planeObj);
+            planes.push(planeObj);
+        }
+
+        function setFrameGroupPos() {
+            let left = -1.5;
+            let right = 0;
+
+            let winMax = 1160;
+            let winMin = 510;
+
+            frameGroup.position.set(calcFrameX(left, right, winMin, winMax), -4.75, 0)
+            /* console.log(window.innerWidth)
+            console.log(frameGroup.position) */
+        }
+
+        function setPlanesGroupPos() {
+            let left = .75;
+            let right = 0;
+
+            let winMax = 1160;
+            let winMin = 510;
+
+            planesGroup.position.set(calcFrameX(left, right, winMin, winMax), -.25, 0)
+            console.log(window.innerWidth)
+            console.log(planesGroup.position)
+        }
+
+        function calcFrameX(left, right, min, max) {
+            return lerp(right, left, getPercentInRange(min, max, window.innerWidth));
+        }
+
+        function lerp(v0, v1, t) {
+            return v0 * (1 - t) + v1 * t
+        }
+
+        function getPercentInRange(min, max, val) {
+            return (val - min) / (max - min);
+        }
+
+        /**
+         * GSAP
+         */
+        var myDraggable = Draggable.create("a", { type: "x,y", minimumMovement: 3, edgeResistance: 0.65, bounds: "body", inertia: true });
+
+        function gsapNeutralAnim() {
+            t1.repeat(0);
+            t1.to({}, {
+                duration: 1, onComplete: function () {
+                    t1.clear();
+                    t1.to(planesGroup.rotation, {
+                        y: planesGroup.rotation.y + .25, duration: 1, ease: "sine.in", onComplete: function () {
+                            t1.repeat(-1);
+                            t1.clear();
+                            t1.to(planesGroup.rotation, { y: planesGroup.rotation.y + (2 * Math.PI), duration: 15, ease: "none" });
+                        }
+                    })
+                }
+            });
+        }
+        function gsapToProject(num) {
+            t1.to({}, { duration: .2 });
+            //console.log(num);
+            t1.repeat(0);
+            t1.clear();
+            //console.log(`from: ${planesGroup.rotation.y}`)
+            //console.log(`to: ${num}`)
+            let dur = Math.abs(num - planesGroup.rotation.y) / (8);
+            let dur2 = dur / Math.pow(dur, 2);
+            //console.log(dur);
+
+            t1.to(planesGroup.rotation, { y: num, duration: dur + .25, ease: "power3.out" });
+        }
+
+        function toAbout() {
+            inGallery = false;
+            let galleryLink = document.getElementById("galleryLink");
+            t2.clear();
+            gsap.to(camera.position, {
+                y: -5, duration: 2.5,
+                ease: CustomEase.create("custom", "M0,0 C0.688,0 0.62,1.009 0.872,1.01 0.932,1.01 0.948,1 1,1 "),
+                onComplete: () => galleryLink.style.opacity = 1,
+            })
+            //let a = document.getElementsByTagName("a")
+            let a = document.querySelectorAll("#projectContainer > *")
+            for (let i = a.length - 1; i > -1; i--) {
+                t2.to({}, { duration: .1, onComplete: () => { a[i].style.opacity = 0; } })
+            }
+            document.getElementById("aboutText").style.display = "block"
+            document.getElementById("aboutText").style.opacity = 0;
+            t2.to({}, {
+                duration: 2, onComplete: () => {
+                    document.getElementById("aboutText").style.opacity = 1;
+                }
+            })
+        }
+
+        function toGallery() {
+            inGallery = true;
+            galleryLink.style.opacity = 0;
+            document.getElementById("aboutText").style.opacity = 0;
+            t2.clear();
+            document.getElementById("welcomeText").innerHTML = "<span>Welcome Back!</span>";
+            t2.to(camera.position, {
+                y: .25, duration: 1.75,
+                ease: CustomEase.create("custom", "M0,0 C0.908,-0.214 0.216,1 1,1 "),
+
+            })
+            let a = document.querySelectorAll("#projectContainer > *")
+            for (let i = 0; i < a.length; i++) {
+                t2.to({}, { duration: .1, onComplete: () => { a[i].style.opacity = 1; } })
+            }
+
+            //document.getElementById("aboutText").style.display = "none";
+        }
+
+        /**
+         * Listeners
+         */
+        //#region Listeners
+        addEventListener('mouseover', (event) => {
+            let text = event.srcElement.outerText;
+            let tag = event.srcElement.tagName;
+            //console.log(tag)
+            if (tag === `A`) {
+                hovering = true;
+                //console.log(`hovering: ${hovering}`)
+            }
+            switch (text) {
+                // case (`Resume`): gsapToProject(0 * distance); break;
+                case (`Oxley`): gsapToProject(0 * distance); break;
+                case (`Alchemist`): gsapToProject(1 * distance); break;
+                case (`Wawa`): gsapToProject(2 * distance); break;
+                case (`Helion branding and website`): gsapToProject(3 * distance); break;
+                case (`Selected Artworks — Image Imagination`): gsapToProject(4 * distance); break;
+                //case (`About`): planesGroup.position.y += .5;
+            }
+        });
+
+        addEventListener('mouseout', (event) => {
+            let text = event.srcElement.outerText;
+            let tag = event.srcElement.tagName;
+            //if (text === "Resume Oxley Alchemist Wawa Helion branding and website Selected Artworks — Image Imagination About")
+            if (tag === `A` && text !== `About`) {
+                hovering = false;
+                //console.log(`hovering: ${hovering}`)
+                //t1.clear();
+                gsapNeutralAnim();
+            }
+        });
+
+        let aboutLink = document.querySelector('#aboutLink');
+        let galleryLink = document.querySelector('#galleryLink');
+
+        aboutLink.addEventListener("click", (event) => {
+            toAbout();
+        });
+        galleryLink.addEventListener("click", (event) => {
+            toGallery();
+        });
+
+        /* window.addEventListener('wheel', function (event) {
+            if (event.deltaY > 0 && inGallery) {
+                console.log('scrolling down');
+                toAbout();
+            } else if (event.deltaY < 0 && !inGallery) {
+                console.log('scrolling up');
+                toGallery();
+            }
+        }); */
+
+        let mouseX = 0;
+        let mouseY = 0;
+        document.addEventListener("mousemove", () => {
+            mouseX = event.clientX - (window.innerWidth / 2); // Gets Mouse X
+            mouseY = event.clientY - (window.innerHeight / 2); // Gets Mouse Y
+
+            document.getElementById('mouse').style.left = `${mouseX}px`;
+            document.getElementById('mouse').style.top = `${mouseY}px`;
+        });
+
+        //#endregion
+
+        /**
+         * Mouse
+         */
+        const mouseObj = document.getElementById('mouse');
+        let maxX = window.innerWidth;
+        let maxY = window.innerHeight;
+
+        function targetPI(num, max) { return (num / (max / Math.PI)) }
+        //function average(arr) { return arr.reduce((a, b) => a + b, 0) / arr.length }
+
+        function getBounds(obj) {
+            const rect = obj.getBoundingClientRect();
+            return {
+                left: rect.left,
+                top: rect.top
+            }
+        }
+
+
+
+        /**
+         * Animate
+         */
+
+        const clock = new THREE.Clock()
+        let x = 0;
+        let y = 0;
+
+        const tick = () => {
+            //const elapsedTime = clock.getElapsedTime()
+
+            x = targetPI(getBounds(mouseObj).left, maxX);
+            y = targetPI(getBounds(mouseObj).top, maxY);
+            frameGroup.rotation.set(-y / 5, -x / 5, 0);
+            planesGroup.rotation.x = -y / 10;
+            //planesGroup.rotation.z = -x / 10;
+
+            // Update objects
+            //sphere.rotation.y = -.5 * elapsedTime;
+            /* if (!hovering && planesGroup.rotation.y < (2 * Math.PI)) {
+                planesGroup.rotation.y += .005;
+            } else if (planesGroup.rotation.y >= (2 * Math.PI)) {
+                console.log(planesGroup.rotation.y);
+                planesGroup.rotation.y = 0;
+            } */
+
+
+            // Update Orbital Controls
+            // controls.update()
+
+            // Render
+            renderer.render(scene, camera)
+
+            // Call tick again on the next frame
+            window.requestAnimationFrame(tick)
+        }
+
+        tick()
+    </script>
 
 </body>
 
