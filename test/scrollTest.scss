@@ -1,7 +1,0 @@
-$refImg: url(midnight_gif2.gif);
-$refWidth: image-width($refImg);
-
-img {
-    width: $refWidth;
-    object-fit: contain;
-}

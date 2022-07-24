@@ -19,20 +19,20 @@
 </head>
 
 
-<body>
+<body style="height:90vh">
 
     <div id="projectContainer">
         <h1 id="welcomeText">Hello, <span>I'm Aaron!</span></h1>
-        <a href="https://aaron.greider.org/DOWNLOADS/AaronGreider_Resume_Fall20.pdf"
+        <a class="arrow" href="https://boom-advantage-beb.notion.site/Resume-bd632ee3b8fd4b57ac2f7baf2f11f374"
             target="_blank"><span>Resume</span></a>
         <br>
-        <a class="projectLink" href="oxley.html"><span>Oxley</span></a>
-        <a class="projectLink"><span>Alchemist</span></a>
-        <a class="projectLink"><span>Wawa</span></a>
-        <a class="projectLink"><span>Helion branding and website</span></a>
-        <a class="projectLink"><span>Selected Artworks — Image Imagination</span></a>
+        <a class="projectLink" href="oxley.html"><span>👾 Oxley</span></a>
+        <a class="projectLink" href="alchemist.html"><span>⚗️ Alchemist</span></a>
+        <a class="projectLink" href="wawa.html"><span>🦆 Wawa</span></a>
+        <a class="projectLink" href="helion.html"><span>🎈 Helion branding and website</span></a>
+        <a class="projectLink" href="artworks.html"><span>🙀 Selected Artworks — Image Imagination</span></a>
         <br>
-        <a id="aboutLink">About</a>
+        <a id="aboutLink"><span>About</span></a>
     </div>
     <a id="galleryLink">Gallery</a>
     <p id="aboutText">Strategic and technical creativity is my passion, from motion design to front-end web development.
@@ -86,7 +86,9 @@
         // Scene
         const scene = new THREE.Scene()
         scene.background = '0xff0000';
-        scene.fog = new THREE.Fog(0xffffff, 0.0025, 15);
+        scene.fog = new THREE.Fog(0xffffff, 7, 13.25);
+
+        const txtLoader = new THREE.TextureLoader();
 
         // Lights
 
@@ -204,7 +206,7 @@
          */
         //#region About
         let planeSize = 2;
-        let spaceSize = 1.2;
+        let spaceSize = planeSize / 2 + .7; //1.2
         const frameGeo = new THREE.PlaneGeometry(planeSize, planeSize);
         const frameMat = new THREE.MeshBasicMaterial({
             color: 0xffffff,
@@ -214,17 +216,27 @@
         const frameObj2 = new THREE.Mesh(frameGeo, frameMat);
         const frameObj3 = new THREE.Mesh(frameGeo, frameMat);
         const frameObj4 = new THREE.Mesh(frameGeo, frameMat);
+        const frameObj5 = new THREE.Mesh(frameGeo, frameMat);
+        const frameObj6 = new THREE.Mesh(frameGeo, frameMat);
+        const frameObj7 = new THREE.Mesh(frameGeo, frameMat);
+        const frameObj8 = new THREE.Mesh(frameGeo, frameMat);
         const portrait = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), new THREE.MeshBasicMaterial({
             map: new THREE.TextureLoader().load('Graphics/about_img.jpg'),
             fog: false,
         }))
-        frameObj1.position.set(planeSize / -spaceSize, 0, 0);
-        frameObj2.position.set(planeSize / spaceSize, 0, 0);
-        frameObj3.position.set(0, planeSize / spaceSize, 0);
-        frameObj4.position.set(0, planeSize / -spaceSize, 0);
+        frameObj1.position.set(-spaceSize, 0, 0);
+        frameObj2.position.set(spaceSize, 0, 0);
+        frameObj3.position.set(0, spaceSize, 0);
+        frameObj4.position.set(0, -spaceSize, 0);
+
+        frameObj5.position.set(-spaceSize, -spaceSize, 0);
+        frameObj6.position.set(spaceSize, -spaceSize, 0);
+        frameObj7.position.set(-spaceSize, spaceSize, 0);
+        frameObj8.position.set(spaceSize, spaceSize, 0);
+
         portrait.position.set(0, 0, -1);
         //scene.add(frameObj1, frameObj2, frameObj3, frameObj4, portrait);
-        frameGroup.add(frameObj1, frameObj2, frameObj3, frameObj4, portrait);
+        frameGroup.add(frameObj1, frameObj2, frameObj3, frameObj4, frameObj5, frameObj6, frameObj7, frameObj8, portrait);
         // frameGroup.position.set(calcFrameX(), -4.75, 0)
         setFrameGroupPos();
         //frameGroup.position.set(-2.25, -4.75, 0)
@@ -236,16 +248,21 @@
         /**
          * Methods
          */
+
         function populatePlanes(dist, projectNum) {
             let x = radius * Math.cos(dist * projectNum);
             let y = radius * Math.sin(dist * projectNum);
             //console.log(`project ${projectNum} x: ${x} y: ${y}`)
 
             const planeGeo = new THREE.PlaneGeometry(1, 0.5625);
+            const planeTxt = txtLoader.load(`Graphics/project${projectNum + 1}_cover.jpg`);
+            planeTxt.wrapS = THREE.RepeatWrapping;
+            planeTxt.repeat.x = - 1;
             const planeMat = new THREE.MeshBasicMaterial({
-                map: new THREE.TextureLoader().load(`Graphics/project${projectNum + 1}_cover.jpg`),
+                map: planeTxt,
                 side: THREE.DoubleSide
             });
+            planeMat.map.flipY = true;
             const planeObj = new THREE.Mesh(planeGeo, planeMat);
             planeObj.position.set(y, 0, x);
             planeObj.lookAt(0, 0, 0);
@@ -259,10 +276,13 @@
 
             let winMax = 1160;
             let winMin = 510;
-
-            frameGroup.position.set(calcFrameX(left, right, winMin, winMax), -4.75, 0)
-            /* console.log(window.innerWidth)
-            console.log(frameGroup.position) */
+            if (window.innerWidth < winMin) {
+                frameGroup.position.set(0, -5.75, 0)
+            } else {
+                frameGroup.position.set(calcFrameX(left, right, winMin, winMax), -4.75, 0)
+            }
+            console.log(window.innerWidth)
+            console.log(frameGroup.position)
         }
 
         function setPlanesGroupPos() {
@@ -332,12 +352,14 @@
                 ease: CustomEase.create("custom", "M0,0 C0.688,0 0.62,1.009 0.872,1.01 0.932,1.01 0.948,1 1,1 "),
                 onComplete: () => galleryLink.style.opacity = 1,
             })
-            //let a = document.getElementsByTagName("a")
             let a = document.querySelectorAll("#projectContainer > *")
             for (let i = a.length - 1; i > -1; i--) {
                 t2.to({}, { duration: .1, onComplete: () => { a[i].style.opacity = 0; } })
             }
-            document.getElementById("aboutText").style.display = "block"
+            for (let i = a.length - 1; i > -1; i--) {
+                t2.to({}, { duration: .1, onComplete: () => { a[i].style.display = "none"; } })
+            }
+            document.getElementById("aboutText").style.display = "block";
             document.getElementById("aboutText").style.opacity = 0;
             t2.to({}, {
                 duration: 2, onComplete: () => {
@@ -355,9 +377,12 @@
             t2.to(camera.position, {
                 y: .25, duration: 1.75,
                 ease: CustomEase.create("custom", "M0,0 C0.908,-0.214 0.216,1 1,1 "),
-
+                onComplete: () => document.getElementById("aboutText").style.display = "none"
             })
             let a = document.querySelectorAll("#projectContainer > *")
+            for (let i = a.length - 1; i > -1; i--) {
+                t2.call(a[i].style.display = "block")
+            }
             for (let i = 0; i < a.length; i++) {
                 t2.to({}, { duration: .1, onComplete: () => { a[i].style.opacity = 1; } })
             }
@@ -380,10 +405,10 @@
             switch (text) {
                 // case (`Resume`): gsapToProject(0 * distance); break;
                 case (`Oxley`): gsapToProject(0 * distance); break;
-                case (`Alchemist`): gsapToProject(1 * distance); break;
-                case (`Wawa`): gsapToProject(2 * distance); break;
-                case (`Helion branding and website`): gsapToProject(3 * distance); break;
-                case (`Selected Artworks — Image Imagination`): gsapToProject(4 * distance); break;
+                case (`Alchemist`): gsapToProject(-1 * distance); break;
+                case (`Wawa`): gsapToProject(-2 * distance); break;
+                case (`Helion branding and website`): gsapToProject(-3 * distance); break;
+                case (`Selected Artworks — Image Imagination`): gsapToProject(-4 * distance); break;
                 //case (`About`): planesGroup.position.y += .5;
             }
         });
