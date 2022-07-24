@@ -337,6 +337,10 @@ iframe {
 
     /* PROJECT PAGES */
 
+    header {
+        width: 100%;
+    }
+
     main {
         align-self: auto;
     }
@@ -347,6 +351,15 @@ iframe {
         p {
             width: 100%;
             max-width: 100%;
+        }
+    }
+
+    .jsAdjust {
+        display: block !important;
+
+        img {
+            max-width: 100% !important;
+            object-fit: cover;
         }
     }
 }

@@ -324,6 +324,9 @@ iframe {
     max-width: 80%;
   }
   /* PROJECT PAGES */
+  header {
+    width: 100%;
+  }
   main {
     -ms-flex-item-align: auto;
         -ms-grid-row-align: auto;
@@ -338,6 +341,14 @@ iframe {
   .flex-row p {
     width: 100%;
     max-width: 100%;
+  }
+  .jsAdjust {
+    display: block !important;
+  }
+  .jsAdjust img {
+    max-width: 100% !important;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
 }
 /*# sourceMappingURL=2_gallery_style.css.map */
