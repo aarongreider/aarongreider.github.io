@@ -157,6 +157,7 @@ header {
   color: rgba(55, 53, 47, 0.347);
   padding: 16px;
   position: fixed;
+  z-index: 999;
 }
 
 header a {
@@ -289,6 +290,8 @@ iframe {
 
 .jsAdjust img {
   max-width: 100% !important;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .p-half {
@@ -304,6 +307,10 @@ iframe {
   /* and (orientation: portrait) */
   html {
     font-size: 16px;
+  }
+  img {
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   /* GALLERY PAGE */
   #projectContainer {
