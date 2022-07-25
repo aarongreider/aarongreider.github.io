@@ -269,6 +269,7 @@ iframe {
         //align-items: center;
         justify-content: center;
         flex: 1 2 10px;
+        align-self: flex-start;
 
         p {
             width: 100%;
@@ -348,6 +349,12 @@ iframe {
     .flex-row {
         flex-direction: column;
 
+        div {
+            max-height: 75vh;
+            max-width: 100%;
+            overflow: visible;
+        }
+
         p {
             width: 100%;
             max-width: 100%;
@@ -357,9 +364,15 @@ iframe {
     .jsAdjust {
         display: block !important;
 
+        div {
+            max-height: 75vh;
+            max-width: 100%;
+            overflow: visible;
+        }
+
         img {
             max-width: 100% !important;
-            object-fit: cover;
+            object-fit: contain;
         }
     }
 }

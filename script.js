@@ -1,7 +1,10 @@
 iconAsides();
 
 window.onload = function () {
+    //if (window.innerWidth > 810) {
     imgFlex();
+    //}
+
 
     //var elements = gsap.utils.toArray('main > *');
     var elements = gsap.utils.toArray('img, iframe, h1, h2, h3, aside, p');

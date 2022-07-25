@@ -278,6 +278,8 @@ iframe {
   -webkit-box-flex: 1;
       -ms-flex: 1 2 10px;
           flex: 1 2 10px;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
 }
 
 .flex-row div p {
@@ -338,6 +340,11 @@ iframe {
         -ms-flex-direction: column;
             flex-direction: column;
   }
+  .flex-row div {
+    max-height: 75vh;
+    max-width: 100%;
+    overflow: visible;
+  }
   .flex-row p {
     width: 100%;
     max-width: 100%;
@@ -345,10 +352,15 @@ iframe {
   .jsAdjust {
     display: block !important;
   }
+  .jsAdjust div {
+    max-height: 75vh;
+    max-width: 100%;
+    overflow: visible;
+  }
   .jsAdjust img {
     max-width: 100% !important;
-    -o-object-fit: cover;
-       object-fit: cover;
+    -o-object-fit: contain;
+       object-fit: contain;
   }
 }
 /*# sourceMappingURL=2_gallery_style.css.map */
