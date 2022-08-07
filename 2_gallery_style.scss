@@ -82,6 +82,7 @@ h3 {
 p {
     font-size: $p-size;
     font-weight: 400;
+    //margin-bottom: 16px;
 }
 
 b {
@@ -146,7 +147,7 @@ a {
 
 #aboutText {
     position: absolute;
-    margin: 15rem 0 0 29rem;
+    margin: 10rem 0 0 29rem;
     max-width: 23rem;
 
     display: none;
@@ -225,7 +226,8 @@ img {
     margin: 0 0 16px 0;
 }
 
-iframe {
+iframe,
+video {
     /* width: 327px;
     height: 184px; */
     margin: 0;
@@ -260,7 +262,7 @@ iframe {
 
     img {
         max-width: 40%;
-        flex: 2 2 60%;
+        //flex: 2 2 60%;
     }
 
     div {
