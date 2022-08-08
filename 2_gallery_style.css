@@ -227,6 +227,11 @@ video {
   height: 25rem;
 }
 
+.cp_embed_iframe {
+  width: 100%;
+  height: 33rem;
+}
+
 .sketchfab {
   width: 100%;
   height: 25rem;
