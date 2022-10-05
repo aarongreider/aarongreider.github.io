@@ -307,6 +307,37 @@ video {
   max-width: 710px;
 }
 
+.mockupGIFContainer {
+  position: relative;
+  height: auto;
+}
+
+.mockupGIFContainer img {
+  margin: 0;
+}
+
+.mockupGIFContainer .mockupGIF {
+  position: absolute;
+  height: 92%;
+  width: 24.9%;
+  left: 72.94%;
+  top: 3.34%;
+  border-radius: 17px;
+  -webkit-box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  margin: 0;
+  overflow: hidden;
+  opacity: 1;
+}
+
+.mockupGIFContainer .mockupGIF img {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 /* PORTRAIT QUERY */
 @media (max-width: 800px) {
   /* and (orientation: portrait) */
