@@ -425,15 +425,10 @@ let x = 0;
 let y = 0;
 
 const tick = () => {
-    //const elapsedTime = clock.getElapsedTime()
-
     x = targetPI(getBounds(mouseObj).left, maxX);
     y = targetPI(getBounds(mouseObj).top, maxY);
     frameGroup.rotation.set(-y / 5, -x / 5, 0);
     planesGroup.rotation.x = -y / 10;
-
-    // Update Orbital Controls
-    // controls.update()
 
     // Render
     renderer.render(scene, camera)
