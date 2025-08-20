@@ -1,0 +1,445 @@
+import * as THREE from 'three';
+
+//#region Three Init
+
+// Canvas
+const canvas = document.querySelector('canvas.webgl')
+
+// Scene
+const scene = new THREE.Scene()
+scene.background = '0xff0000';
+scene.fog = new THREE.Fog(0xffffff, 7, 13.25);
+
+const txtLoader = new THREE.TextureLoader();
+
+// Lights
+
+const pointLight = new THREE.PointLight(0xffffff, 0.1)
+pointLight.position.x = 2
+pointLight.position.y = 3
+pointLight.position.z = 4
+scene.add(pointLight)
+
+/**
+ * Sizes
+ */
+const sizes = {
+    width: window.innerWidth,
+    height: window.innerHeight
+}
+
+window.addEventListener('resize', () => {
+    setFrameGroupPos();
+    setPlanesGroupPos();
+
+    // Update sizes
+    sizes.width = window.innerWidth
+    sizes.height = window.innerHeight
+
+    // Update camera
+    camera.aspect = sizes.width / sizes.height
+    camera.updateProjectionMatrix()
+
+    // Update renderer
+    renderer.setSize(sizes.width, sizes.height)
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+})
+
+/**
+ * Camera
+ */
+// Base camera
+const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
+camera.position.set(0, .25, 10)
+//camera.lookAt(-.75, .25, 0)
+camera.lookAt(0, 0, 0)
+camera.fov = 20;
+camera.updateProjectionMatrix();
+scene.add(camera)
+
+/**
+ * Renderer
+ */
+const renderer = new THREE.WebGLRenderer({
+    canvas: canvas,
+    alpha: true
+})
+renderer.setSize(sizes.width, sizes.height)
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+renderer.setClearColor(0xffffff, 0);
+//#endregion
+
+/**
+ * Init
+ */
+//#region Init
+let inGallery = true;
+let hovering = false;
+let planes = [];
+let projects = [];
+const planesGroup = new THREE.Group();
+const frameGroup = new THREE.Group();
+function projectObj(name, num, plane, imgPath, rad) {
+    this.name = name;
+    this.num = num;
+    this.plane = plane;
+    this.imgPath = imgPath;
+    this.rad = rad;
+}
+
+const t1 = gsap.timeline({ repeat: -1 });
+const t2 = gsap.timeline({ repeat: 0 });
+
+let projectLinks = document.getElementsByClassName("projectLink");
+let distance = 2 * (Math.PI) / (projectLinks.length);
+let radius = 1.15;
+
+for (let i = 0; i < projectLinks.length; i++) {
+    populatePlanes(distance, i);
+}
+
+planes.forEach(plane => {
+    planesGroup.add(plane);
+});
+// planesGroup.position.set(.75, -.25, 0);
+setPlanesGroupPos();
+scene.add(planesGroup);
+gsapNeutralAnim();
+
+let oxley = new projectObj(
+    "oxley", 0, planes[0],
+    function () {
+        return `Graphics/project${this.num}_cover.jpg`;
+    },
+    function () {
+        return distance * this.num;
+    }
+);
+projects.push(oxley);
+console.log(oxley)
+
+//#endregion
+/**
+ * About Section Init
+ */
+//#region About
+let planeSize = 2;
+let spaceSize = planeSize / 2 + .7; //1.2
+const frameGeo = new THREE.PlaneGeometry(planeSize, planeSize);
+const frameMat = new THREE.MeshBasicMaterial({
+    color: 0xffffff,
+    //side: THREE.DoubleSide
+});
+const frameObj1 = new THREE.Mesh(frameGeo, frameMat);
+const frameObj2 = new THREE.Mesh(frameGeo, frameMat);
+const frameObj3 = new THREE.Mesh(frameGeo, frameMat);
+const frameObj4 = new THREE.Mesh(frameGeo, frameMat);
+const frameObj5 = new THREE.Mesh(frameGeo, frameMat);
+const frameObj6 = new THREE.Mesh(frameGeo, frameMat);
+const frameObj7 = new THREE.Mesh(frameGeo, frameMat);
+const frameObj8 = new THREE.Mesh(frameGeo, frameMat);
+const portraitTxt = txtLoader.load('Graphics/about_img.jpg');
+const karmaTxt = txtLoader.load('Graphics/karma3.jpg');
+const portrait = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), new THREE.MeshBasicMaterial({
+    map: portraitTxt,
+    fog: false,
+}))
+frameObj1.position.set(-spaceSize, 0, 0);
+frameObj2.position.set(spaceSize, 0, 0);
+frameObj3.position.set(0, spaceSize, 0);
+frameObj4.position.set(0, -spaceSize, 0);
+
+frameObj5.position.set(-spaceSize, -spaceSize, 0);
+frameObj6.position.set(spaceSize, -spaceSize, 0);
+frameObj7.position.set(-spaceSize, spaceSize, 0);
+frameObj8.position.set(spaceSize, spaceSize, 0);
+
+portrait.position.set(0, 0, -1);
+//scene.add(frameObj1, frameObj2, frameObj3, frameObj4, portrait);
+frameGroup.add(frameObj1, frameObj2, frameObj3, frameObj4, frameObj5, frameObj6, frameObj7, frameObj8, portrait);
+// frameGroup.position.set(calcFrameX(), -4.75, 0)
+setFrameGroupPos();
+//frameGroup.position.set(-2.25, -4.75, 0)
+//frameGroup.position.set(0, 0, 0)
+scene.add(frameGroup);
+
+//#endregion
+
+/**
+ * Methods
+ */
+
+function populatePlanes(dist, projectNum) {
+    let x = radius * Math.cos(dist * projectNum);
+    let y = radius * Math.sin(dist * projectNum);
+    //console.log(`project ${projectNum} x: ${x} y: ${y}`)
+
+    const planeGeo = new THREE.PlaneGeometry(1, 0.5625);
+    const planeTxt = txtLoader.load(`Graphics/project${projectNum + 1}_cover.webp`);
+    planeTxt.wrapS = THREE.RepeatWrapping;
+    planeTxt.repeat.x = - 1;
+    const planeMat = new THREE.MeshBasicMaterial({
+        map: planeTxt,
+        side: THREE.DoubleSide
+    });
+    planeMat.map.flipY = true;
+    const planeObj = new THREE.Mesh(planeGeo, planeMat);
+    planeObj.position.set(y, 0, x);
+    planeObj.lookAt(0, 0, 0);
+    scene.add(planeObj);
+    planes.push(planeObj);
+}
+
+function setFrameGroupPos() {
+    let left = -1.5;
+    let right = 0;
+
+    let winMax = 1160;
+    let winMin = 510;
+    if (window.innerWidth < winMin) {
+        frameGroup.position.set(0, -5.75, 0)
+    } else {
+        frameGroup.position.set(calcFrameX(left, right, winMin, winMax), -4.75, 0)
+    }
+    console.log(window.innerWidth)
+    console.log(frameGroup.position)
+}
+
+function setPlanesGroupPos() {
+    let left = .75;
+    let right = 0;
+
+    let winMax = 1160;
+    let winMin = 510;
+
+    planesGroup.position.set(calcFrameX(left, right, winMin, winMax), -.25, 0)
+    console.log(window.innerWidth)
+    console.log(planesGroup.position)
+}
+
+function calcFrameX(left, right, min, max) {
+    return lerp(right, left, getPercentInRange(min, max, window.innerWidth));
+}
+
+function lerp(v0, v1, t) {
+    return v0 * (1 - t) + v1 * t
+}
+
+function getPercentInRange(min, max, val) {
+    return (val - min) / (max - min);
+}
+
+/**
+ * GSAP
+ */
+var myDraggable = Draggable.create("a", { type: "x,y", minimumMovement: 3, edgeResistance: 0.65, bounds: "body", inertia: true });
+
+function gsapNeutralAnim() {
+    t1.repeat(0);
+    t1.to({}, {
+        duration: 1, onComplete: function () {
+            t1.clear();
+            t1.to(planesGroup.rotation, {
+                y: planesGroup.rotation.y + .25, duration: 1, ease: "sine.in", onComplete: function () {
+                    t1.repeat(-1);
+                    t1.clear();
+                    t1.to(planesGroup.rotation, { y: planesGroup.rotation.y + (2 * Math.PI), duration: 15, ease: "none" });
+                }
+            })
+        }
+    });
+}
+function gsapToProject(num) {
+    t1.to({}, { duration: .2 });
+    //console.log(num);
+    t1.repeat(0);
+    t1.clear();
+    //console.log(`from: ${planesGroup.rotation.y}`)
+    //console.log(`to: ${num}`)
+    let dur = Math.abs(num - planesGroup.rotation.y) / (8);
+    let dur2 = dur / Math.pow(dur, 2);
+    //console.log(dur);
+
+    t1.to(planesGroup.rotation, { y: num, duration: dur + .25, ease: "power3.out" });
+}
+
+function toAbout() {
+    inGallery = false;
+    let galleryLink = document.getElementById("galleryLink");
+    t2.clear();
+    gsap.to(camera.position, {
+        y: -5, duration: 2.5,
+        ease: CustomEase.create("custom", "M0,0 C0.688,0 0.62,1.009 0.872,1.01 0.932,1.01 0.948,1 1,1 "),
+        onComplete: () => galleryLink.style.opacity = 1,
+    })
+    let a = document.querySelectorAll("#projectContainer > *")
+    for (let i = a.length - 1; i > -1; i--) {
+        t2.to({}, { duration: .1, onComplete: () => { a[i].style.opacity = 0; } })
+    }
+    for (let i = a.length - 1; i > -1; i--) {
+        t2.to({}, { duration: .1, onComplete: () => { a[i].style.display = "none"; } })
+    }
+    document.getElementById("aboutText").style.display = "block";
+    document.getElementById("aboutText").style.opacity = 0;
+    t2.to({}, {
+        duration: 2, onComplete: () => {
+            document.getElementById("aboutText").style.opacity = 1;
+        }
+    })
+}
+
+function toGallery() {
+    inGallery = true;
+    galleryLink.style.opacity = 0;
+    document.getElementById("aboutText").style.opacity = 0;
+    t2.clear();
+    document.getElementById("welcomeText").innerHTML = "<span>Nice to meet you!</span>";
+    t2.to(camera.position, {
+        y: .25, duration: 1.75,
+        ease: CustomEase.create("custom", "M0,0 C0.908,-0.214 0.216,1 1,1 "),
+        onComplete: () => document.getElementById("aboutText").style.display = "none"
+    })
+    let a = document.querySelectorAll("#projectContainer > *")
+    for (let i = a.length - 1; i > -1; i--) {
+        t2.call(a[i].style.display = "block")
+    }
+    for (let i = 0; i < a.length; i++) {
+        t2.to({}, { duration: .1, onComplete: () => { a[i].style.opacity = 1; } })
+    }
+
+    //document.getElementById("aboutText").style.display = "none";
+}
+
+/**
+ * Listeners
+ */
+//#region Listeners
+addEventListener('mouseover', (event) => {
+    let text = event.srcElement.outerText;
+    let tag = event.srcElement.tagName;
+    //console.log(tag)
+    if (tag === `A`) {
+        hovering = true;
+        console.log(`hovering: ${hovering}`)
+    }
+    /* 🔍 Jungle Jim's Item Search</span></a>
+        🛍️ Weekly Deals Webapp</span></a>
+        🌴 Jungle Jim's Web and Branding Guidelines</span></a>
+        🎈 Helion Web and Branding Guidelines</span></a>
+        🙀 Selected Posters and Murals</span></a> */
+    switch (text) {
+        case (`🙀 Selected Print Design`): gsapToProject(0 * distance); break;
+        case (`🔍 Jungle Jim's Item Search`): gsapToProject(-1 * distance); break;
+        case (`🌴 Jungle Jim's Web and Branding Guidelines`): gsapToProject(-2 * distance); break;
+        case (`🎈 Helion Web and Branding Guidelines`): gsapToProject(-3 * distance); break;
+        /* case (`🙀 Selected Print Design`): gsapToProject(-4 * distance); break; */
+        //case (`About`): planesGroup.position.y += .5;
+    }
+});
+
+addEventListener('mouseout', (event) => {
+    let text = event.srcElement.outerText;
+    let tag = event.srcElement.tagName;
+    //if (text === "Resume Oxley Alchemist Wawa Helion branding and website Selected Artworks — Image Imagination About")
+    if (tag === `A` && text !== `About`) {
+        hovering = false;
+        //console.log(`hovering: ${hovering}`)
+        //t1.clear();
+        gsapNeutralAnim();
+    }
+});
+
+let aboutLink = document.querySelector('#aboutLink');
+let galleryLink = document.querySelector('#galleryLink');
+
+aboutLink.addEventListener("click", (event) => {
+    toAbout();
+});
+galleryLink.addEventListener("click", (event) => {
+    toGallery();
+});
+
+/* window.addEventListener('wheel', function (event) {
+    if (event.deltaY > 0 && inGallery) {
+console.log('scrolling down');
+toAbout();
+    } else if (event.deltaY < 0 && !inGallery) {
+console.log('scrolling up');
+toGallery();
+    }
+}); */
+
+let karmaLink = document.querySelector('#karma');
+
+karmaLink.addEventListener("mouseover", (event) => {
+    portrait.material = new THREE.MeshBasicMaterial({
+        map: karmaTxt,
+        fog: false,
+    });
+});
+karmaLink.addEventListener("mouseout", (event) => {
+    portrait.material = new THREE.MeshBasicMaterial({
+        map: portraitTxt,
+        fog: false,
+    });
+});
+
+let mouseX = 0;
+let mouseY = 0;
+document.addEventListener("mousemove", () => {
+    mouseX = event.clientX - (window.innerWidth / 2); // Gets Mouse X
+    mouseY = event.clientY - (window.innerHeight / 2); // Gets Mouse Y
+
+    document.getElementById('mouse').style.left = `${mouseX}px`;
+    document.getElementById('mouse').style.top = `${mouseY}px`;
+});
+
+//#endregion
+
+/**
+ * Mouse
+ */
+const mouseObj = document.getElementById('mouse');
+let maxX = window.innerWidth;
+let maxY = window.innerHeight;
+
+function targetPI(num, max) { return (num / (max / Math.PI)) }
+//function average(arr) { return arr.reduce((a, b) => a + b, 0) / arr.length }
+
+function getBounds(obj) {
+    const rect = obj.getBoundingClientRect();
+    return {
+        left: rect.left,
+        top: rect.top
+    }
+}
+
+
+
+/**
+ * Animate
+ */
+
+const clock = new THREE.Clock()
+let x = 0;
+let y = 0;
+
+const tick = () => {
+    //const elapsedTime = clock.getElapsedTime()
+
+    x = targetPI(getBounds(mouseObj).left, maxX);
+    y = targetPI(getBounds(mouseObj).top, maxY);
+    frameGroup.rotation.set(-y / 5, -x / 5, 0);
+    planesGroup.rotation.x = -y / 10;
+
+    // Update Orbital Controls
+    // controls.update()
+
+    // Render
+    renderer.render(scene, camera)
+
+    // Call tick again on the next frame
+    window.requestAnimationFrame(tick)
+}
+
+tick()
