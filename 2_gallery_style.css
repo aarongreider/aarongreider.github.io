@@ -123,6 +123,9 @@ a :hover {
   opacity: 0;
   transition: opacity 1s ease-out;
 }
+#aboutText img {
+  display: none;
+}
 
 #projectContainer {
   display: inline-flex;
@@ -296,6 +299,13 @@ video {
   #aboutText {
     margin: 6rem 0 0 3rem;
     max-width: 80%;
+    padding-bottom: 100px;
+  }
+  #aboutText img {
+    display: block;
+  }
+  canvas {
+    display: none;
   }
   /* PROJECT PAGES */
   header {

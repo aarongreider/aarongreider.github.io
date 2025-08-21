@@ -153,6 +153,10 @@ a {
     display: none;
     opacity: 0;
     transition: opacity 1s ease-out;
+
+    img {
+        display: none;
+    }
 }
 
 #projectContainer {
@@ -376,6 +380,15 @@ video {
     #aboutText {
         margin: 6rem 0 0 3rem;
         max-width: 80%;
+        padding-bottom: 100px;
+
+        img {
+            display: block;
+        }
+    }
+
+    canvas {
+        display: none;
     }
 
 
